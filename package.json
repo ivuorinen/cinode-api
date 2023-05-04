@@ -1,0 +1,27 @@
+{
+  "name": "cinode-api-ts",
+  "version": "0.1.0",
+  "description": "Cinode API TypeScript Client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "npx prettier --write .",
+    "prepare": "husky install"
+  },
+  "author": "Ismo Vuorinen <https://github.com/ivuorinen>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "openapi-fetch": "^0.1.0"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "openapi-typescript": "^6.2.4",
+    "prettier": "2.8.8"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}

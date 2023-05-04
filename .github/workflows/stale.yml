@@ -1,0 +1,13 @@
+---
+name: Stale
+
+# yamllint disable-line rule:truthy
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  stale:
+    uses: ivuorinen/.github/.github/workflows/stale.yml@main
