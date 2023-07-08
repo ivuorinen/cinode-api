@@ -16,10 +16,10 @@
     "openapi-fetch": "^0.6.0"
   },
   "devDependencies": {
+    "@ivuorinen/prettier-config": "^0.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "openapi-typescript": "^6.2.4",
-    "prettier": "2.8.8"
+    "openapi-typescript": "^6.2.4"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

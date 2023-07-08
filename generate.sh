@@ -10,3 +10,6 @@ npx openapi-typescript \
   --export-type \
   --path-params-as-type \
   --output "$DEST"
+
+npm run prettier
+
