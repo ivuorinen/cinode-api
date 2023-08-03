@@ -4,7 +4,8 @@
   "description": "Cinode API TypeScript Client",
   "main": "index.js",
   "scripts": {
-    "start": "bash generate.sh",
+    "start": "bash generate.sh && npm run docs",
+    "docs": "npx typedoc src/cinode.d.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "npx prettier --write .",
     "prepare": "husky install"
@@ -20,7 +21,8 @@
     "@ivuorinen/prettier-config": "^0.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "openapi-typescript": "^6.2.4"
+    "openapi-typescript": "^6.2.4",
+    "typedoc": "^0.24.8"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
