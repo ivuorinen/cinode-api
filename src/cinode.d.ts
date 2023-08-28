@@ -1197,6 +1197,20 @@ export type paths = {
      */
     post: operations['SubcontractorAttachment']
   }
+  '/v0.1/companies/{companyId}/subcontractors/{subcontractorId}/roles': {
+    /**
+     * Get assigned and prospect roles for subcontractor
+     * @description Requires access level: CompanyManager. Requires module: Assignments.
+     */
+    get: operations['GetSubcontractorRoles']
+  }
+  '/v0.1/companies/{companyId}/subcontractors/{subcontractorId}/roles/{projectAssignmentId}': {
+    /**
+     * Get a specific role, assigned and or prospected, for subcontractor by role id
+     * @description Requires access level: CompanyManager. Requires module: Assignments.
+     */
+    get: operations['GetSubcontractorRole']
+  }
   '/v0.1/companies/{companyId}/users/{companyUserId}/tags': {
     /**
      * Edit Tags for User
@@ -1885,6 +1899,11 @@ export type components = {
       disabled?: boolean
     }
     CommitmentBlockModel: {
+      hideInEdit?: boolean
+      hideTitle?: boolean
+      hideDescription?: boolean
+      hideText?: boolean
+      hideUrl?: boolean
       data?: components['schemas']['CommitmentBlockItemModel'][] | null
       /** Format: uuid */
       blockId?: string
@@ -4083,6 +4102,19 @@ export type components = {
       id?: number | null
       links?: components['schemas']['Link'][] | null
     }
+    CompanyUserSubcontractorRoleMemberModel: {
+      /** Format: int32 */
+      projectAssignmentId?: number
+      /** Format: int32 */
+      assignmentTariff?: number | null
+      currency?: components['schemas']['CurrencyModel'] | null
+      currentState?: components['schemas']['ProjectAssignmentMemberStateHistoryModel'] | null
+      projectAssignment?: components['schemas']['ProjectAssignmentBaseModel'] | null
+    }
+    CompanyUserSubcontractorRolesModel: {
+      assigned?: components['schemas']['CompanyUserSubcontractorRoleMemberModel'][] | null
+      prospect?: components['schemas']['CompanyUserSubcontractorRoleMemberModel'][] | null
+    }
     /**
      * Format: int32
      * @description
@@ -5635,6 +5667,10 @@ export type components = {
      * @enum {integer}
      */
     ProjectAssignmentMemberState: 0 | 10 | 20 | 30 | 40
+    ProjectAssignmentMemberStateHistoryModel: {
+      state?: components['schemas']['ProjectAssignmentMemberState']
+      note?: string | null
+    }
     ProjectAssignmentMemberSubcontractorAddModel: {
       /** Format: int32 */
       groupId?: number | null
@@ -6393,11 +6429,12 @@ export type components = {
     }
     SearchCompanyUserQueryModel: {
       term?: string | null
+      includeDisconnected?: boolean
       pageAndSortBy?: components['schemas']['CompanyUserQuerySortPageAndSortByModel'] | null
     }
     SearchCompanyUserResultModel: {
       pagedAndSortedBy?: components['schemas']['CompanyUserQuerySortPageAndSortByModel'] | null
-      result?: components['schemas']['CompanyUserBaseModel'][] | null
+      result?: components['schemas']['CompanyUserExtendedModel'][] | null
       /** Format: int32 */
       hits?: number
       /** Format: int32 */
@@ -7464,7 +7501,7 @@ export type operations = {
          *     "op": "replace"
          *   },
          *   {
-         *     "value": "2023-08-03T18:00:09.8364399+02:00",
+         *     "value": "2023-08-28T13:13:38.3094173+02:00",
          *     "path": "/availablefromdate",
          *     "op": "replace"
          *   },
@@ -12885,12 +12922,12 @@ export type operations = {
          *     "op": "replace"
          *   },
          *   {
-         *     "value": "2023-08-03T18:00:10.0953997+02:00",
+         *     "value": "2023-08-28T13:13:38.5546243+02:00",
          *     "path": "/employmentstartdate",
          *     "op": "replace"
          *   },
          *   {
-         *     "value": "2023-08-03T18:00:10.0954045+02:00",
+         *     "value": "2023-08-28T13:13:38.5546283+02:00",
          *     "path": "/employmentenddate",
          *     "op": "replace"
          *   },
@@ -12915,7 +12952,7 @@ export type operations = {
          *     "op": "replace"
          *   },
          *   {
-         *     "value": "2023-08-03T18:00:10.0954082+02:00",
+         *     "value": "2023-08-28T13:13:38.5546312+02:00",
          *     "path": "/availablefromdate",
          *     "op": "replace"
          *   },
@@ -12980,7 +13017,7 @@ export type operations = {
          *     "op": "replace"
          *   },
          *   {
-         *     "value": "2023-08-03T18:00:10.0954145+02:00",
+         *     "value": "2023-08-28T13:13:38.5546364+02:00",
          *     "path": "/dateofbirth",
          *     "op": "replace"
          *   },
@@ -17947,6 +17984,108 @@ export type operations = {
       /** @description Unauthorized */
       401: never
       /** @description Server Error */
+      500: {
+        content: {
+          'text/plain': components['schemas']['ErrorModel']
+          'application/json': components['schemas']['ErrorModel']
+          'text/json': components['schemas']['ErrorModel']
+          'application/xml': components['schemas']['ErrorModel']
+          'text/xml': components['schemas']['ErrorModel']
+        }
+      }
+    }
+  }
+  /**
+   * Get assigned and prospect roles for subcontractor
+   * @description Requires access level: CompanyManager. Requires module: Assignments.
+   */
+  GetSubcontractorRoles: {
+    parameters: {
+      path: {
+        /** @description Company Id */
+        companyId: number
+        /** @description Subcontractor Id */
+        subcontractorId: number
+      }
+    }
+    responses: {
+      /** @description All went well */
+      200: {
+        content: {
+          'text/plain': components['schemas']['CompanyUserSubcontractorRolesModel']
+          'application/json': components['schemas']['CompanyUserSubcontractorRolesModel']
+          'text/json': components['schemas']['CompanyUserSubcontractorRolesModel']
+          'application/xml': components['schemas']['CompanyUserSubcontractorRolesModel']
+          'text/xml': components['schemas']['CompanyUserSubcontractorRolesModel']
+        }
+      }
+      /** @description Incorrect request */
+      400: {
+        content: {
+          'text/plain': components['schemas']['ValidationModel']
+          'application/json': components['schemas']['ValidationModel']
+          'text/json': components['schemas']['ValidationModel']
+          'application/xml': components['schemas']['ValidationModel']
+          'text/xml': components['schemas']['ValidationModel']
+        }
+      }
+      /** @description Unauthorized request */
+      401: never
+      /** @description Resource not found */
+      404: never
+      /** @description Server error */
+      500: {
+        content: {
+          'text/plain': components['schemas']['ErrorModel']
+          'application/json': components['schemas']['ErrorModel']
+          'text/json': components['schemas']['ErrorModel']
+          'application/xml': components['schemas']['ErrorModel']
+          'text/xml': components['schemas']['ErrorModel']
+        }
+      }
+    }
+  }
+  /**
+   * Get a specific role, assigned and or prospected, for subcontractor by role id
+   * @description Requires access level: CompanyManager. Requires module: Assignments.
+   */
+  GetSubcontractorRole: {
+    parameters: {
+      path: {
+        /** @description Company Id */
+        companyId: number
+        /** @description Subcontractor Id */
+        subcontractorId: number
+        /** @description Project assignment Id */
+        projectAssignmentId: number
+      }
+    }
+    responses: {
+      /** @description All went well */
+      200: {
+        content: {
+          'text/plain': components['schemas']['CompanyUserSubcontractorRoleMemberModel']
+          'application/json': components['schemas']['CompanyUserSubcontractorRoleMemberModel']
+          'text/json': components['schemas']['CompanyUserSubcontractorRoleMemberModel']
+          'application/xml': components['schemas']['CompanyUserSubcontractorRoleMemberModel']
+          'text/xml': components['schemas']['CompanyUserSubcontractorRoleMemberModel']
+        }
+      }
+      /** @description Incorrect request */
+      400: {
+        content: {
+          'text/plain': components['schemas']['ValidationModel']
+          'application/json': components['schemas']['ValidationModel']
+          'text/json': components['schemas']['ValidationModel']
+          'application/xml': components['schemas']['ValidationModel']
+          'text/xml': components['schemas']['ValidationModel']
+        }
+      }
+      /** @description Unauthorized request */
+      401: never
+      /** @description Resource not found */
+      404: never
+      /** @description Server error */
       500: {
         content: {
           'text/plain': components['schemas']['ErrorModel']
