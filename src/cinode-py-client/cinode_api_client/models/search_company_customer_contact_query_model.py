@@ -8,6 +8,7 @@ if TYPE_CHECKING:
     from ..models.company_customer_contact_query_sort_page_and_sort_by_model import (
         CompanyCustomerContactQuerySortPageAndSortByModel,
     )
+    from ..models.date_time_filter_interval import DateTimeFilterInterval
 
 
 T = TypeVar("T", bound="SearchCompanyCustomerContactQueryModel")
@@ -21,6 +22,9 @@ class SearchCompanyCustomerContactQueryModel:
         managers (Union[Unset, None, List[int]]):
         customers (Union[Unset, None, List[int]]):
         tags (Union[Unset, None, List[int]]):
+        last_touched_at (Union[Unset, None, DateTimeFilterInterval]):
+        created_at (Union[Unset, None, DateTimeFilterInterval]):
+        updated_at (Union[Unset, None, DateTimeFilterInterval]):
         page_and_sort_by (Union[Unset, None, CompanyCustomerContactQuerySortPageAndSortByModel]):
     """
 
@@ -28,6 +32,9 @@ class SearchCompanyCustomerContactQueryModel:
     managers: Union[Unset, None, List[int]] = UNSET
     customers: Union[Unset, None, List[int]] = UNSET
     tags: Union[Unset, None, List[int]] = UNSET
+    last_touched_at: Union[Unset, None, "DateTimeFilterInterval"] = UNSET
+    created_at: Union[Unset, None, "DateTimeFilterInterval"] = UNSET
+    updated_at: Union[Unset, None, "DateTimeFilterInterval"] = UNSET
     page_and_sort_by: Union[Unset, None, "CompanyCustomerContactQuerySortPageAndSortByModel"] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
@@ -53,6 +60,18 @@ class SearchCompanyCustomerContactQueryModel:
             else:
                 tags = self.tags
 
+        last_touched_at: Union[Unset, None, Dict[str, Any]] = UNSET
+        if not isinstance(self.last_touched_at, Unset):
+            last_touched_at = self.last_touched_at.to_dict() if self.last_touched_at else None
+
+        created_at: Union[Unset, None, Dict[str, Any]] = UNSET
+        if not isinstance(self.created_at, Unset):
+            created_at = self.created_at.to_dict() if self.created_at else None
+
+        updated_at: Union[Unset, None, Dict[str, Any]] = UNSET
+        if not isinstance(self.updated_at, Unset):
+            updated_at = self.updated_at.to_dict() if self.updated_at else None
+
         page_and_sort_by: Union[Unset, None, Dict[str, Any]] = UNSET
         if not isinstance(self.page_and_sort_by, Unset):
             page_and_sort_by = self.page_and_sort_by.to_dict() if self.page_and_sort_by else None
@@ -67,6 +86,12 @@ class SearchCompanyCustomerContactQueryModel:
             field_dict["customers"] = customers
         if tags is not UNSET:
             field_dict["tags"] = tags
+        if last_touched_at is not UNSET:
+            field_dict["lastTouchedAt"] = last_touched_at
+        if created_at is not UNSET:
+            field_dict["createdAt"] = created_at
+        if updated_at is not UNSET:
+            field_dict["updatedAt"] = updated_at
         if page_and_sort_by is not UNSET:
             field_dict["pageAndSortBy"] = page_and_sort_by
 
@@ -77,6 +102,7 @@ class SearchCompanyCustomerContactQueryModel:
         from ..models.company_customer_contact_query_sort_page_and_sort_by_model import (
             CompanyCustomerContactQuerySortPageAndSortByModel,
         )
+        from ..models.date_time_filter_interval import DateTimeFilterInterval
 
         d = src_dict.copy()
         term = d.pop("term", UNSET)
@@ -86,6 +112,33 @@ class SearchCompanyCustomerContactQueryModel:
         customers = cast(List[int], d.pop("customers", UNSET))
 
         tags = cast(List[int], d.pop("tags", UNSET))
+
+        _last_touched_at = d.pop("lastTouchedAt", UNSET)
+        last_touched_at: Union[Unset, None, DateTimeFilterInterval]
+        if _last_touched_at is None:
+            last_touched_at = None
+        elif isinstance(_last_touched_at, Unset):
+            last_touched_at = UNSET
+        else:
+            last_touched_at = DateTimeFilterInterval.from_dict(_last_touched_at)
+
+        _created_at = d.pop("createdAt", UNSET)
+        created_at: Union[Unset, None, DateTimeFilterInterval]
+        if _created_at is None:
+            created_at = None
+        elif isinstance(_created_at, Unset):
+            created_at = UNSET
+        else:
+            created_at = DateTimeFilterInterval.from_dict(_created_at)
+
+        _updated_at = d.pop("updatedAt", UNSET)
+        updated_at: Union[Unset, None, DateTimeFilterInterval]
+        if _updated_at is None:
+            updated_at = None
+        elif isinstance(_updated_at, Unset):
+            updated_at = UNSET
+        else:
+            updated_at = DateTimeFilterInterval.from_dict(_updated_at)
 
         _page_and_sort_by = d.pop("pageAndSortBy", UNSET)
         page_and_sort_by: Union[Unset, None, CompanyCustomerContactQuerySortPageAndSortByModel]
@@ -101,6 +154,9 @@ class SearchCompanyCustomerContactQueryModel:
             managers=managers,
             customers=customers,
             tags=tags,
+            last_touched_at=last_touched_at,
+            created_at=created_at,
+            updated_at=updated_at,
             page_and_sort_by=page_and_sort_by,
         )
 

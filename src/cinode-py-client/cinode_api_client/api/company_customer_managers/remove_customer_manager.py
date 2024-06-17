@@ -68,9 +68,10 @@ def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, ErrorModel, ValidationModel]]:
-    """Remove customer responsible
+    """Remove a person as customer manager (responsible) for given customer.
 
-     Sample request:
+     Note that the id property is the CompanyUserId of the manager (responsible) to remove.
+    Sample request:
 
         DELETE /v0.1/companies/1/customers/22228/managers/54632
 
@@ -107,9 +108,10 @@ def sync(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, ErrorModel, ValidationModel]]:
-    """Remove customer responsible
+    """Remove a person as customer manager (responsible) for given customer.
 
-     Sample request:
+     Note that the id property is the CompanyUserId of the manager (responsible) to remove.
+    Sample request:
 
         DELETE /v0.1/companies/1/customers/22228/managers/54632
 
@@ -141,9 +143,10 @@ async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, ErrorModel, ValidationModel]]:
-    """Remove customer responsible
+    """Remove a person as customer manager (responsible) for given customer.
 
-     Sample request:
+     Note that the id property is the CompanyUserId of the manager (responsible) to remove.
+    Sample request:
 
         DELETE /v0.1/companies/1/customers/22228/managers/54632
 
@@ -178,9 +181,10 @@ async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, ErrorModel, ValidationModel]]:
-    """Remove customer responsible
+    """Remove a person as customer manager (responsible) for given customer.
 
-     Sample request:
+     Note that the id property is the CompanyUserId of the manager (responsible) to remove.
+    Sample request:
 
         DELETE /v0.1/companies/1/customers/22228/managers/54632
 

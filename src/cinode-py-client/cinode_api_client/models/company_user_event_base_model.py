@@ -32,6 +32,8 @@ class CompanyUserEventBaseModel:
         company_id (Union[Unset, None, int]):
         title (Union[Unset, None, str]):
         description (Union[Unset, None, str]):
+        description_html (Union[Unset, None, str]):
+        description_delta (Union[Unset, None, str]):
         event_date (Union[Unset, datetime.datetime]):
         links (Union[Unset, None, List['Link']]):
     """
@@ -42,6 +44,8 @@ class CompanyUserEventBaseModel:
     company_id: Union[Unset, None, int] = UNSET
     title: Union[Unset, None, str] = UNSET
     description: Union[Unset, None, str] = UNSET
+    description_html: Union[Unset, None, str] = UNSET
+    description_delta: Union[Unset, None, str] = UNSET
     event_date: Union[Unset, datetime.datetime] = UNSET
     links: Union[Unset, None, List["Link"]] = UNSET
 
@@ -55,6 +59,8 @@ class CompanyUserEventBaseModel:
         company_id = self.company_id
         title = self.title
         description = self.description
+        description_html = self.description_html
+        description_delta = self.description_delta
         event_date: Union[Unset, str] = UNSET
         if not isinstance(self.event_date, Unset):
             event_date = self.event_date.isoformat()
@@ -84,6 +90,10 @@ class CompanyUserEventBaseModel:
             field_dict["title"] = title
         if description is not UNSET:
             field_dict["description"] = description
+        if description_html is not UNSET:
+            field_dict["descriptionHtml"] = description_html
+        if description_delta is not UNSET:
+            field_dict["descriptionDelta"] = description_delta
         if event_date is not UNSET:
             field_dict["eventDate"] = event_date
         if links is not UNSET:
@@ -113,6 +123,10 @@ class CompanyUserEventBaseModel:
 
         description = d.pop("description", UNSET)
 
+        description_html = d.pop("descriptionHtml", UNSET)
+
+        description_delta = d.pop("descriptionDelta", UNSET)
+
         _event_date = d.pop("eventDate", UNSET)
         event_date: Union[Unset, datetime.datetime]
         if isinstance(_event_date, Unset):
@@ -134,6 +148,8 @@ class CompanyUserEventBaseModel:
             company_id=company_id,
             title=title,
             description=description,
+            description_html=description_html,
+            description_delta=description_delta,
             event_date=event_date,
             links=links,
         )

@@ -20,10 +20,10 @@ class DynamicTemplateViewModelPrimaryStyleAssets:
         classic (Union[Unset, List['ITemplateSharedAssetViewModel']]):
         dynamic (Union[Unset, List['ITemplateSharedAssetViewModel']]):
         page_flow (Union[Unset, List['ITemplateSharedAssetViewModel']]):
-        cinode_premium_3_page_flow (Union[Unset, List['ITemplateSharedAssetViewModel']]):
-        cinode_premium_2_page_flow (Union[Unset, List['ITemplateSharedAssetViewModel']]):
         block_work_experience (Union[Unset, List['ITemplateSharedAssetViewModel']]):
         block_skills_by_level (Union[Unset, List['ITemplateSharedAssetViewModel']]):
+        cinode_premium_3_page_flow (Union[Unset, List['ITemplateSharedAssetViewModel']]):
+        cinode_premium_2_page_flow (Union[Unset, List['ITemplateSharedAssetViewModel']]):
         template_type (Union[Unset, List['ITemplateSharedAssetViewModel']]):
     """
 
@@ -32,10 +32,10 @@ class DynamicTemplateViewModelPrimaryStyleAssets:
     classic: Union[Unset, List["ITemplateSharedAssetViewModel"]] = UNSET
     dynamic: Union[Unset, List["ITemplateSharedAssetViewModel"]] = UNSET
     page_flow: Union[Unset, List["ITemplateSharedAssetViewModel"]] = UNSET
-    cinode_premium_3_page_flow: Union[Unset, List["ITemplateSharedAssetViewModel"]] = UNSET
-    cinode_premium_2_page_flow: Union[Unset, List["ITemplateSharedAssetViewModel"]] = UNSET
     block_work_experience: Union[Unset, List["ITemplateSharedAssetViewModel"]] = UNSET
     block_skills_by_level: Union[Unset, List["ITemplateSharedAssetViewModel"]] = UNSET
+    cinode_premium_3_page_flow: Union[Unset, List["ITemplateSharedAssetViewModel"]] = UNSET
+    cinode_premium_2_page_flow: Union[Unset, List["ITemplateSharedAssetViewModel"]] = UNSET
     template_type: Union[Unset, List["ITemplateSharedAssetViewModel"]] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
@@ -79,22 +79,6 @@ class DynamicTemplateViewModelPrimaryStyleAssets:
 
                 page_flow.append(page_flow_item)
 
-        cinode_premium_3_page_flow: Union[Unset, List[Dict[str, Any]]] = UNSET
-        if not isinstance(self.cinode_premium_3_page_flow, Unset):
-            cinode_premium_3_page_flow = []
-            for cinode_premium_3_page_flow_item_data in self.cinode_premium_3_page_flow:
-                cinode_premium_3_page_flow_item = cinode_premium_3_page_flow_item_data.to_dict()
-
-                cinode_premium_3_page_flow.append(cinode_premium_3_page_flow_item)
-
-        cinode_premium_2_page_flow: Union[Unset, List[Dict[str, Any]]] = UNSET
-        if not isinstance(self.cinode_premium_2_page_flow, Unset):
-            cinode_premium_2_page_flow = []
-            for cinode_premium_2_page_flow_item_data in self.cinode_premium_2_page_flow:
-                cinode_premium_2_page_flow_item = cinode_premium_2_page_flow_item_data.to_dict()
-
-                cinode_premium_2_page_flow.append(cinode_premium_2_page_flow_item)
-
         block_work_experience: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.block_work_experience, Unset):
             block_work_experience = []
@@ -110,6 +94,22 @@ class DynamicTemplateViewModelPrimaryStyleAssets:
                 block_skills_by_level_item = block_skills_by_level_item_data.to_dict()
 
                 block_skills_by_level.append(block_skills_by_level_item)
+
+        cinode_premium_3_page_flow: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.cinode_premium_3_page_flow, Unset):
+            cinode_premium_3_page_flow = []
+            for cinode_premium_3_page_flow_item_data in self.cinode_premium_3_page_flow:
+                cinode_premium_3_page_flow_item = cinode_premium_3_page_flow_item_data.to_dict()
+
+                cinode_premium_3_page_flow.append(cinode_premium_3_page_flow_item)
+
+        cinode_premium_2_page_flow: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.cinode_premium_2_page_flow, Unset):
+            cinode_premium_2_page_flow = []
+            for cinode_premium_2_page_flow_item_data in self.cinode_premium_2_page_flow:
+                cinode_premium_2_page_flow_item = cinode_premium_2_page_flow_item_data.to_dict()
+
+                cinode_premium_2_page_flow.append(cinode_premium_2_page_flow_item)
 
         template_type: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.template_type, Unset):
@@ -131,14 +131,14 @@ class DynamicTemplateViewModelPrimaryStyleAssets:
             field_dict["Dynamic"] = dynamic
         if page_flow is not UNSET:
             field_dict["PageFlow"] = page_flow
-        if cinode_premium_3_page_flow is not UNSET:
-            field_dict["CinodePremium3PageFlow"] = cinode_premium_3_page_flow
-        if cinode_premium_2_page_flow is not UNSET:
-            field_dict["CinodePremium2PageFlow"] = cinode_premium_2_page_flow
         if block_work_experience is not UNSET:
             field_dict["BlockWorkExperience"] = block_work_experience
         if block_skills_by_level is not UNSET:
             field_dict["BlockSkillsByLevel"] = block_skills_by_level
+        if cinode_premium_3_page_flow is not UNSET:
+            field_dict["CinodePremium3PageFlow"] = cinode_premium_3_page_flow
+        if cinode_premium_2_page_flow is not UNSET:
+            field_dict["CinodePremium2PageFlow"] = cinode_premium_2_page_flow
         if template_type is not UNSET:
             field_dict["TemplateType"] = template_type
 
@@ -184,6 +184,20 @@ class DynamicTemplateViewModelPrimaryStyleAssets:
 
             page_flow.append(page_flow_item)
 
+        block_work_experience = []
+        _block_work_experience = d.pop("BlockWorkExperience", UNSET)
+        for block_work_experience_item_data in _block_work_experience or []:
+            block_work_experience_item = ITemplateSharedAssetViewModel.from_dict(block_work_experience_item_data)
+
+            block_work_experience.append(block_work_experience_item)
+
+        block_skills_by_level = []
+        _block_skills_by_level = d.pop("BlockSkillsByLevel", UNSET)
+        for block_skills_by_level_item_data in _block_skills_by_level or []:
+            block_skills_by_level_item = ITemplateSharedAssetViewModel.from_dict(block_skills_by_level_item_data)
+
+            block_skills_by_level.append(block_skills_by_level_item)
+
         cinode_premium_3_page_flow = []
         _cinode_premium_3_page_flow = d.pop("CinodePremium3PageFlow", UNSET)
         for cinode_premium_3_page_flow_item_data in _cinode_premium_3_page_flow or []:
@@ -202,20 +216,6 @@ class DynamicTemplateViewModelPrimaryStyleAssets:
 
             cinode_premium_2_page_flow.append(cinode_premium_2_page_flow_item)
 
-        block_work_experience = []
-        _block_work_experience = d.pop("BlockWorkExperience", UNSET)
-        for block_work_experience_item_data in _block_work_experience or []:
-            block_work_experience_item = ITemplateSharedAssetViewModel.from_dict(block_work_experience_item_data)
-
-            block_work_experience.append(block_work_experience_item)
-
-        block_skills_by_level = []
-        _block_skills_by_level = d.pop("BlockSkillsByLevel", UNSET)
-        for block_skills_by_level_item_data in _block_skills_by_level or []:
-            block_skills_by_level_item = ITemplateSharedAssetViewModel.from_dict(block_skills_by_level_item_data)
-
-            block_skills_by_level.append(block_skills_by_level_item)
-
         template_type = []
         _template_type = d.pop("TemplateType", UNSET)
         for template_type_item_data in _template_type or []:
@@ -229,10 +229,10 @@ class DynamicTemplateViewModelPrimaryStyleAssets:
             classic=classic,
             dynamic=dynamic,
             page_flow=page_flow,
-            cinode_premium_3_page_flow=cinode_premium_3_page_flow,
-            cinode_premium_2_page_flow=cinode_premium_2_page_flow,
             block_work_experience=block_work_experience,
             block_skills_by_level=block_skills_by_level,
+            cinode_premium_3_page_flow=cinode_premium_3_page_flow,
+            cinode_premium_2_page_flow=cinode_premium_2_page_flow,
             template_type=template_type,
         )
 

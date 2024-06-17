@@ -85,7 +85,7 @@ def sync_detailed(
     client: Union[AuthenticatedClient, Client],
     json_body: CompanyCustomerManagersAddEditModel,
 ) -> Response[Union[Any, ErrorModel, List["CompanyCustomerManagerModel"], ValidationModel]]:
-    """Add customer responsible
+    """Add a person as customer manager (responsible) for given customer
 
      Sample request:
 
@@ -129,7 +129,7 @@ def sync(
     client: Union[AuthenticatedClient, Client],
     json_body: CompanyCustomerManagersAddEditModel,
 ) -> Optional[Union[Any, ErrorModel, List["CompanyCustomerManagerModel"], ValidationModel]]:
-    """Add customer responsible
+    """Add a person as customer manager (responsible) for given customer
 
      Sample request:
 
@@ -168,7 +168,7 @@ async def asyncio_detailed(
     client: Union[AuthenticatedClient, Client],
     json_body: CompanyCustomerManagersAddEditModel,
 ) -> Response[Union[Any, ErrorModel, List["CompanyCustomerManagerModel"], ValidationModel]]:
-    """Add customer responsible
+    """Add a person as customer manager (responsible) for given customer
 
      Sample request:
 
@@ -210,7 +210,7 @@ async def asyncio(
     client: Union[AuthenticatedClient, Client],
     json_body: CompanyCustomerManagersAddEditModel,
 ) -> Optional[Union[Any, ErrorModel, List["CompanyCustomerManagerModel"], ValidationModel]]:
-    """Add customer responsible
+    """Add a person as customer manager (responsible) for given customer
 
      Sample request:
 

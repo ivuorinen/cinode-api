@@ -5,6 +5,7 @@ from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
 from ..models.event_note_type import EventNoteType
+from ..models.event_status_value import EventStatusValue
 from ..models.event_type import EventType
 from ..models.event_visibility import EventVisibility
 from ..types import UNSET, Unset
@@ -29,6 +30,18 @@ class CustomerEventNoteAddEditModel:
         timezone_id (Union[Unset, None, str]): The desired timezone to be used for NoteDate property. Valid timezone ids
             can be found at https://nodatime.org/TimeZones
             If empty, the timezone of the executing user (API account) will be used.
+        assigned_to_company_user_id (Union[Unset, None, int]):
+        status (Union[Unset, EventStatusValue]):
+
+            Inte påbörjad = 0
+
+            Påbörjad = 1
+
+            Färdig = 2
+
+            Uppskjuten = 3
+
+            Väntar = 4
         type (Union[Unset, EventType]):
 
             Möte = 0
@@ -51,6 +64,8 @@ class CustomerEventNoteAddEditModel:
     note_type: Union[Unset, None, EventNoteType] = UNSET
     note_date: Union[Unset, None, datetime.datetime] = UNSET
     timezone_id: Union[Unset, None, str] = UNSET
+    assigned_to_company_user_id: Union[Unset, None, int] = UNSET
+    status: Union[Unset, EventStatusValue] = UNSET
     type: Union[Unset, EventType] = UNSET
     description: Union[Unset, None, str] = UNSET
     visibility: Union[Unset, EventVisibility] = UNSET
@@ -67,6 +82,11 @@ class CustomerEventNoteAddEditModel:
             note_date = self.note_date.isoformat() if self.note_date else None
 
         timezone_id = self.timezone_id
+        assigned_to_company_user_id = self.assigned_to_company_user_id
+        status: Union[Unset, int] = UNSET
+        if not isinstance(self.status, Unset):
+            status = self.status.value
+
         type: Union[Unset, int] = UNSET
         if not isinstance(self.type, Unset):
             type = self.type.value
@@ -90,6 +110,10 @@ class CustomerEventNoteAddEditModel:
             field_dict["noteDate"] = note_date
         if timezone_id is not UNSET:
             field_dict["timezoneId"] = timezone_id
+        if assigned_to_company_user_id is not UNSET:
+            field_dict["assignedToCompanyUserId"] = assigned_to_company_user_id
+        if status is not UNSET:
+            field_dict["status"] = status
         if type is not UNSET:
             field_dict["type"] = type
         if description is not UNSET:
@@ -126,6 +150,15 @@ class CustomerEventNoteAddEditModel:
 
         timezone_id = d.pop("timezoneId", UNSET)
 
+        assigned_to_company_user_id = d.pop("assignedToCompanyUserId", UNSET)
+
+        _status = d.pop("status", UNSET)
+        status: Union[Unset, EventStatusValue]
+        if isinstance(_status, Unset):
+            status = UNSET
+        else:
+            status = EventStatusValue(_status)
+
         _type = d.pop("type", UNSET)
         type: Union[Unset, EventType]
         if isinstance(_type, Unset):
@@ -148,6 +181,8 @@ class CustomerEventNoteAddEditModel:
             note_type=note_type,
             note_date=note_date,
             timezone_id=timezone_id,
+            assigned_to_company_user_id=assigned_to_company_user_id,
+            status=status,
             type=type,
             description=description,
             visibility=visibility,

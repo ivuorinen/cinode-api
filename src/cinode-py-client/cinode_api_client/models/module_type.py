@@ -20,17 +20,25 @@ class ModuleType(IntEnum):
     VALUE_21 = 21
     VALUE_22 = 22
     VALUE_23 = 23
+    VALUE_24 = 24
     VALUE_30 = 30
     VALUE_31 = 31
     VALUE_40 = 40
     VALUE_41 = 41
     VALUE_42 = 42
     VALUE_43 = 43
+    VALUE_44 = 44
+    VALUE_45 = 45
+    VALUE_46 = 46
+    VALUE_48 = 48
     VALUE_50 = 50
     VALUE_51 = 51
     VALUE_52 = 52
     VALUE_60 = 60
     VALUE_70 = 70
+    VALUE_80 = 80
+    VALUE_90 = 90
+    VALUE_99 = 99
     VALUE_600 = 600
 
     def __str__(self) -> str:

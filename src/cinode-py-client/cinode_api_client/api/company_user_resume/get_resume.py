@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.classic_company_user_resume_model import ClassicCompanyUserResumeModel
+from ...models.company_user_resume_base_model import CompanyUserResumeBaseModel
 from ...models.error_model import ErrorModel
 from ...models.validation_model import ValidationModel
 from ...types import Response
@@ -30,9 +30,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[Union[Any, ClassicCompanyUserResumeModel, ErrorModel, ValidationModel]]:
+) -> Optional[Union[Any, CompanyUserResumeBaseModel, ErrorModel, ValidationModel]]:
     if response.status_code == HTTPStatus.OK:
-        response_200 = ClassicCompanyUserResumeModel.from_dict(response.json())
+        response_200 = CompanyUserResumeBaseModel.from_dict(response.json())
 
         return response_200
     if response.status_code == HTTPStatus.BAD_REQUEST:
@@ -57,7 +57,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[Any, ClassicCompanyUserResumeModel, ErrorModel, ValidationModel]]:
+) -> Response[Union[Any, CompanyUserResumeBaseModel, ErrorModel, ValidationModel]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -72,8 +72,8 @@ def sync_detailed(
     id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[Union[Any, ClassicCompanyUserResumeModel, ErrorModel, ValidationModel]]:
-    """Get resume by id
+) -> Response[Union[Any, CompanyUserResumeBaseModel, ErrorModel, ValidationModel]]:
+    """Get resume by id.
 
      Requires module: CompanyUserResume.
 
@@ -87,7 +87,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[Any, ClassicCompanyUserResumeModel, ErrorModel, ValidationModel]]
+        Response[Union[Any, CompanyUserResumeBaseModel, ErrorModel, ValidationModel]]
     """
 
     kwargs = _get_kwargs(
@@ -109,8 +109,8 @@ def sync(
     id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[Union[Any, ClassicCompanyUserResumeModel, ErrorModel, ValidationModel]]:
-    """Get resume by id
+) -> Optional[Union[Any, CompanyUserResumeBaseModel, ErrorModel, ValidationModel]]:
+    """Get resume by id.
 
      Requires module: CompanyUserResume.
 
@@ -124,7 +124,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[Any, ClassicCompanyUserResumeModel, ErrorModel, ValidationModel]
+        Union[Any, CompanyUserResumeBaseModel, ErrorModel, ValidationModel]
     """
 
     return sync_detailed(
@@ -141,8 +141,8 @@ async def asyncio_detailed(
     id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[Union[Any, ClassicCompanyUserResumeModel, ErrorModel, ValidationModel]]:
-    """Get resume by id
+) -> Response[Union[Any, CompanyUserResumeBaseModel, ErrorModel, ValidationModel]]:
+    """Get resume by id.
 
      Requires module: CompanyUserResume.
 
@@ -156,7 +156,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[Any, ClassicCompanyUserResumeModel, ErrorModel, ValidationModel]]
+        Response[Union[Any, CompanyUserResumeBaseModel, ErrorModel, ValidationModel]]
     """
 
     kwargs = _get_kwargs(
@@ -176,8 +176,8 @@ async def asyncio(
     id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[Union[Any, ClassicCompanyUserResumeModel, ErrorModel, ValidationModel]]:
-    """Get resume by id
+) -> Optional[Union[Any, CompanyUserResumeBaseModel, ErrorModel, ValidationModel]]:
+    """Get resume by id.
 
      Requires module: CompanyUserResume.
 
@@ -191,7 +191,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[Any, ClassicCompanyUserResumeModel, ErrorModel, ValidationModel]
+        Union[Any, CompanyUserResumeBaseModel, ErrorModel, ValidationModel]
     """
 
     return (

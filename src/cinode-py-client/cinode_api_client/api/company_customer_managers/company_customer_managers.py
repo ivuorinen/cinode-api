@@ -78,7 +78,7 @@ def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, ErrorModel, List["CompanyCustomerManagerModel"], ValidationModel]]:
-    """Get customer managers
+    """Get customer managers (responsibles) for given customer
 
      Requires access level: CompanyManager. Requires module: Customers.
 
@@ -112,7 +112,7 @@ def sync(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, ErrorModel, List["CompanyCustomerManagerModel"], ValidationModel]]:
-    """Get customer managers
+    """Get customer managers (responsibles) for given customer
 
      Requires access level: CompanyManager. Requires module: Customers.
 
@@ -141,7 +141,7 @@ async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[Any, ErrorModel, List["CompanyCustomerManagerModel"], ValidationModel]]:
-    """Get customer managers
+    """Get customer managers (responsibles) for given customer
 
      Requires access level: CompanyManager. Requires module: Customers.
 
@@ -173,7 +173,7 @@ async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[Any, ErrorModel, List["CompanyCustomerManagerModel"], ValidationModel]]:
-    """Get customer managers
+    """Get customer managers (responsibles) for given customer
 
      Requires access level: CompanyManager. Requires module: Customers.
 

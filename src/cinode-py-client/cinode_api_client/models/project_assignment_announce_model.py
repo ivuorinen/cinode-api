@@ -29,10 +29,13 @@ class ProjectAssignmentAnnounceModel:
         subcontractor_ids (Union[Unset, None, List[int]]):
         announce_to_partner_network (Union[Unset, None, bool]):
         announce_to_market (Union[Unset, None, bool]):
-        is_remote (Union[Unset, bool]):
+        is_remote (Union[Unset, None, bool]):
+        remote_percentage (Union[Unset, None, int]): Accepts values between 0 and 100. 0 indicates that the work is to
+            be done on site. 100 means that the position is fully remote.
         is_end_customer_assignment (Union[Unset, None, bool]):
         publish_for_real (Union[Unset, bool]): Set to true if you actually want to publish the announcement to your
             recipients, if you are developing/testing the endpoint it should be false, then no persist will take place.
+        reference_id (Union[Unset, None, str]):
     """
 
     title: str
@@ -47,9 +50,11 @@ class ProjectAssignmentAnnounceModel:
     subcontractor_ids: Union[Unset, None, List[int]] = UNSET
     announce_to_partner_network: Union[Unset, None, bool] = UNSET
     announce_to_market: Union[Unset, None, bool] = UNSET
-    is_remote: Union[Unset, bool] = UNSET
+    is_remote: Union[Unset, None, bool] = UNSET
+    remote_percentage: Union[Unset, None, int] = UNSET
     is_end_customer_assignment: Union[Unset, None, bool] = UNSET
     publish_for_real: Union[Unset, bool] = UNSET
+    reference_id: Union[Unset, None, str] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
         title = self.title
@@ -88,8 +93,10 @@ class ProjectAssignmentAnnounceModel:
         announce_to_partner_network = self.announce_to_partner_network
         announce_to_market = self.announce_to_market
         is_remote = self.is_remote
+        remote_percentage = self.remote_percentage
         is_end_customer_assignment = self.is_end_customer_assignment
         publish_for_real = self.publish_for_real
+        reference_id = self.reference_id
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(
@@ -119,10 +126,14 @@ class ProjectAssignmentAnnounceModel:
             field_dict["announceToMarket"] = announce_to_market
         if is_remote is not UNSET:
             field_dict["isRemote"] = is_remote
+        if remote_percentage is not UNSET:
+            field_dict["remotePercentage"] = remote_percentage
         if is_end_customer_assignment is not UNSET:
             field_dict["isEndCustomerAssignment"] = is_end_customer_assignment
         if publish_for_real is not UNSET:
             field_dict["publishForReal"] = publish_for_real
+        if reference_id is not UNSET:
+            field_dict["referenceId"] = reference_id
 
         return field_dict
 
@@ -162,9 +173,13 @@ class ProjectAssignmentAnnounceModel:
 
         is_remote = d.pop("isRemote", UNSET)
 
+        remote_percentage = d.pop("remotePercentage", UNSET)
+
         is_end_customer_assignment = d.pop("isEndCustomerAssignment", UNSET)
 
         publish_for_real = d.pop("publishForReal", UNSET)
+
+        reference_id = d.pop("referenceId", UNSET)
 
         project_assignment_announce_model = cls(
             title=title,
@@ -180,8 +195,10 @@ class ProjectAssignmentAnnounceModel:
             announce_to_partner_network=announce_to_partner_network,
             announce_to_market=announce_to_market,
             is_remote=is_remote,
+            remote_percentage=remote_percentage,
             is_end_customer_assignment=is_end_customer_assignment,
             publish_for_real=publish_for_real,
+            reference_id=reference_id,
         )
 
         return project_assignment_announce_model

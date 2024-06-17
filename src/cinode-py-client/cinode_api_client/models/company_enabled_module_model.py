@@ -38,7 +38,7 @@ class CompanyEnabledModuleModel:
 
             CalendarSync = 13
 
-            AllowWidgetModification = 14
+            AllowDashboardModification = 14
 
             ConfiguredFilters = 19
 
@@ -49,6 +49,8 @@ class CompanyEnabledModuleModel:
             OverdueProjectReminders = 22
 
             EmailSync = 23
+
+            ContactsSync = 24
 
             ApplicationRegistration = 30
 
@@ -62,6 +64,14 @@ class CompanyEnabledModuleModel:
 
             AI = 43
 
+            AITextGeneration = 44
+
+            AISkillsExtractionForWE = 45
+
+            AISkillsGenerationForRoles = 46
+
+            ProjectPlanning = 48
+
             ExternalAccounts = 50
 
             ConvertAccount = 51
@@ -71,6 +81,12 @@ class CompanyEnabledModuleModel:
             Webhooks = 60
 
             GrowthPlan = 70
+
+            GUIShowcase = 80
+
+            Appmixer = 90
+
+            Mixpanel = 99
 
             Intercom = 600
     """

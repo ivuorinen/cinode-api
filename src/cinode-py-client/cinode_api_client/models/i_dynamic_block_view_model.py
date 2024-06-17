@@ -21,9 +21,10 @@ class IDynamicBlockViewModel:
         is_editable (Union[Unset, bool]):
         partial_edit_view_path (Union[Unset, None, str]):
         friendly_block_name (Union[Unset, None, str]):
-        block_id (Union[Unset, str]):
-        updated (Union[Unset, None, datetime.datetime]):
+        has_updates_in_profile (Union[Unset, bool]):
         heading (Union[Unset, None, str]):
+        updated (Union[Unset, None, datetime.datetime]):
+        block_id (Union[Unset, str]):
     """
 
     view_component_name: Union[Unset, None, str] = UNSET
@@ -33,9 +34,10 @@ class IDynamicBlockViewModel:
     is_editable: Union[Unset, bool] = UNSET
     partial_edit_view_path: Union[Unset, None, str] = UNSET
     friendly_block_name: Union[Unset, None, str] = UNSET
-    block_id: Union[Unset, str] = UNSET
-    updated: Union[Unset, None, datetime.datetime] = UNSET
+    has_updates_in_profile: Union[Unset, bool] = UNSET
     heading: Union[Unset, None, str] = UNSET
+    updated: Union[Unset, None, datetime.datetime] = UNSET
+    block_id: Union[Unset, str] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
         view_component_name = self.view_component_name
@@ -55,12 +57,13 @@ class IDynamicBlockViewModel:
         is_editable = self.is_editable
         partial_edit_view_path = self.partial_edit_view_path
         friendly_block_name = self.friendly_block_name
-        block_id = self.block_id
+        has_updates_in_profile = self.has_updates_in_profile
+        heading = self.heading
         updated: Union[Unset, None, str] = UNSET
         if not isinstance(self.updated, Unset):
             updated = self.updated.isoformat() if self.updated else None
 
-        heading = self.heading
+        block_id = self.block_id
 
         field_dict: Dict[str, Any] = {}
         field_dict.update({})
@@ -78,12 +81,14 @@ class IDynamicBlockViewModel:
             field_dict["partialEditViewPath"] = partial_edit_view_path
         if friendly_block_name is not UNSET:
             field_dict["friendlyBlockName"] = friendly_block_name
-        if block_id is not UNSET:
-            field_dict["blockId"] = block_id
-        if updated is not UNSET:
-            field_dict["updated"] = updated
+        if has_updates_in_profile is not UNSET:
+            field_dict["hasUpdatesInProfile"] = has_updates_in_profile
         if heading is not UNSET:
             field_dict["heading"] = heading
+        if updated is not UNSET:
+            field_dict["updated"] = updated
+        if block_id is not UNSET:
+            field_dict["blockId"] = block_id
 
         return field_dict
 
@@ -109,7 +114,9 @@ class IDynamicBlockViewModel:
 
         friendly_block_name = d.pop("friendlyBlockName", UNSET)
 
-        block_id = d.pop("blockId", UNSET)
+        has_updates_in_profile = d.pop("hasUpdatesInProfile", UNSET)
+
+        heading = d.pop("heading", UNSET)
 
         _updated = d.pop("updated", UNSET)
         updated: Union[Unset, None, datetime.datetime]
@@ -120,7 +127,7 @@ class IDynamicBlockViewModel:
         else:
             updated = isoparse(_updated)
 
-        heading = d.pop("heading", UNSET)
+        block_id = d.pop("blockId", UNSET)
 
         i_dynamic_block_view_model = cls(
             view_component_name=view_component_name,
@@ -130,9 +137,10 @@ class IDynamicBlockViewModel:
             is_editable=is_editable,
             partial_edit_view_path=partial_edit_view_path,
             friendly_block_name=friendly_block_name,
-            block_id=block_id,
-            updated=updated,
+            has_updates_in_profile=has_updates_in_profile,
             heading=heading,
+            updated=updated,
+            block_id=block_id,
         )
 
         return i_dynamic_block_view_model

@@ -32,7 +32,6 @@ class CompanyUserModel:
     Attributes:
         employment_start_date (Union[Unset, None, datetime.datetime]):
         employment_end_date (Union[Unset, None, datetime.datetime]):
-        employment_number (Union[Unset, None, str]):
         availability_percent (Union[Unset, None, int]):
         available_from_date (Union[Unset, None, datetime.datetime]):
         mobility (Union[Unset, None, int]):
@@ -58,6 +57,7 @@ class CompanyUserModel:
         company_user_email (Union[Unset, None, str]):
         created_date_time (Union[Unset, None, datetime.datetime]):
         updated_date_time (Union[Unset, None, datetime.datetime]):
+        employment_number (Union[Unset, None, str]):
         company_address (Union[Unset, None, CompanyAddressModel]):
         home_address (Union[Unset, None, LocationModel]):
         image (Union[Unset, None, CompanyUserImageModel]):
@@ -90,7 +90,6 @@ class CompanyUserModel:
 
     employment_start_date: Union[Unset, None, datetime.datetime] = UNSET
     employment_end_date: Union[Unset, None, datetime.datetime] = UNSET
-    employment_number: Union[Unset, None, str] = UNSET
     availability_percent: Union[Unset, None, int] = UNSET
     available_from_date: Union[Unset, None, datetime.datetime] = UNSET
     mobility: Union[Unset, None, int] = UNSET
@@ -110,6 +109,7 @@ class CompanyUserModel:
     company_user_email: Union[Unset, None, str] = UNSET
     created_date_time: Union[Unset, None, datetime.datetime] = UNSET
     updated_date_time: Union[Unset, None, datetime.datetime] = UNSET
+    employment_number: Union[Unset, None, str] = UNSET
     company_address: Union[Unset, None, "CompanyAddressModel"] = UNSET
     home_address: Union[Unset, None, "LocationModel"] = UNSET
     image: Union[Unset, None, "CompanyUserImageModel"] = UNSET
@@ -138,7 +138,6 @@ class CompanyUserModel:
         if not isinstance(self.employment_end_date, Unset):
             employment_end_date = self.employment_end_date.isoformat() if self.employment_end_date else None
 
-        employment_number = self.employment_number
         availability_percent = self.availability_percent
         available_from_date: Union[Unset, None, str] = UNSET
         if not isinstance(self.available_from_date, Unset):
@@ -246,6 +245,7 @@ class CompanyUserModel:
         if not isinstance(self.updated_date_time, Unset):
             updated_date_time = self.updated_date_time.isoformat() if self.updated_date_time else None
 
+        employment_number = self.employment_number
         company_address: Union[Unset, None, Dict[str, Any]] = UNSET
         if not isinstance(self.company_address, Unset):
             company_address = self.company_address.to_dict() if self.company_address else None
@@ -292,8 +292,6 @@ class CompanyUserModel:
             field_dict["employmentStartDate"] = employment_start_date
         if employment_end_date is not UNSET:
             field_dict["employmentEndDate"] = employment_end_date
-        if employment_number is not UNSET:
-            field_dict["employmentNumber"] = employment_number
         if availability_percent is not UNSET:
             field_dict["availabilityPercent"] = availability_percent
         if available_from_date is not UNSET:
@@ -332,6 +330,8 @@ class CompanyUserModel:
             field_dict["createdDateTime"] = created_date_time
         if updated_date_time is not UNSET:
             field_dict["updatedDateTime"] = updated_date_time
+        if employment_number is not UNSET:
+            field_dict["employmentNumber"] = employment_number
         if company_address is not UNSET:
             field_dict["companyAddress"] = company_address
         if home_address is not UNSET:
@@ -404,8 +404,6 @@ class CompanyUserModel:
             employment_end_date = UNSET
         else:
             employment_end_date = isoparse(_employment_end_date)
-
-        employment_number = d.pop("employmentNumber", UNSET)
 
         availability_percent = d.pop("availabilityPercent", UNSET)
 
@@ -522,6 +520,8 @@ class CompanyUserModel:
         else:
             updated_date_time = isoparse(_updated_date_time)
 
+        employment_number = d.pop("employmentNumber", UNSET)
+
         _company_address = d.pop("companyAddress", UNSET)
         company_address: Union[Unset, None, CompanyAddressModel]
         if _company_address is None:
@@ -594,7 +594,6 @@ class CompanyUserModel:
         company_user_model = cls(
             employment_start_date=employment_start_date,
             employment_end_date=employment_end_date,
-            employment_number=employment_number,
             availability_percent=availability_percent,
             available_from_date=available_from_date,
             mobility=mobility,
@@ -614,6 +613,7 @@ class CompanyUserModel:
             company_user_email=company_user_email,
             created_date_time=created_date_time,
             updated_date_time=updated_date_time,
+            employment_number=employment_number,
             company_address=company_address,
             home_address=home_address,
             image=image,

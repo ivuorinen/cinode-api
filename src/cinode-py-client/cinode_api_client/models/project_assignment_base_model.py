@@ -36,6 +36,7 @@ class ProjectAssignmentBaseModel:
 
             Timmar = 1
         extent (Union[Unset, None, int]):
+        project_commitment_booking_id (Union[Unset, None, str]):
         links (Union[Unset, None, List['Link']]):
     """
 
@@ -51,6 +52,7 @@ class ProjectAssignmentBaseModel:
     end_date: Union[Unset, None, datetime.datetime] = UNSET
     extent_type: Union[Unset, ExtentType] = UNSET
     extent: Union[Unset, None, int] = UNSET
+    project_commitment_booking_id: Union[Unset, None, str] = UNSET
     links: Union[Unset, None, List["Link"]] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
@@ -81,6 +83,7 @@ class ProjectAssignmentBaseModel:
             extent_type = self.extent_type.value
 
         extent = self.extent
+        project_commitment_booking_id = self.project_commitment_booking_id
         links: Union[Unset, None, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.links, Unset):
             if self.links is None:
@@ -118,6 +121,8 @@ class ProjectAssignmentBaseModel:
             field_dict["extentType"] = extent_type
         if extent is not UNSET:
             field_dict["extent"] = extent
+        if project_commitment_booking_id is not UNSET:
+            field_dict["projectCommitmentBookingId"] = project_commitment_booking_id
         if links is not UNSET:
             field_dict["links"] = links
 
@@ -187,6 +192,8 @@ class ProjectAssignmentBaseModel:
 
         extent = d.pop("extent", UNSET)
 
+        project_commitment_booking_id = d.pop("projectCommitmentBookingId", UNSET)
+
         links = []
         _links = d.pop("links", UNSET)
         for links_item_data in _links or []:
@@ -207,6 +214,7 @@ class ProjectAssignmentBaseModel:
             end_date=end_date,
             extent_type=extent_type,
             extent=extent,
+            project_commitment_booking_id=project_commitment_booking_id,
             links=links,
         )
 

@@ -73,25 +73,27 @@ def sync_detailed(
 ) -> Response[Union[Any, ErrorModel, SearchProjectsResultModel, ValidationModel]]:
     r"""Get projects list from search criteria
 
-     Sample request
-    {
-        \"pipelines\": [4],
-        \"projectStates\": [0],
-        \"PageAndSortBy\": {
-        \"SortBy\": \"0\",
-        \"SortOrder\": \"1\",
-        \"Page\": \"1\",
-        \"ItemsPerPage\": \"15\",
+     Sample request:
+
+        POST /v0.1/companies/1/projects/search
+        {
+            \"pipelines\": [4],
+            \"projectStates\": [0],
+            \"PageAndSortBy\": {
+                \"SortBy\": \"0\",
+                \"SortOrder\": \"1\",
+                \"Page\": \"1\",
+                \"ItemsPerPage\": \"15\",
+            }
         }
-    }
-    SortBy Parameter can be:
-        CreatedDateTime=0 // Default
-        Title=1
-        Identifier=2
-        CustomerIdentifier=3
-        SeoId=4
-        UpdatedDateTime=6
-        LastTouchDateTime=7
+        SortBy Parameter can be:
+            CreatedDateTime=0 // Default
+            Title=1
+            Identifier=2
+            CustomerIdentifier=3
+            SeoId=4
+            UpdatedDateTime=6
+            LastTouchDateTime=7
 
     Args:
         company_id (int):
@@ -125,25 +127,27 @@ def sync(
 ) -> Optional[Union[Any, ErrorModel, SearchProjectsResultModel, ValidationModel]]:
     r"""Get projects list from search criteria
 
-     Sample request
-    {
-        \"pipelines\": [4],
-        \"projectStates\": [0],
-        \"PageAndSortBy\": {
-        \"SortBy\": \"0\",
-        \"SortOrder\": \"1\",
-        \"Page\": \"1\",
-        \"ItemsPerPage\": \"15\",
+     Sample request:
+
+        POST /v0.1/companies/1/projects/search
+        {
+            \"pipelines\": [4],
+            \"projectStates\": [0],
+            \"PageAndSortBy\": {
+                \"SortBy\": \"0\",
+                \"SortOrder\": \"1\",
+                \"Page\": \"1\",
+                \"ItemsPerPage\": \"15\",
+            }
         }
-    }
-    SortBy Parameter can be:
-        CreatedDateTime=0 // Default
-        Title=1
-        Identifier=2
-        CustomerIdentifier=3
-        SeoId=4
-        UpdatedDateTime=6
-        LastTouchDateTime=7
+        SortBy Parameter can be:
+            CreatedDateTime=0 // Default
+            Title=1
+            Identifier=2
+            CustomerIdentifier=3
+            SeoId=4
+            UpdatedDateTime=6
+            LastTouchDateTime=7
 
     Args:
         company_id (int):
@@ -172,25 +176,27 @@ async def asyncio_detailed(
 ) -> Response[Union[Any, ErrorModel, SearchProjectsResultModel, ValidationModel]]:
     r"""Get projects list from search criteria
 
-     Sample request
-    {
-        \"pipelines\": [4],
-        \"projectStates\": [0],
-        \"PageAndSortBy\": {
-        \"SortBy\": \"0\",
-        \"SortOrder\": \"1\",
-        \"Page\": \"1\",
-        \"ItemsPerPage\": \"15\",
+     Sample request:
+
+        POST /v0.1/companies/1/projects/search
+        {
+            \"pipelines\": [4],
+            \"projectStates\": [0],
+            \"PageAndSortBy\": {
+                \"SortBy\": \"0\",
+                \"SortOrder\": \"1\",
+                \"Page\": \"1\",
+                \"ItemsPerPage\": \"15\",
+            }
         }
-    }
-    SortBy Parameter can be:
-        CreatedDateTime=0 // Default
-        Title=1
-        Identifier=2
-        CustomerIdentifier=3
-        SeoId=4
-        UpdatedDateTime=6
-        LastTouchDateTime=7
+        SortBy Parameter can be:
+            CreatedDateTime=0 // Default
+            Title=1
+            Identifier=2
+            CustomerIdentifier=3
+            SeoId=4
+            UpdatedDateTime=6
+            LastTouchDateTime=7
 
     Args:
         company_id (int):
@@ -222,25 +228,27 @@ async def asyncio(
 ) -> Optional[Union[Any, ErrorModel, SearchProjectsResultModel, ValidationModel]]:
     r"""Get projects list from search criteria
 
-     Sample request
-    {
-        \"pipelines\": [4],
-        \"projectStates\": [0],
-        \"PageAndSortBy\": {
-        \"SortBy\": \"0\",
-        \"SortOrder\": \"1\",
-        \"Page\": \"1\",
-        \"ItemsPerPage\": \"15\",
+     Sample request:
+
+        POST /v0.1/companies/1/projects/search
+        {
+            \"pipelines\": [4],
+            \"projectStates\": [0],
+            \"PageAndSortBy\": {
+                \"SortBy\": \"0\",
+                \"SortOrder\": \"1\",
+                \"Page\": \"1\",
+                \"ItemsPerPage\": \"15\",
+            }
         }
-    }
-    SortBy Parameter can be:
-        CreatedDateTime=0 // Default
-        Title=1
-        Identifier=2
-        CustomerIdentifier=3
-        SeoId=4
-        UpdatedDateTime=6
-        LastTouchDateTime=7
+        SortBy Parameter can be:
+            CreatedDateTime=0 // Default
+            Title=1
+            Identifier=2
+            CustomerIdentifier=3
+            SeoId=4
+            UpdatedDateTime=6
+            LastTouchDateTime=7
 
     Args:
         company_id (int):

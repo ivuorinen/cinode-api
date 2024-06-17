@@ -33,6 +33,7 @@ class CompanyUserExtendedModel:
         company_user_email (Union[Unset, None, str]):
         created_date_time (Union[Unset, None, datetime.datetime]):
         updated_date_time (Union[Unset, None, datetime.datetime]):
+        employment_number (Union[Unset, None, str]):
         company_address (Union[Unset, None, CompanyAddressModel]):
         home_address (Union[Unset, None, LocationModel]):
         image (Union[Unset, None, CompanyUserImageModel]):
@@ -68,6 +69,7 @@ class CompanyUserExtendedModel:
     company_user_email: Union[Unset, None, str] = UNSET
     created_date_time: Union[Unset, None, datetime.datetime] = UNSET
     updated_date_time: Union[Unset, None, datetime.datetime] = UNSET
+    employment_number: Union[Unset, None, str] = UNSET
     company_address: Union[Unset, None, "CompanyAddressModel"] = UNSET
     home_address: Union[Unset, None, "LocationModel"] = UNSET
     image: Union[Unset, None, "CompanyUserImageModel"] = UNSET
@@ -102,6 +104,7 @@ class CompanyUserExtendedModel:
         if not isinstance(self.updated_date_time, Unset):
             updated_date_time = self.updated_date_time.isoformat() if self.updated_date_time else None
 
+        employment_number = self.employment_number
         company_address: Union[Unset, None, Dict[str, Any]] = UNSET
         if not isinstance(self.company_address, Unset):
             company_address = self.company_address.to_dict() if self.company_address else None
@@ -154,6 +157,8 @@ class CompanyUserExtendedModel:
             field_dict["createdDateTime"] = created_date_time
         if updated_date_time is not UNSET:
             field_dict["updatedDateTime"] = updated_date_time
+        if employment_number is not UNSET:
+            field_dict["employmentNumber"] = employment_number
         if company_address is not UNSET:
             field_dict["companyAddress"] = company_address
         if home_address is not UNSET:
@@ -232,6 +237,8 @@ class CompanyUserExtendedModel:
         else:
             updated_date_time = isoparse(_updated_date_time)
 
+        employment_number = d.pop("employmentNumber", UNSET)
+
         _company_address = d.pop("companyAddress", UNSET)
         company_address: Union[Unset, None, CompanyAddressModel]
         if _company_address is None:
@@ -307,6 +314,7 @@ class CompanyUserExtendedModel:
             company_user_email=company_user_email,
             created_date_time=created_date_time,
             updated_date_time=updated_date_time,
+            employment_number=employment_number,
             company_address=company_address,
             home_address=home_address,
             image=image,

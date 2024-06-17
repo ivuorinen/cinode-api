@@ -18,6 +18,7 @@ class CompanyCustomerContactAddEditModel:
         phone2 (Union[Unset, None, str]):
         title (Union[Unset, None, str]):
         comments (Union[Unset, None, str]):
+        pronouns (Union[Unset, None, str]):
     """
 
     first_name: str
@@ -27,6 +28,7 @@ class CompanyCustomerContactAddEditModel:
     phone2: Union[Unset, None, str] = UNSET
     title: Union[Unset, None, str] = UNSET
     comments: Union[Unset, None, str] = UNSET
+    pronouns: Union[Unset, None, str] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
         first_name = self.first_name
@@ -36,6 +38,7 @@ class CompanyCustomerContactAddEditModel:
         phone2 = self.phone2
         title = self.title
         comments = self.comments
+        pronouns = self.pronouns
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(
@@ -54,6 +57,8 @@ class CompanyCustomerContactAddEditModel:
             field_dict["title"] = title
         if comments is not UNSET:
             field_dict["comments"] = comments
+        if pronouns is not UNSET:
+            field_dict["pronouns"] = pronouns
 
         return field_dict
 
@@ -74,6 +79,8 @@ class CompanyCustomerContactAddEditModel:
 
         comments = d.pop("comments", UNSET)
 
+        pronouns = d.pop("pronouns", UNSET)
+
         company_customer_contact_add_edit_model = cls(
             first_name=first_name,
             last_name=last_name,
@@ -82,6 +89,7 @@ class CompanyCustomerContactAddEditModel:
             phone2=phone2,
             title=title,
             comments=comments,
+            pronouns=pronouns,
         )
 
         return company_customer_contact_add_edit_model

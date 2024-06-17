@@ -17,11 +17,9 @@ from .availability_filter_model import AvailabilityFilterModel
 from .availability_model import AvailabilityModel
 from .calendar_day_model import CalendarDayModel
 from .candidate_attachment_multipart_data import CandidateAttachmentMultipartData
-from .classic_company_user_resume_model import ClassicCompanyUserResumeModel
-from .commitment_block_item_model import CommitmentBlockItemModel
-from .commitment_block_model import CommitmentBlockModel
 from .company_address_model import CompanyAddressModel
 from .company_base_model import CompanyBaseModel
+from .company_candidate_add_candidate_user_model import CompanyCandidateAddCandidateUserModel
 from .company_candidate_add_invite_model import CompanyCandidateAddInviteModel
 from .company_candidate_add_model import CompanyCandidateAddModel
 from .company_candidate_attachment_model import CompanyCandidateAttachmentModel
@@ -82,6 +80,8 @@ from .company_tag_model import CompanyTagModel
 from .company_tag_type_model import CompanyTagTypeModel
 from .company_user_add_model import CompanyUserAddModel
 from .company_user_base_model import CompanyUserBaseModel
+from .company_user_candidate_model import CompanyUserCandidateModel
+from .company_user_candidate_status import CompanyUserCandidateStatus
 from .company_user_edit_model import CompanyUserEditModel
 from .company_user_event_base_model import CompanyUserEventBaseModel
 from .company_user_event_meeting_add_edit_model import CompanyUserEventMeetingAddEditModel
@@ -112,8 +112,9 @@ from .company_user_profile_ext_skill_add_edit_model import CompanyUserProfileExt
 from .company_user_profile_ext_skill_model import CompanyUserProfileExtSkillModel
 from .company_user_profile_ext_skill_translation_model import CompanyUserProfileExtSkillTranslationModel
 from .company_user_profile_full_model import CompanyUserProfileFullModel
-from .company_user_profile_language_add_edit_model import CompanyUserProfileLanguageAddEditModel
+from .company_user_profile_language_add_model import CompanyUserProfileLanguageAddModel
 from .company_user_profile_language_branch_model import CompanyUserProfileLanguageBranchModel
+from .company_user_profile_language_edit_model import CompanyUserProfileLanguageEditModel
 from .company_user_profile_language_model import CompanyUserProfileLanguageModel
 from .company_user_profile_presentation_edit_model import CompanyUserProfilePresentationEditModel
 from .company_user_profile_presentation_model import CompanyUserProfilePresentationModel
@@ -165,14 +166,11 @@ from .customer_event_note_add_edit_model import CustomerEventNoteAddEditModel
 from .customer_event_note_model import CustomerEventNoteModel
 from .customer_event_task_add_edit_model import CustomerEventTaskAddEditModel
 from .customer_event_task_model import CustomerEventTaskModel
+from .date_time_filter_interval import DateTimeFilterInterval
 from .dynamic_company_user_resume_model import DynamicCompanyUserResumeModel
 from .dynamic_template_view_model import DynamicTemplateViewModel
 from .dynamic_template_view_model_primary_script_assets import DynamicTemplateViewModelPrimaryScriptAssets
 from .dynamic_template_view_model_primary_style_assets import DynamicTemplateViewModelPrimaryStyleAssets
-from .education_block_item_model import EducationBlockItemModel
-from .education_block_model import EducationBlockModel
-from .employer_block_item_model import EmployerBlockItemModel
-from .employer_block_model import EmployerBlockModel
 from .error_model import ErrorModel
 from .event_comment_model import EventCommentModel
 from .event_meeting_add_edit_model import EventMeetingAddEditModel
@@ -184,33 +182,25 @@ from .event_task_type import EventTaskType
 from .event_type import EventType
 from .event_visibility import EventVisibility
 from .extent_type import ExtentType
-from .extra_skill_block_model import ExtraSkillBlockModel
-from .extra_skill_item_block_model import ExtraSkillItemBlockModel
 from .filter_model import FilterModel
-from .highlighted_work_experience_block_item_model import HighlightedWorkExperienceBlockItemModel
-from .highlighted_work_experience_block_model import HighlightedWorkExperienceBlockModel
 from .i_company_address_view_model import ICompanyAddressViewModel
 from .i_company_candidate_patch_document import ICompanyCandidatePatchDocument
 from .i_company_user_employee_patch_document import ICompanyUserEmployeePatchDocument
 from .i_contact_info_view_model import IContactInfoViewModel
 from .i_dynamic_block_view_model import IDynamicBlockViewModel
 from .i_template_company import ITemplateCompany
-from .i_template_image import ITemplateImage
 from .i_template_logotype import ITemplateLogotype
+from .i_template_profile_image import ITemplateProfileImage
 from .i_template_shared_asset_view_model import ITemplateSharedAssetViewModel
 from .i_template_style_asset_view_model import ITemplateStyleAssetViewModel
 from .i_template_user_info import ITemplateUserInfo
-from .image_block_model import ImageBlockModel
 from .image_size import ImageSize
 from .import_profile_async_operation import ImportProfileAsyncOperation
 from .keyword_model import KeywordModel
 from .keyword_synonym_model import KeywordSynonymModel
 from .keyword_type import KeywordType
-from .language_block_model import LanguageBlockModel
-from .language_item_block_model import LanguageItemBlockModel
 from .language_level import LanguageLevel
 from .link import Link
-from .location_block_model import LocationBlockModel
 from .location_model import LocationModel
 from .long_running_status import LongRunningStatus
 from .mention_text_model import MentionTextModel
@@ -225,7 +215,6 @@ from .partners_filter_model import PartnersFilterModel
 from .partners_overview_model import PartnersOverviewModel
 from .pdf_engine_type import PdfEngineType
 from .pdf_orientation import PdfOrientation
-from .presentation_block_model import PresentationBlockModel
 from .profile_language_model import ProfileLanguageModel
 from .project_add_edit_model import ProjectAddEditModel
 from .project_assignment_add_model import ProjectAssignmentAddModel
@@ -274,10 +263,8 @@ from .project_state import ProjectState
 from .project_state_history_model import ProjectStateHistoryModel
 from .project_state_reason_model import ProjectStateReasonModel
 from .recruitment_source_model import RecruitmentSourceModel
-from .reference_block_item_model import ReferenceBlockItemModel
-from .reference_block_model import ReferenceBlockModel
-from .resume_model import ResumeModel
 from .role_model import RoleModel
+from .save_to_api_option import SaveToApiOption
 from .search_company_candidate_query_model import SearchCompanyCandidateQueryModel
 from .search_company_candidate_result_model import SearchCompanyCandidateResultModel
 from .search_company_customer_contact_query_model import SearchCompanyCustomerContactQueryModel
@@ -291,10 +278,6 @@ from .search_projects_result_model import SearchProjectsResultModel
 from .search_skill_model import SearchSkillModel
 from .search_skill_query_model import SearchSkillQueryModel
 from .search_skill_result_model import SearchSkillResultModel
-from .skill_block_item_model import SkillBlockItemModel
-from .skill_by_category_block_item_model import SkillByCategoryBlockItemModel
-from .skill_by_category_block_model import SkillByCategoryBlockModel
-from .skill_model_model import SkillModelModel
 from .skill_result_model import SkillResultModel
 from .skill_search_query_term_model import SkillSearchQueryTermModel
 from .sort_order import SortOrder
@@ -311,11 +294,6 @@ from .team_member_model import TeamMemberModel
 from .team_member_move_model import TeamMemberMoveModel
 from .team_model import TeamModel
 from .template_asset_type import TemplateAssetType
-from .text_block_model import TextBlockModel
-from .top_skill_block_item_model import TopSkillBlockItemModel
-from .top_skill_block_model import TopSkillBlockModel
-from .training_block_model import TrainingBlockModel
-from .training_item_block_model import TrainingItemBlockModel
 from .training_type import TrainingType
 from .updated_model import UpdatedModel
 from .user_gender import UserGender
@@ -329,8 +307,6 @@ from .webhook_credentials_model import WebhookCredentialsModel
 from .webhook_entity_type import WebhookEntityType
 from .webhook_model import WebhookModel
 from .word_engine_type import WordEngineType
-from .work_experience_block_item_model import WorkExperienceBlockItemModel
-from .work_experience_block_model import WorkExperienceBlockModel
 
 __all__ = (
     "AbscencePeriodDayModel",
@@ -350,11 +326,9 @@ __all__ = (
     "AvailabilityModel",
     "CalendarDayModel",
     "CandidateAttachmentMultipartData",
-    "ClassicCompanyUserResumeModel",
-    "CommitmentBlockItemModel",
-    "CommitmentBlockModel",
     "CompanyAddressModel",
     "CompanyBaseModel",
+    "CompanyCandidateAddCandidateUserModel",
     "CompanyCandidateAddInviteModel",
     "CompanyCandidateAddModel",
     "CompanyCandidateAttachmentModel",
@@ -413,6 +387,8 @@ __all__ = (
     "CompanyTagTypeModel",
     "CompanyUserAddModel",
     "CompanyUserBaseModel",
+    "CompanyUserCandidateModel",
+    "CompanyUserCandidateStatus",
     "CompanyUserEditModel",
     "CompanyUserEventBaseModel",
     "CompanyUserEventMeetingAddEditModel",
@@ -443,8 +419,9 @@ __all__ = (
     "CompanyUserProfileExtSkillModel",
     "CompanyUserProfileExtSkillTranslationModel",
     "CompanyUserProfileFullModel",
-    "CompanyUserProfileLanguageAddEditModel",
+    "CompanyUserProfileLanguageAddModel",
     "CompanyUserProfileLanguageBranchModel",
+    "CompanyUserProfileLanguageEditModel",
     "CompanyUserProfileLanguageModel",
     "CompanyUserProfilePresentationEditModel",
     "CompanyUserProfilePresentationModel",
@@ -496,14 +473,11 @@ __all__ = (
     "CustomerEventNoteModel",
     "CustomerEventTaskAddEditModel",
     "CustomerEventTaskModel",
+    "DateTimeFilterInterval",
     "DynamicCompanyUserResumeModel",
     "DynamicTemplateViewModel",
     "DynamicTemplateViewModelPrimaryScriptAssets",
     "DynamicTemplateViewModelPrimaryStyleAssets",
-    "EducationBlockItemModel",
-    "EducationBlockModel",
-    "EmployerBlockItemModel",
-    "EmployerBlockModel",
     "ErrorModel",
     "EventCommentModel",
     "EventMeetingAddEditModel",
@@ -515,33 +489,25 @@ __all__ = (
     "EventType",
     "EventVisibility",
     "ExtentType",
-    "ExtraSkillBlockModel",
-    "ExtraSkillItemBlockModel",
     "FilterModel",
-    "HighlightedWorkExperienceBlockItemModel",
-    "HighlightedWorkExperienceBlockModel",
     "ICompanyAddressViewModel",
     "ICompanyCandidatePatchDocument",
     "ICompanyUserEmployeePatchDocument",
     "IContactInfoViewModel",
     "IDynamicBlockViewModel",
-    "ImageBlockModel",
     "ImageSize",
     "ImportProfileAsyncOperation",
     "ITemplateCompany",
-    "ITemplateImage",
     "ITemplateLogotype",
+    "ITemplateProfileImage",
     "ITemplateSharedAssetViewModel",
     "ITemplateStyleAssetViewModel",
     "ITemplateUserInfo",
     "KeywordModel",
     "KeywordSynonymModel",
     "KeywordType",
-    "LanguageBlockModel",
-    "LanguageItemBlockModel",
     "LanguageLevel",
     "Link",
-    "LocationBlockModel",
     "LocationModel",
     "LongRunningStatus",
     "MentionTextModel",
@@ -556,7 +522,6 @@ __all__ = (
     "PartnersOverviewModel",
     "PdfEngineType",
     "PdfOrientation",
-    "PresentationBlockModel",
     "ProfileLanguageModel",
     "ProjectAddEditModel",
     "ProjectAssignmentAddModel",
@@ -605,10 +570,8 @@ __all__ = (
     "ProjectStateHistoryModel",
     "ProjectStateReasonModel",
     "RecruitmentSourceModel",
-    "ReferenceBlockItemModel",
-    "ReferenceBlockModel",
-    "ResumeModel",
     "RoleModel",
+    "SaveToApiOption",
     "SearchCompanyCandidateQueryModel",
     "SearchCompanyCandidateResultModel",
     "SearchCompanyCustomerContactQueryModel",
@@ -622,10 +585,6 @@ __all__ = (
     "SearchSkillModel",
     "SearchSkillQueryModel",
     "SearchSkillResultModel",
-    "SkillBlockItemModel",
-    "SkillByCategoryBlockItemModel",
-    "SkillByCategoryBlockModel",
-    "SkillModelModel",
     "SkillResultModel",
     "SkillSearchQueryTermModel",
     "SortOrder",
@@ -642,11 +601,6 @@ __all__ = (
     "TeamMemberMoveModel",
     "TeamModel",
     "TemplateAssetType",
-    "TextBlockModel",
-    "TopSkillBlockItemModel",
-    "TopSkillBlockModel",
-    "TrainingBlockModel",
-    "TrainingItemBlockModel",
     "TrainingType",
     "UpdatedModel",
     "UserGender",
@@ -660,6 +614,4 @@ __all__ = (
     "WebhookEntityType",
     "WebhookModel",
     "WordEngineType",
-    "WorkExperienceBlockItemModel",
-    "WorkExperienceBlockModel",
 )

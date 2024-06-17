@@ -43,8 +43,11 @@ class ProjectAssignmentAnnouncementBaseModel:
         is_announced_to_partner_network (Union[Unset, None, bool]):
         is_price_negotiable (Union[Unset, bool]):
         is_remote (Union[Unset, None, bool]):
+        remote_percentage (Union[Unset, None, int]): 0 indicates that the work is to be done on site. 100 means that the
+            position is fully remote.
         is_announced_to_market (Union[Unset, None, bool]):
         is_end_customer_assignment (Union[Unset, None, bool]):
+        reference_id (Union[Unset, None, str]):
     """
 
     request_id: Union[Unset, int] = UNSET
@@ -65,8 +68,10 @@ class ProjectAssignmentAnnouncementBaseModel:
     is_announced_to_partner_network: Union[Unset, None, bool] = UNSET
     is_price_negotiable: Union[Unset, bool] = UNSET
     is_remote: Union[Unset, None, bool] = UNSET
+    remote_percentage: Union[Unset, None, int] = UNSET
     is_announced_to_market: Union[Unset, None, bool] = UNSET
     is_end_customer_assignment: Union[Unset, None, bool] = UNSET
+    reference_id: Union[Unset, None, str] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
         request_id = self.request_id
@@ -99,8 +104,10 @@ class ProjectAssignmentAnnouncementBaseModel:
         is_announced_to_partner_network = self.is_announced_to_partner_network
         is_price_negotiable = self.is_price_negotiable
         is_remote = self.is_remote
+        remote_percentage = self.remote_percentage
         is_announced_to_market = self.is_announced_to_market
         is_end_customer_assignment = self.is_end_customer_assignment
+        reference_id = self.reference_id
 
         field_dict: Dict[str, Any] = {}
         field_dict.update({})
@@ -140,10 +147,14 @@ class ProjectAssignmentAnnouncementBaseModel:
             field_dict["isPriceNegotiable"] = is_price_negotiable
         if is_remote is not UNSET:
             field_dict["isRemote"] = is_remote
+        if remote_percentage is not UNSET:
+            field_dict["remotePercentage"] = remote_percentage
         if is_announced_to_market is not UNSET:
             field_dict["isAnnouncedToMarket"] = is_announced_to_market
         if is_end_customer_assignment is not UNSET:
             field_dict["isEndCustomerAssignment"] = is_end_customer_assignment
+        if reference_id is not UNSET:
+            field_dict["referenceId"] = reference_id
 
         return field_dict
 
@@ -206,9 +217,13 @@ class ProjectAssignmentAnnouncementBaseModel:
 
         is_remote = d.pop("isRemote", UNSET)
 
+        remote_percentage = d.pop("remotePercentage", UNSET)
+
         is_announced_to_market = d.pop("isAnnouncedToMarket", UNSET)
 
         is_end_customer_assignment = d.pop("isEndCustomerAssignment", UNSET)
+
+        reference_id = d.pop("referenceId", UNSET)
 
         project_assignment_announcement_base_model = cls(
             request_id=request_id,
@@ -229,8 +244,10 @@ class ProjectAssignmentAnnouncementBaseModel:
             is_announced_to_partner_network=is_announced_to_partner_network,
             is_price_negotiable=is_price_negotiable,
             is_remote=is_remote,
+            remote_percentage=remote_percentage,
             is_announced_to_market=is_announced_to_market,
             is_end_customer_assignment=is_end_customer_assignment,
+            reference_id=reference_id,
         )
 
         return project_assignment_announcement_base_model

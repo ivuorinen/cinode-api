@@ -15,7 +15,8 @@ T = TypeVar("T", bound="CompanyCustomerManagerModel")
 
 @_attrs_define
 class CompanyCustomerManagerModel:
-    """
+    """An employee who is a manager (responsible) for a customer
+
     Attributes:
         company_customer_manager_id (Union[Unset, None, int]):
         customer_id (Union[Unset, None, int]):

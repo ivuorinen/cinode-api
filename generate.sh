@@ -22,4 +22,3 @@ npx openapi-typescript \
   --output "$DEST_TS"
 
 npm run prettier
-

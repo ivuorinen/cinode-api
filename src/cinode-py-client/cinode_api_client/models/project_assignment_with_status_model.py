@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
@@ -71,7 +71,11 @@ class ProjectAssignmentWithStatusModel:
             Timmar = 1
         rate (Union[Unset, None, int]):
         estimated_close_date (Union[Unset, None, datetime.datetime]):
+        estimated_value (Union[Unset, None, int]):
         assigned (Union[Unset, None, ProjectAssignmentMemberModel]):
+        prospects (Union[Unset, None, List['ProjectAssignmentMemberModel']]):
+        project_commitment_booking_id (Union[Unset, None, str]): A value in this field indicates that the role is part
+            of advanced planning and can't be updated through the API
     """
 
     pipeline_id: Union[Unset, None, int] = UNSET
@@ -91,7 +95,10 @@ class ProjectAssignmentWithStatusModel:
     project_assignment_extent_type: Union[Unset, ProjectAssignmentExtentType] = UNSET
     rate: Union[Unset, None, int] = UNSET
     estimated_close_date: Union[Unset, None, datetime.datetime] = UNSET
+    estimated_value: Union[Unset, None, int] = UNSET
     assigned: Union[Unset, None, "ProjectAssignmentMemberModel"] = UNSET
+    prospects: Union[Unset, None, List["ProjectAssignmentMemberModel"]] = UNSET
+    project_commitment_booking_id: Union[Unset, None, str] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
         pipeline_id = self.pipeline_id
@@ -138,9 +145,23 @@ class ProjectAssignmentWithStatusModel:
         if not isinstance(self.estimated_close_date, Unset):
             estimated_close_date = self.estimated_close_date.isoformat() if self.estimated_close_date else None
 
+        estimated_value = self.estimated_value
         assigned: Union[Unset, None, Dict[str, Any]] = UNSET
         if not isinstance(self.assigned, Unset):
             assigned = self.assigned.to_dict() if self.assigned else None
+
+        prospects: Union[Unset, None, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.prospects, Unset):
+            if self.prospects is None:
+                prospects = None
+            else:
+                prospects = []
+                for prospects_item_data in self.prospects:
+                    prospects_item = prospects_item_data.to_dict()
+
+                    prospects.append(prospects_item)
+
+        project_commitment_booking_id = self.project_commitment_booking_id
 
         field_dict: Dict[str, Any] = {}
         field_dict.update({})
@@ -178,8 +199,14 @@ class ProjectAssignmentWithStatusModel:
             field_dict["rate"] = rate
         if estimated_close_date is not UNSET:
             field_dict["estimatedCloseDate"] = estimated_close_date
+        if estimated_value is not UNSET:
+            field_dict["estimatedValue"] = estimated_value
         if assigned is not UNSET:
             field_dict["assigned"] = assigned
+        if prospects is not UNSET:
+            field_dict["prospects"] = prospects
+        if project_commitment_booking_id is not UNSET:
+            field_dict["projectCommitmentBookingId"] = project_commitment_booking_id
 
         return field_dict
 
@@ -279,6 +306,8 @@ class ProjectAssignmentWithStatusModel:
         else:
             estimated_close_date = isoparse(_estimated_close_date)
 
+        estimated_value = d.pop("estimatedValue", UNSET)
+
         _assigned = d.pop("assigned", UNSET)
         assigned: Union[Unset, None, ProjectAssignmentMemberModel]
         if _assigned is None:
@@ -287,6 +316,15 @@ class ProjectAssignmentWithStatusModel:
             assigned = UNSET
         else:
             assigned = ProjectAssignmentMemberModel.from_dict(_assigned)
+
+        prospects = []
+        _prospects = d.pop("prospects", UNSET)
+        for prospects_item_data in _prospects or []:
+            prospects_item = ProjectAssignmentMemberModel.from_dict(prospects_item_data)
+
+            prospects.append(prospects_item)
+
+        project_commitment_booking_id = d.pop("projectCommitmentBookingId", UNSET)
 
         project_assignment_with_status_model = cls(
             pipeline_id=pipeline_id,
@@ -306,7 +344,10 @@ class ProjectAssignmentWithStatusModel:
             project_assignment_extent_type=project_assignment_extent_type,
             rate=rate,
             estimated_close_date=estimated_close_date,
+            estimated_value=estimated_value,
             assigned=assigned,
+            prospects=prospects,
+            project_commitment_booking_id=project_commitment_booking_id,
         )
 
         return project_assignment_with_status_model

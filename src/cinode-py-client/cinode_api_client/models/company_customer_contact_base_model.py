@@ -22,6 +22,7 @@ class CompanyCustomerContactBaseModel:
         first_name (Union[Unset, None, str]):
         last_name (Union[Unset, None, str]):
         email (Union[Unset, None, str]):
+        pronouns (Union[Unset, None, str]):
         links (Union[Unset, None, List['Link']]):
     """
 
@@ -32,6 +33,7 @@ class CompanyCustomerContactBaseModel:
     first_name: Union[Unset, None, str] = UNSET
     last_name: Union[Unset, None, str] = UNSET
     email: Union[Unset, None, str] = UNSET
+    pronouns: Union[Unset, None, str] = UNSET
     links: Union[Unset, None, List["Link"]] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
@@ -42,6 +44,7 @@ class CompanyCustomerContactBaseModel:
         first_name = self.first_name
         last_name = self.last_name
         email = self.email
+        pronouns = self.pronouns
         links: Union[Unset, None, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.links, Unset):
             if self.links is None:
@@ -69,6 +72,8 @@ class CompanyCustomerContactBaseModel:
             field_dict["lastName"] = last_name
         if email is not UNSET:
             field_dict["email"] = email
+        if pronouns is not UNSET:
+            field_dict["pronouns"] = pronouns
         if links is not UNSET:
             field_dict["links"] = links
 
@@ -93,6 +98,8 @@ class CompanyCustomerContactBaseModel:
 
         email = d.pop("email", UNSET)
 
+        pronouns = d.pop("pronouns", UNSET)
+
         links = []
         _links = d.pop("links", UNSET)
         for links_item_data in _links or []:
@@ -108,6 +115,7 @@ class CompanyCustomerContactBaseModel:
             first_name=first_name,
             last_name=last_name,
             email=email,
+            pronouns=pronouns,
             links=links,
         )
 

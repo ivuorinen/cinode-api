@@ -8,6 +8,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.company_tag_model import CompanyTagModel
+    from ..models.company_user_base_model import CompanyUserBaseModel
     from ..models.link import Link
 
 
@@ -22,7 +23,10 @@ class CompanyCustomerContactModel:
         phone1 (Union[Unset, None, str]):
         phone2 (Union[Unset, None, str]):
         comments (Union[Unset, None, str]):
+        last_touched_date (Union[Unset, datetime.datetime]):
         created_date_time (Union[Unset, datetime.datetime]):
+        updated_date_time (Union[Unset, datetime.datetime]):
+        created_by (Union[Unset, None, CompanyUserBaseModel]):
         tags (Union[Unset, None, List['CompanyTagModel']]):
         id (Union[Unset, int]):
         company_id (Union[Unset, int]):
@@ -31,6 +35,7 @@ class CompanyCustomerContactModel:
         first_name (Union[Unset, None, str]):
         last_name (Union[Unset, None, str]):
         email (Union[Unset, None, str]):
+        pronouns (Union[Unset, None, str]):
         links (Union[Unset, None, List['Link']]):
     """
 
@@ -38,7 +43,10 @@ class CompanyCustomerContactModel:
     phone1: Union[Unset, None, str] = UNSET
     phone2: Union[Unset, None, str] = UNSET
     comments: Union[Unset, None, str] = UNSET
+    last_touched_date: Union[Unset, datetime.datetime] = UNSET
     created_date_time: Union[Unset, datetime.datetime] = UNSET
+    updated_date_time: Union[Unset, datetime.datetime] = UNSET
+    created_by: Union[Unset, None, "CompanyUserBaseModel"] = UNSET
     tags: Union[Unset, None, List["CompanyTagModel"]] = UNSET
     id: Union[Unset, int] = UNSET
     company_id: Union[Unset, int] = UNSET
@@ -47,6 +55,7 @@ class CompanyCustomerContactModel:
     first_name: Union[Unset, None, str] = UNSET
     last_name: Union[Unset, None, str] = UNSET
     email: Union[Unset, None, str] = UNSET
+    pronouns: Union[Unset, None, str] = UNSET
     links: Union[Unset, None, List["Link"]] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
@@ -54,9 +63,21 @@ class CompanyCustomerContactModel:
         phone1 = self.phone1
         phone2 = self.phone2
         comments = self.comments
+        last_touched_date: Union[Unset, str] = UNSET
+        if not isinstance(self.last_touched_date, Unset):
+            last_touched_date = self.last_touched_date.isoformat()
+
         created_date_time: Union[Unset, str] = UNSET
         if not isinstance(self.created_date_time, Unset):
             created_date_time = self.created_date_time.isoformat()
+
+        updated_date_time: Union[Unset, str] = UNSET
+        if not isinstance(self.updated_date_time, Unset):
+            updated_date_time = self.updated_date_time.isoformat()
+
+        created_by: Union[Unset, None, Dict[str, Any]] = UNSET
+        if not isinstance(self.created_by, Unset):
+            created_by = self.created_by.to_dict() if self.created_by else None
 
         tags: Union[Unset, None, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.tags, Unset):
@@ -76,6 +97,7 @@ class CompanyCustomerContactModel:
         first_name = self.first_name
         last_name = self.last_name
         email = self.email
+        pronouns = self.pronouns
         links: Union[Unset, None, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.links, Unset):
             if self.links is None:
@@ -97,8 +119,14 @@ class CompanyCustomerContactModel:
             field_dict["phone2"] = phone2
         if comments is not UNSET:
             field_dict["comments"] = comments
+        if last_touched_date is not UNSET:
+            field_dict["lastTouchedDate"] = last_touched_date
         if created_date_time is not UNSET:
             field_dict["createdDateTime"] = created_date_time
+        if updated_date_time is not UNSET:
+            field_dict["updatedDateTime"] = updated_date_time
+        if created_by is not UNSET:
+            field_dict["createdBy"] = created_by
         if tags is not UNSET:
             field_dict["tags"] = tags
         if id is not UNSET:
@@ -115,6 +143,8 @@ class CompanyCustomerContactModel:
             field_dict["lastName"] = last_name
         if email is not UNSET:
             field_dict["email"] = email
+        if pronouns is not UNSET:
+            field_dict["pronouns"] = pronouns
         if links is not UNSET:
             field_dict["links"] = links
 
@@ -123,6 +153,7 @@ class CompanyCustomerContactModel:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.company_tag_model import CompanyTagModel
+        from ..models.company_user_base_model import CompanyUserBaseModel
         from ..models.link import Link
 
         d = src_dict.copy()
@@ -134,12 +165,35 @@ class CompanyCustomerContactModel:
 
         comments = d.pop("comments", UNSET)
 
+        _last_touched_date = d.pop("lastTouchedDate", UNSET)
+        last_touched_date: Union[Unset, datetime.datetime]
+        if isinstance(_last_touched_date, Unset):
+            last_touched_date = UNSET
+        else:
+            last_touched_date = isoparse(_last_touched_date)
+
         _created_date_time = d.pop("createdDateTime", UNSET)
         created_date_time: Union[Unset, datetime.datetime]
         if isinstance(_created_date_time, Unset):
             created_date_time = UNSET
         else:
             created_date_time = isoparse(_created_date_time)
+
+        _updated_date_time = d.pop("updatedDateTime", UNSET)
+        updated_date_time: Union[Unset, datetime.datetime]
+        if isinstance(_updated_date_time, Unset):
+            updated_date_time = UNSET
+        else:
+            updated_date_time = isoparse(_updated_date_time)
+
+        _created_by = d.pop("createdBy", UNSET)
+        created_by: Union[Unset, None, CompanyUserBaseModel]
+        if _created_by is None:
+            created_by = None
+        elif isinstance(_created_by, Unset):
+            created_by = UNSET
+        else:
+            created_by = CompanyUserBaseModel.from_dict(_created_by)
 
         tags = []
         _tags = d.pop("tags", UNSET)
@@ -162,6 +216,8 @@ class CompanyCustomerContactModel:
 
         email = d.pop("email", UNSET)
 
+        pronouns = d.pop("pronouns", UNSET)
+
         links = []
         _links = d.pop("links", UNSET)
         for links_item_data in _links or []:
@@ -174,7 +230,10 @@ class CompanyCustomerContactModel:
             phone1=phone1,
             phone2=phone2,
             comments=comments,
+            last_touched_date=last_touched_date,
             created_date_time=created_date_time,
+            updated_date_time=updated_date_time,
+            created_by=created_by,
             tags=tags,
             id=id,
             company_id=company_id,
@@ -183,6 +242,7 @@ class CompanyCustomerContactModel:
             first_name=first_name,
             last_name=last_name,
             email=email,
+            pronouns=pronouns,
             links=links,
         )
 

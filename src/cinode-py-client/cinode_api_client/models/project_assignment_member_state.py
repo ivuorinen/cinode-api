@@ -4,6 +4,8 @@ from enum import IntEnum
 class ProjectAssignmentMemberState(IntEnum):
     VALUE_0 = 0
     VALUE_10 = 10
+    VALUE_12 = 12
+    VALUE_13 = 13
     VALUE_20 = 20
     VALUE_30 = 30
     VALUE_40 = 40

@@ -7,6 +7,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.company_customer_query_sort_page_and_sort_by_model import CompanyCustomerQuerySortPageAndSortByModel
+    from ..models.date_time_filter_interval import DateTimeFilterInterval
 
 
 T = TypeVar("T", bound="SearchCompanyCustomerQueryModel")
@@ -46,6 +47,7 @@ class SearchCompanyCustomerQueryModel:
             EndsWith = 2
 
             Equals = 3
+        last_touched_at (Union[Unset, None, DateTimeFilterInterval]):
         page_and_sort_by (Union[Unset, None, CompanyCustomerQuerySortPageAndSortByModel]):
     """
 
@@ -55,6 +57,7 @@ class SearchCompanyCustomerQueryModel:
     identification_operator: Union[Unset, StringComparisonOperator] = UNSET
     corporate_identity_number: Union[Unset, None, str] = UNSET
     corporate_identity_number_operator: Union[Unset, StringComparisonOperator] = UNSET
+    last_touched_at: Union[Unset, None, "DateTimeFilterInterval"] = UNSET
     page_and_sort_by: Union[Unset, None, "CompanyCustomerQuerySortPageAndSortByModel"] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,6 +75,10 @@ class SearchCompanyCustomerQueryModel:
         corporate_identity_number_operator: Union[Unset, int] = UNSET
         if not isinstance(self.corporate_identity_number_operator, Unset):
             corporate_identity_number_operator = self.corporate_identity_number_operator.value
+
+        last_touched_at: Union[Unset, None, Dict[str, Any]] = UNSET
+        if not isinstance(self.last_touched_at, Unset):
+            last_touched_at = self.last_touched_at.to_dict() if self.last_touched_at else None
 
         page_and_sort_by: Union[Unset, None, Dict[str, Any]] = UNSET
         if not isinstance(self.page_and_sort_by, Unset):
@@ -91,6 +98,8 @@ class SearchCompanyCustomerQueryModel:
             field_dict["corporateIdentityNumber"] = corporate_identity_number
         if corporate_identity_number_operator is not UNSET:
             field_dict["corporateIdentityNumberOperator"] = corporate_identity_number_operator
+        if last_touched_at is not UNSET:
+            field_dict["lastTouchedAt"] = last_touched_at
         if page_and_sort_by is not UNSET:
             field_dict["pageAndSortBy"] = page_and_sort_by
 
@@ -101,6 +110,7 @@ class SearchCompanyCustomerQueryModel:
         from ..models.company_customer_query_sort_page_and_sort_by_model import (
             CompanyCustomerQuerySortPageAndSortByModel,
         )
+        from ..models.date_time_filter_interval import DateTimeFilterInterval
 
         d = src_dict.copy()
         name = d.pop("name", UNSET)
@@ -130,6 +140,15 @@ class SearchCompanyCustomerQueryModel:
         else:
             corporate_identity_number_operator = StringComparisonOperator(_corporate_identity_number_operator)
 
+        _last_touched_at = d.pop("lastTouchedAt", UNSET)
+        last_touched_at: Union[Unset, None, DateTimeFilterInterval]
+        if _last_touched_at is None:
+            last_touched_at = None
+        elif isinstance(_last_touched_at, Unset):
+            last_touched_at = UNSET
+        else:
+            last_touched_at = DateTimeFilterInterval.from_dict(_last_touched_at)
+
         _page_and_sort_by = d.pop("pageAndSortBy", UNSET)
         page_and_sort_by: Union[Unset, None, CompanyCustomerQuerySortPageAndSortByModel]
         if _page_and_sort_by is None:
@@ -146,6 +165,7 @@ class SearchCompanyCustomerQueryModel:
             identification_operator=identification_operator,
             corporate_identity_number=corporate_identity_number,
             corporate_identity_number_operator=corporate_identity_number_operator,
+            last_touched_at=last_touched_at,
             page_and_sort_by=page_and_sort_by,
         )
 

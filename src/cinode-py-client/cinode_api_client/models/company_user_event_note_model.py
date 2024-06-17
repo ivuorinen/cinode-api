@@ -5,6 +5,7 @@ from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
 from ..models.event_note_type import EventNoteType
+from ..models.event_status_value import EventStatusValue
 from ..models.event_type import EventType
 from ..models.event_visibility import EventVisibility
 from ..types import UNSET, Unset
@@ -30,6 +31,18 @@ class CompanyUserEventNoteModel:
 
             E-mail = 2
         note_date (Union[Unset, None, datetime.datetime]):
+        assigned_to_company_user_id (Union[Unset, None, int]):
+        status (Union[Unset, EventStatusValue]):
+
+            Inte påbörjad = 0
+
+            Påbörjad = 1
+
+            Färdig = 2
+
+            Uppskjuten = 3
+
+            Väntar = 4
         created_by_company_user_id (Union[Unset, int]):
         updated_by_company_user_id (Union[Unset, None, int]):
         created (Union[Unset, datetime.datetime]):
@@ -53,6 +66,8 @@ class CompanyUserEventNoteModel:
         company_id (Union[Unset, None, int]):
         title (Union[Unset, None, str]):
         description (Union[Unset, None, str]):
+        description_html (Union[Unset, None, str]):
+        description_delta (Union[Unset, None, str]):
         event_date (Union[Unset, datetime.datetime]):
         links (Union[Unset, None, List['Link']]):
     """
@@ -60,6 +75,8 @@ class CompanyUserEventNoteModel:
     company_user_id: Union[Unset, None, int] = UNSET
     note_type: Union[Unset, None, EventNoteType] = UNSET
     note_date: Union[Unset, None, datetime.datetime] = UNSET
+    assigned_to_company_user_id: Union[Unset, None, int] = UNSET
+    status: Union[Unset, EventStatusValue] = UNSET
     created_by_company_user_id: Union[Unset, int] = UNSET
     updated_by_company_user_id: Union[Unset, None, int] = UNSET
     created: Union[Unset, datetime.datetime] = UNSET
@@ -71,6 +88,8 @@ class CompanyUserEventNoteModel:
     company_id: Union[Unset, None, int] = UNSET
     title: Union[Unset, None, str] = UNSET
     description: Union[Unset, None, str] = UNSET
+    description_html: Union[Unset, None, str] = UNSET
+    description_delta: Union[Unset, None, str] = UNSET
     event_date: Union[Unset, datetime.datetime] = UNSET
     links: Union[Unset, None, List["Link"]] = UNSET
 
@@ -83,6 +102,11 @@ class CompanyUserEventNoteModel:
         note_date: Union[Unset, None, str] = UNSET
         if not isinstance(self.note_date, Unset):
             note_date = self.note_date.isoformat() if self.note_date else None
+
+        assigned_to_company_user_id = self.assigned_to_company_user_id
+        status: Union[Unset, int] = UNSET
+        if not isinstance(self.status, Unset):
+            status = self.status.value
 
         created_by_company_user_id = self.created_by_company_user_id
         updated_by_company_user_id = self.updated_by_company_user_id
@@ -117,6 +141,8 @@ class CompanyUserEventNoteModel:
         company_id = self.company_id
         title = self.title
         description = self.description
+        description_html = self.description_html
+        description_delta = self.description_delta
         event_date: Union[Unset, str] = UNSET
         if not isinstance(self.event_date, Unset):
             event_date = self.event_date.isoformat()
@@ -140,6 +166,10 @@ class CompanyUserEventNoteModel:
             field_dict["noteType"] = note_type
         if note_date is not UNSET:
             field_dict["noteDate"] = note_date
+        if assigned_to_company_user_id is not UNSET:
+            field_dict["assignedToCompanyUserId"] = assigned_to_company_user_id
+        if status is not UNSET:
+            field_dict["status"] = status
         if created_by_company_user_id is not UNSET:
             field_dict["createdByCompanyUserId"] = created_by_company_user_id
         if updated_by_company_user_id is not UNSET:
@@ -162,6 +192,10 @@ class CompanyUserEventNoteModel:
             field_dict["title"] = title
         if description is not UNSET:
             field_dict["description"] = description
+        if description_html is not UNSET:
+            field_dict["descriptionHtml"] = description_html
+        if description_delta is not UNSET:
+            field_dict["descriptionDelta"] = description_delta
         if event_date is not UNSET:
             field_dict["eventDate"] = event_date
         if links is not UNSET:
@@ -194,6 +228,15 @@ class CompanyUserEventNoteModel:
             note_date = UNSET
         else:
             note_date = isoparse(_note_date)
+
+        assigned_to_company_user_id = d.pop("assignedToCompanyUserId", UNSET)
+
+        _status = d.pop("status", UNSET)
+        status: Union[Unset, EventStatusValue]
+        if isinstance(_status, Unset):
+            status = UNSET
+        else:
+            status = EventStatusValue(_status)
 
         created_by_company_user_id = d.pop("createdByCompanyUserId", UNSET)
 
@@ -244,6 +287,10 @@ class CompanyUserEventNoteModel:
 
         description = d.pop("description", UNSET)
 
+        description_html = d.pop("descriptionHtml", UNSET)
+
+        description_delta = d.pop("descriptionDelta", UNSET)
+
         _event_date = d.pop("eventDate", UNSET)
         event_date: Union[Unset, datetime.datetime]
         if isinstance(_event_date, Unset):
@@ -262,6 +309,8 @@ class CompanyUserEventNoteModel:
             company_user_id=company_user_id,
             note_type=note_type,
             note_date=note_date,
+            assigned_to_company_user_id=assigned_to_company_user_id,
+            status=status,
             created_by_company_user_id=created_by_company_user_id,
             updated_by_company_user_id=updated_by_company_user_id,
             created=created,
@@ -273,6 +322,8 @@ class CompanyUserEventNoteModel:
             company_id=company_id,
             title=title,
             description=description,
+            description_html=description_html,
+            description_delta=description_delta,
             event_date=event_date,
             links=links,
         )

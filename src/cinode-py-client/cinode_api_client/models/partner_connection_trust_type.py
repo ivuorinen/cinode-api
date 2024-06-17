@@ -8,6 +8,7 @@ class PartnerConnectionTrustType(IntEnum):
     VALUE_40 = 40
     VALUE_50 = 50
     VALUE_60 = 60
+    VALUE_70 = 70
 
     def __str__(self) -> str:
         return str(self.value)

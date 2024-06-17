@@ -4,6 +4,7 @@ from typing import Any, Dict, Type, TypeVar, Union
 from attrs import define as _attrs_define
 from dateutil.parser import isoparse
 
+from ..models.save_to_api_option import SaveToApiOption
 from ..models.training_type import TrainingType
 from ..types import UNSET, Unset
 
@@ -27,6 +28,11 @@ class CompanyUserProfileTrainingAddEditModel:
             Certifiering = 1
         url (Union[Unset, None, str]):
         expire_date (Union[Unset, None, datetime.datetime]):
+        save_to (Union[Unset, SaveToApiOption]):
+
+            AllResumesOfLanguage = 3
+
+            Profile = 5
     """
 
     title: Union[Unset, None, str] = UNSET
@@ -38,6 +44,7 @@ class CompanyUserProfileTrainingAddEditModel:
     training_type: Union[Unset, TrainingType] = UNSET
     url: Union[Unset, None, str] = UNSET
     expire_date: Union[Unset, None, datetime.datetime] = UNSET
+    save_to: Union[Unset, SaveToApiOption] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
         title = self.title
@@ -54,6 +61,10 @@ class CompanyUserProfileTrainingAddEditModel:
         expire_date: Union[Unset, None, str] = UNSET
         if not isinstance(self.expire_date, Unset):
             expire_date = self.expire_date.isoformat() if self.expire_date else None
+
+        save_to: Union[Unset, int] = UNSET
+        if not isinstance(self.save_to, Unset):
+            save_to = self.save_to.value
 
         field_dict: Dict[str, Any] = {}
         field_dict.update({})
@@ -75,6 +86,8 @@ class CompanyUserProfileTrainingAddEditModel:
             field_dict["url"] = url
         if expire_date is not UNSET:
             field_dict["expireDate"] = expire_date
+        if save_to is not UNSET:
+            field_dict["saveTo"] = save_to
 
         return field_dict
 
@@ -111,6 +124,13 @@ class CompanyUserProfileTrainingAddEditModel:
         else:
             expire_date = isoparse(_expire_date)
 
+        _save_to = d.pop("saveTo", UNSET)
+        save_to: Union[Unset, SaveToApiOption]
+        if isinstance(_save_to, Unset):
+            save_to = UNSET
+        else:
+            save_to = SaveToApiOption(_save_to)
+
         company_user_profile_training_add_edit_model = cls(
             title=title,
             year=year,
@@ -121,6 +141,7 @@ class CompanyUserProfileTrainingAddEditModel:
             training_type=training_type,
             url=url,
             expire_date=expire_date,
+            save_to=save_to,
         )
 
         return company_user_profile_training_add_edit_model

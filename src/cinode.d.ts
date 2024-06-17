@@ -237,6 +237,14 @@ export type paths = {
      */
     delete: operations['DeleteCandidateUriAttachment']
   }
+  '/v0.1/companies/{companyId}/candidates/{id}/user': {
+    /**
+     * Create an account for a candidate.
+     * No email is sent to the candidate, you will have to communicate login details to the candidate yourself.
+     * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
+     */
+    post: operations['AddCandidateUserFromCandidate']
+  }
   '/v0.1/companies/{companyId}/capabilities': {
     /** Get company capabilities */
     get: operations['CompanyCapabilities']
@@ -466,12 +474,12 @@ export type paths = {
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/managers': {
     /**
-     * Get customer managers
+     * Get customer managers (responsibles) for given customer
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['CompanyCustomerManagers']
     /**
-     * Add customer responsible
+     * Add a person as customer manager (responsible) for given customer
      * @description Sample request:
      *
      *     POST /v0.1/companies/1/customers/22228/managers
@@ -485,8 +493,9 @@ export type paths = {
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/managers/{id}': {
     /**
-     * Remove customer responsible
-     * @description Sample request:
+     * Remove a person as customer manager (responsible) for given customer.
+     * @description Note that the id property is the CompanyUserId of the manager (responsible) to remove.
+     * Sample request:
      *
      *     DELETE /v0.1/companies/1/customers/22228/managers/54632
      */
@@ -1026,7 +1035,7 @@ export type paths = {
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/resumes/{id}': {
     /**
-     * Get resume by id
+     * Get resume by id.
      * @description Requires module: CompanyUserResume.
      */
     get: operations['GetResume']
@@ -1287,6 +1296,7 @@ export type paths = {
   '/v0.1/companies/{companyId}/users/{companyUserId}/resumes/{id}/dynamic': {
     /**
      * Get resume by id
+     * @deprecated
      * @description Requires module: CompanyUserResume.
      */
     get: operations['DynamicResume']
@@ -1639,25 +1649,27 @@ export type paths = {
   '/v0.1/companies/{companyId}/projects/search': {
     /**
      * Get projects list from search criteria
-     * @description Sample request
-     * {
-     *     "pipelines": [4],
-     *     "projectStates": [0],
-     *     "PageAndSortBy": {
-     *     "SortBy": "0",
-     *     "SortOrder": "1",
-     *     "Page": "1",
-     *     "ItemsPerPage": "15",
+     * @description Sample request:
+     *
+     *     POST /v0.1/companies/1/projects/search
+     *     {
+     *         "pipelines": [4],
+     *         "projectStates": [0],
+     *         "PageAndSortBy": {
+     *             "SortBy": "0",
+     *             "SortOrder": "1",
+     *             "Page": "1",
+     *             "ItemsPerPage": "15",
+     *         }
      *     }
-     * }
-     * SortBy Parameter can be:
-     *     CreatedDateTime=0 // Default
-     *     Title=1
-     *     Identifier=2
-     *     CustomerIdentifier=3
-     *     SeoId=4
-     *     UpdatedDateTime=6
-     *     LastTouchDateTime=7
+     *     SortBy Parameter can be:
+     *         CreatedDateTime=0 // Default
+     *         Title=1
+     *         Identifier=2
+     *         CustomerIdentifier=3
+     *         SeoId=4
+     *         UpdatedDateTime=6
+     *         LastTouchDateTime=7
      */
     post: operations['SearchProject']
   }
@@ -1851,66 +1863,6 @@ export type components = {
       /** Format: int32 */
       dayOfYear?: number
     }
-    ClassicCompanyUserResumeModel: {
-      /** Format: int32 */
-      imageId?: number | null
-      /** Format: int32 */
-      parentProfileId?: number
-      /** Format: int32 */
-      profileTranslationId?: number
-      /** Format: int32 */
-      parentCompanyUserResumeId?: number | null
-      resume?: components['schemas']['ResumeModel'] | null
-      /** Format: int32 */
-      id?: number | null
-      /** Format: int32 */
-      companyUserId?: number | null
-      /** Format: int32 */
-      companyId?: number | null
-      created?: components['schemas']['CreatedModel'] | null
-      updated?: components['schemas']['UpdatedModel'] | null
-      title?: string | null
-      description?: string | null
-      slug?: string | null
-      language?: components['schemas']['CompanyResumeTemplateLanguageModel'] | null
-      template?: components['schemas']['CompanyResumeTemplateBaseModel'] | null
-      isPublic?: boolean
-      links?: components['schemas']['Link'][] | null
-    }
-    CommitmentBlockItemModel: {
-      url?: string | null
-      title?: string | null
-      description?: string | null
-      /** Format: date-time */
-      startDate?: string
-      /** Format: date-time */
-      endDate?: string | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
-    CommitmentBlockModel: {
-      hideInEdit?: boolean
-      hideTitle?: boolean
-      hideDescription?: boolean
-      hideText?: boolean
-      hideUrl?: boolean
-      data?: components['schemas']['CommitmentBlockItemModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
     CompanyAddressModel: {
       /** Format: int32 */
       companyId?: number | null
@@ -1939,6 +1891,18 @@ export type components = {
       seoId?: string | null
       description?: string | null
       links?: components['schemas']['Link'][] | null
+    }
+    CompanyCandidateAddCandidateUserModel: {
+      /** @default false */
+      createProfile?: boolean | null
+      /** Format: int32 */
+      languageId?: number | null
+      /** Format: email */
+      email: string
+      firstName: string
+      lastName: string
+      password: string
+      confirmPassword: string
     }
     CompanyCandidateAddInviteModel: {
       email?: string | null
@@ -2032,6 +1996,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -2069,6 +2035,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -2098,6 +2066,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -2108,6 +2078,9 @@ export type components = {
       noteType?: components['schemas']['EventNoteType'] | null
       /** Format: date-time */
       noteDate?: string | null
+      /** Format: int32 */
+      assignedToCompanyUserId?: number | null
+      status?: components['schemas']['EventStatusValue']
       /** Format: int32 */
       createdByCompanyUserId?: number
       /** Format: int32 */
@@ -2130,6 +2103,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -2171,6 +2146,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -2438,6 +2415,12 @@ export type components = {
       description?: string | null
       identification?: string | null
       seoId?: string | null
+      /** Format: date-time */
+      createdDateTime?: string | null
+      /** Format: date-time */
+      updatedDateTime?: string | null
+      /** Format: date-time */
+      lastTouchDateTime?: string | null
       /** @deprecated */
       status?: components['schemas']['Status']
       links?: components['schemas']['Link'][] | null
@@ -2450,6 +2433,7 @@ export type components = {
       phone2?: string | null
       title?: string | null
       comments?: string | null
+      pronouns?: string | null
     }
     CompanyCustomerContactBaseModel: {
       /** Format: int32 */
@@ -2462,6 +2446,7 @@ export type components = {
       firstName?: string | null
       lastName?: string | null
       email?: string | null
+      pronouns?: string | null
       links?: components['schemas']['Link'][] | null
     }
     CompanyCustomerContactModel: {
@@ -2470,7 +2455,12 @@ export type components = {
       phone2?: string | null
       comments?: string | null
       /** Format: date-time */
+      lastTouchedDate?: string
+      /** Format: date-time */
       createdDateTime?: string
+      /** Format: date-time */
+      updatedDateTime?: string
+      createdBy?: components['schemas']['CompanyUserBaseModel'] | null
       tags?: components['schemas']['CompanyTagModel'][] | null
       /** Format: int32 */
       id?: number
@@ -2482,6 +2472,7 @@ export type components = {
       firstName?: string | null
       lastName?: string | null
       email?: string | null
+      pronouns?: string | null
       links?: components['schemas']['Link'][] | null
     }
     /**
@@ -2550,10 +2541,17 @@ export type components = {
       description?: string | null
       identification?: string | null
       seoId?: string | null
+      /** Format: date-time */
+      createdDateTime?: string | null
+      /** Format: date-time */
+      updatedDateTime?: string | null
+      /** Format: date-time */
+      lastTouchDateTime?: string | null
       /** @deprecated */
       status?: components['schemas']['Status']
       links?: components['schemas']['Link'][] | null
     }
+    /** @description An employee who is a manager (responsible) for a customer */
     CompanyCustomerManagerModel: {
       /** Format: int32 */
       companyCustomerManagerId?: number | null
@@ -2614,6 +2612,12 @@ export type components = {
       description?: string | null
       identification?: string | null
       seoId?: string | null
+      /** Format: date-time */
+      createdDateTime?: string | null
+      /** Format: date-time */
+      updatedDateTime?: string | null
+      /** Format: date-time */
+      lastTouchDateTime?: string | null
       /** @deprecated */
       status?: components['schemas']['Status']
       links?: components['schemas']['Link'][] | null
@@ -2906,6 +2910,55 @@ export type components = {
       id?: number | null
       links?: components['schemas']['Link'][] | null
     }
+    CompanyUserCandidateModel: {
+      resumes?: components['schemas']['CompanyUserResumeBaseModel'][] | null
+      defaultCurrency?: components['schemas']['CurrencyModel'] | null
+      /** Format: date-time */
+      createdDateTime?: string
+      phone?: string | null
+      tags?: components['schemas']['CompanyTagBaseModel'][] | null
+      status?: components['schemas']['CompanyUserCandidateStatus'] | null
+      email?: string | null
+      companyAddress?: components['schemas']['CompanyAddressModel'] | null
+      homeAddress?: components['schemas']['LocationModel'] | null
+      image?: components['schemas']['CompanyUserImageModel'] | null
+      desiredAssignment?: string | null
+      internalIdentifier?: string | null
+      twitter?: string | null
+      linkedIn?: string | null
+      homepage?: string | null
+      blog?: string | null
+      gitHub?: string | null
+      /** Format: int32 */
+      companyUserId?: number | null
+      /** Format: int32 */
+      companyId?: number | null
+      seoId?: string | null
+      firstName?: string | null
+      lastName?: string | null
+      /**
+       * @description Employee = 0,
+       * Candidate = 10,
+       * Subcontractor = 20
+       */
+      companyUserType?: components['schemas']['CompanyUserType'] | null
+      /**
+       * Format: int32
+       * @deprecated
+       */
+      id?: number | null
+      links?: components['schemas']['Link'][] | null
+    }
+    /**
+     * Format: int32
+     * @description
+     *
+     * Frånkopplad = 0
+     *
+     * Aktiv = 1
+     * @enum {integer}
+     */
+    CompanyUserCandidateStatus: 0 | 1
     CompanyUserEditModel: {
       status?: components['schemas']['CompanyUserStatus']
       /** Format: date-time */
@@ -2963,6 +3016,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -3020,6 +3075,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -3049,6 +3106,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -3064,6 +3123,9 @@ export type components = {
        * If empty, the timezone of the executing user (API account) will be used.
        */
       timezoneId?: string | null
+      /** Format: int32 */
+      assignedToCompanyUserId?: number | null
+      status?: components['schemas']['EventStatusValue']
       type?: components['schemas']['EventType']
       title: string
       description?: string | null
@@ -3075,6 +3137,9 @@ export type components = {
       noteType?: components['schemas']['EventNoteType'] | null
       /** Format: date-time */
       noteDate?: string | null
+      /** Format: int32 */
+      assignedToCompanyUserId?: number | null
+      status?: components['schemas']['EventStatusValue']
       /** Format: int32 */
       createdByCompanyUserId?: number
       /** Format: int32 */
@@ -3097,6 +3162,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -3158,6 +3225,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -3175,6 +3244,7 @@ export type components = {
       createdDateTime?: string | null
       /** Format: date-time */
       updatedDateTime?: string | null
+      employmentNumber?: string | null
       companyAddress?: components['schemas']['CompanyAddressModel'] | null
       homeAddress?: components['schemas']['LocationModel'] | null
       image?: components['schemas']['CompanyUserImageModel'] | null
@@ -3221,7 +3291,6 @@ export type components = {
       employmentStartDate?: string | null
       /** Format: date-time */
       employmentEndDate?: string | null
-      employmentNumber?: string | null
       /** Format: int32 */
       availabilityPercent?: number | null
       /** Format: date-time */
@@ -3252,6 +3321,7 @@ export type components = {
       createdDateTime?: string | null
       /** Format: date-time */
       updatedDateTime?: string | null
+      employmentNumber?: string | null
       companyAddress?: components['schemas']['CompanyAddressModel'] | null
       homeAddress?: components['schemas']['LocationModel'] | null
       image?: components['schemas']['CompanyUserImageModel'] | null
@@ -3303,7 +3373,6 @@ export type components = {
       employmentStartDate?: string | null
       /** Format: date-time */
       employmentEndDate?: string | null
-      employmentNumber?: string | null
       /** Format: int32 */
       availabilityPercent?: number | null
       /** Format: date-time */
@@ -3334,6 +3403,7 @@ export type components = {
       createdDateTime?: string | null
       /** Format: date-time */
       updatedDateTime?: string | null
+      employmentNumber?: string | null
       companyAddress?: components['schemas']['CompanyAddressModel'] | null
       homeAddress?: components['schemas']['LocationModel'] | null
       image?: components['schemas']['CompanyUserImageModel'] | null
@@ -3400,6 +3470,7 @@ export type components = {
       /** Format: date-time */
       endDate?: string | null
       url?: string | null
+      saveTo?: components['schemas']['SaveToApiOption']
     }
     CompanyUserProfileCommitmentModel: {
       /** Format: int32 */
@@ -3440,6 +3511,7 @@ export type components = {
       /** Format: date-time */
       endDate?: string | null
       url?: string | null
+      saveTo?: components['schemas']['SaveToApiOption']
     }
     CompanyUserProfileEducationModel: {
       /** Format: int32 */
@@ -3483,6 +3555,7 @@ export type components = {
       /** Format: date-time */
       endDate?: string | null
       url?: string | null
+      saveTo?: components['schemas']['SaveToApiOption']
     }
     CompanyUserProfileEmployerModel: {
       /** Format: int32 */
@@ -3516,6 +3589,7 @@ export type components = {
     }
     CompanyUserProfileExtSkillAddEditModel: {
       title: string
+      saveTo?: components['schemas']['SaveToApiOption']
     }
     CompanyUserProfileExtSkillModel: {
       /** Format: int32 */
@@ -3571,7 +3645,8 @@ export type components = {
       translations?: components['schemas']['CompanyUserProfileTranslationModel'][] | null
       links?: components['schemas']['Link'][] | null
     }
-    CompanyUserProfileLanguageAddEditModel: {
+    CompanyUserProfileLanguageAddModel: {
+      saveTo?: components['schemas']['SaveToApiOption']
       /** Format: int32 */
       languageId: number
       level?: components['schemas']['LanguageLevel']
@@ -3583,6 +3658,11 @@ export type components = {
       languageId?: number | null
       language?: components['schemas']['ProfileLanguageModel'] | null
       enabled?: boolean
+    }
+    CompanyUserProfileLanguageEditModel: {
+      /** Format: int32 */
+      languageId: number
+      level?: components['schemas']['LanguageLevel']
     }
     CompanyUserProfileLanguageModel: {
       /** Format: int32 */
@@ -3603,6 +3683,7 @@ export type components = {
       title?: string | null
       description?: string | null
       personalDescription?: string | null
+      saveTo?: components['schemas']['SaveToApiOption']
     }
     CompanyUserProfilePresentationModel: {
       translations?: components['schemas']['CompanyUserProfilePresentationTranslationModel'][] | null
@@ -3635,6 +3716,7 @@ export type components = {
       text?: string | null
       /** Format: int32 */
       profileWorkExperienceId?: number | null
+      saveTo?: components['schemas']['SaveToApiOption']
     }
     CompanyUserProfileReferenceModel: {
       /** Format: int32 */
@@ -3673,12 +3755,14 @@ export type components = {
       name?: string | null
       /** Format: int32 */
       level?: number | null
+      saveTo?: components['schemas']['SaveToApiOption']
     }
     CompanyUserProfileSkillEditModel: {
       /** Format: int32 */
       keywordSynonymId?: number | null
       /** Format: int32 */
       level?: number
+      saveTo?: components['schemas']['SaveToApiOption']
     }
     CompanyUserProfileSkillHistoryModel: {
       /** Format: int32 */
@@ -3742,6 +3826,7 @@ export type components = {
       url?: string | null
       /** Format: date-time */
       expireDate?: string | null
+      saveTo?: components['schemas']['SaveToApiOption']
     }
     CompanyUserProfileTrainingModel: {
       /** Format: int32 */
@@ -3796,6 +3881,7 @@ export type components = {
       location?: components['schemas']['LocationModel'] | null
       url?: string | null
       skills?: components['schemas']['CompanyUserProfileWorkExperienceSkillAddModel'][] | null
+      saveTo?: components['schemas']['SaveToApiOption']
     }
     CompanyUserProfileWorkExperienceModel: {
       /** Format: int32 */
@@ -4190,6 +4276,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -4249,6 +4337,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -4278,6 +4368,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -4293,6 +4385,9 @@ export type components = {
        * If empty, the timezone of the executing user (API account) will be used.
        */
       timezoneId?: string | null
+      /** Format: int32 */
+      assignedToCompanyUserId?: number | null
+      status?: components['schemas']['EventStatusValue']
       type?: components['schemas']['EventType']
       title: string
       description?: string | null
@@ -4306,6 +4401,9 @@ export type components = {
       noteType?: components['schemas']['EventNoteType'] | null
       /** Format: date-time */
       noteDate?: string | null
+      /** Format: int32 */
+      assignedToCompanyUserId?: number | null
+      status?: components['schemas']['EventStatusValue']
       /** Format: int32 */
       createdByCompanyUserId?: number
       /** Format: int32 */
@@ -4328,6 +4426,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -4391,9 +4491,17 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
+    }
+    DateTimeFilterInterval: {
+      /** Format: date-time */
+      from?: string | null
+      /** Format: date-time */
+      to?: string | null
     }
     DynamicCompanyUserResumeModel: {
       /** Format: int32 */
@@ -4461,7 +4569,7 @@ export type components = {
       contactInfo?: components['schemas']['IContactInfoViewModel'] | null
       userInfo?: components['schemas']['ITemplateUserInfo'] | null
       companyUserInfo?: components['schemas']['CompanyUserInfoBlockViewModel'] | null
-      profileImage?: components['schemas']['ITemplateImage'] | null
+      profileImage?: components['schemas']['ITemplateProfileImage'] | null
       company?: components['schemas']['ITemplateCompany'] | null
       /** Format: date-time */
       created?: string
@@ -4483,10 +4591,10 @@ export type components = {
         Classic?: components['schemas']['ITemplateSharedAssetViewModel'][]
         Dynamic?: components['schemas']['ITemplateSharedAssetViewModel'][]
         PageFlow?: components['schemas']['ITemplateSharedAssetViewModel'][]
-        CinodePremium3PageFlow?: components['schemas']['ITemplateSharedAssetViewModel'][]
-        CinodePremium2PageFlow?: components['schemas']['ITemplateSharedAssetViewModel'][]
         BlockWorkExperience?: components['schemas']['ITemplateSharedAssetViewModel'][]
         BlockSkillsByLevel?: components['schemas']['ITemplateSharedAssetViewModel'][]
+        CinodePremium3PageFlow?: components['schemas']['ITemplateSharedAssetViewModel'][]
+        CinodePremium2PageFlow?: components['schemas']['ITemplateSharedAssetViewModel'][]
         TemplateType?: components['schemas']['ITemplateSharedAssetViewModel'][]
       } | null
       primaryScriptAssets?: {
@@ -4495,82 +4603,14 @@ export type components = {
         Classic?: components['schemas']['ITemplateSharedAssetViewModel'][]
         Dynamic?: components['schemas']['ITemplateSharedAssetViewModel'][]
         PageFlow?: components['schemas']['ITemplateSharedAssetViewModel'][]
-        CinodePremium3PageFlow?: components['schemas']['ITemplateSharedAssetViewModel'][]
-        CinodePremium2PageFlow?: components['schemas']['ITemplateSharedAssetViewModel'][]
         BlockWorkExperience?: components['schemas']['ITemplateSharedAssetViewModel'][]
         BlockSkillsByLevel?: components['schemas']['ITemplateSharedAssetViewModel'][]
+        CinodePremium3PageFlow?: components['schemas']['ITemplateSharedAssetViewModel'][]
+        CinodePremium2PageFlow?: components['schemas']['ITemplateSharedAssetViewModel'][]
         TemplateType?: components['schemas']['ITemplateSharedAssetViewModel'][]
       } | null
       templateAssetTypes?: components['schemas']['TemplateAssetType'][] | null
-    }
-    EducationBlockItemModel: {
-      url?: string | null
-      schoolName?: string | null
-      programName?: string | null
-      degree?: string | null
-      description?: string | null
-      location?: components['schemas']['LocationBlockModel'] | null
-      /** Format: date-time */
-      startDate?: string
-      /** Format: date-time */
-      endDate?: string | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
-    EducationBlockModel: {
-      hideInEdit?: boolean
-      hideTitle?: boolean
-      hideDescription?: boolean
-      hideText?: boolean
-      data?: components['schemas']['EducationBlockItemModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
-    EmployerBlockItemModel: {
-      title?: string | null
-      name?: string | null
-      description?: string | null
-      /** Format: date-time */
-      startDate?: string
-      /** Format: date-time */
-      endDate?: string | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
-    EmployerBlockModel: {
-      hideInEdit?: boolean
-      hideTitle?: boolean
-      hideDescription?: boolean
-      hideText?: boolean
-      data?: components['schemas']['EmployerBlockItemModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
+      isAnsweringToRequest?: boolean
     }
     ErrorModel: {
       /** @description CorrelationId */
@@ -4626,6 +4666,9 @@ export type components = {
        * If empty, the timezone of the executing user (API account) will be used.
        */
       timezoneId?: string | null
+      /** Format: int32 */
+      assignedToCompanyUserId?: number | null
+      status?: components['schemas']['EventStatusValue']
       type?: components['schemas']['EventType']
       title: string
       description?: string | null
@@ -4723,76 +4766,9 @@ export type components = {
      * @enum {integer}
      */
     ExtentType: 0 | 1
-    ExtraSkillBlockModel: {
-      data?: components['schemas']['ExtraSkillItemBlockModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
-    ExtraSkillItemBlockModel: {
-      title?: string | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
     FilterModel: {
       name?: string | null
       values?: number[] | null
-    }
-    HighlightedWorkExperienceBlockItemModel: {
-      title?: string | null
-      description?: string | null
-      employer?: string | null
-      location?: components['schemas']['LocationBlockModel'] | null
-      /** Format: date-time */
-      startDate?: string
-      /** Format: date-time */
-      endDate?: string | null
-      url?: string | null
-      logotype?: components['schemas']['ImageBlockModel'] | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
-    HighlightedWorkExperienceBlockModel: {
-      /** Format: int32 */
-      numberOfItemsInList?: number
-      /** Format: int32 */
-      titleLength?: number
-      /** Format: int32 */
-      descriptionLength?: number
-      /** Format: int32 */
-      employerLength?: number
-      hideInEdit?: boolean
-      hideTitle?: boolean
-      hideDescription?: boolean
-      hideText?: boolean
-      data?: components['schemas']['HighlightedWorkExperienceBlockItemModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
     }
     ICompanyAddressViewModel: {
       /** Format: int32 */
@@ -4884,11 +4860,12 @@ export type components = {
       isEditable?: boolean
       partialEditViewPath?: string | null
       friendlyBlockName?: string | null
-      /** Format: uuid */
-      blockId?: string
+      hasUpdatesInProfile?: boolean
+      heading?: string | null
       /** Format: date-time */
       updated?: string | null
-      heading?: string | null
+      /** Format: uuid */
+      blockId?: string
     }
     ITemplateCompany: {
       /** Format: int32 */
@@ -4902,24 +4879,24 @@ export type components = {
       isTaxRegistered?: boolean
       isUsingFreemiumResumes?: boolean
     }
-    ITemplateImage: {
+    ITemplateLogotype: {
+      imageUrl?: string | null
+      imageOriginalUrl?: string | null
+      imageSize?: components['schemas']['ImageSize']
+      /** Format: uuid */
+      imageFileName?: string
+      extension?: string | null
+    }
+    ITemplateProfileImage: {
+      allowNoProfileImage?: boolean
+      showImage?: boolean
+      useDefaultImage?: boolean
       /** Format: int32 */
       companyUserResumeId?: number
       /** Format: int32 */
       companyUserId?: number
       /** Format: int32 */
       imageId?: number
-      imageUrl?: string | null
-      imageOriginalUrl?: string | null
-      allowNoProfileImage?: boolean
-      showImage?: boolean
-      imageSize?: components['schemas']['ImageSize']
-      useDefaultImage?: boolean
-      /** Format: uuid */
-      imageFileName?: string
-      extension?: string | null
-    }
-    ITemplateLogotype: {
       imageUrl?: string | null
       imageOriginalUrl?: string | null
       imageSize?: components['schemas']['ImageSize']
@@ -4962,21 +4939,6 @@ export type components = {
       location?: string | null
       country?: string | null
       internalIdentifier?: string | null
-    }
-    ImageBlockModel: {
-      /** Format: int32 */
-      imageId?: number | null
-      /** Format: int32 */
-      companyImageId?: number | null
-      imageOriginalUrl?: string | null
-      /** Format: uuid */
-      imageFileName?: string
-      extension?: string | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
     }
     /**
      * Format: int32
@@ -5114,36 +5076,6 @@ export type components = {
      * @enum {integer}
      */
     KeywordType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 100
-    LanguageBlockModel: {
-      data?: components['schemas']['LanguageItemBlockModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
-    LanguageItemBlockModel: {
-      culture?: string | null
-      lang?: string | null
-      country?: string | null
-      name?: string | null
-      /** Format: int32 */
-      level?: number
-      /** Format: int32 */
-      languageId?: number | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
     /**
      * Format: int32
      * @description
@@ -5164,24 +5096,6 @@ export type components = {
       href?: string | null
       rel?: string | null
       methods?: string[] | null
-    }
-    LocationBlockModel: {
-      /** Format: int32 */
-      locationId?: number
-      googleId?: string | null
-      name?: string | null
-      street?: string | null
-      streetNumber?: string | null
-      zipCode?: string | null
-      city?: string | null
-      country?: string | null
-      countryCode?: string | null
-      formattedAddress?: string | null
-      phoneNumber?: string | null
-      latitude?: string | null
-      longitude?: string | null
-      webSiteUrl?: string | null
-      displayName?: string | null
     }
     LocationModel: {
       /** Format: int32 */
@@ -5243,7 +5157,7 @@ export type components = {
      *
      * CalendarSync = 13
      *
-     * AllowWidgetModification = 14
+     * AllowDashboardModification = 14
      *
      * ConfiguredFilters = 19
      *
@@ -5254,6 +5168,8 @@ export type components = {
      * OverdueProjectReminders = 22
      *
      * EmailSync = 23
+     *
+     * ContactsSync = 24
      *
      * ApplicationRegistration = 30
      *
@@ -5267,6 +5183,14 @@ export type components = {
      *
      * AI = 43
      *
+     * AITextGeneration = 44
+     *
+     * AISkillsExtractionForWE = 45
+     *
+     * AISkillsGenerationForRoles = 46
+     *
+     * ProjectPlanning = 48
+     *
      * ExternalAccounts = 50
      *
      * ConvertAccount = 51
@@ -5277,10 +5201,16 @@ export type components = {
      *
      * GrowthPlan = 70
      *
+     * GUIShowcase = 80
+     *
+     * Appmixer = 90
+     *
+     * Mixpanel = 99
+     *
      * Intercom = 600
      * @enum {integer}
      */
-    ModuleType: 1 | 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 19 | 20 | 21 | 22 | 23 | 30 | 31 | 40 | 41 | 42 | 43 | 50 | 51 | 52 | 60 | 70 | 600
+    ModuleType: 1 | 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 19 | 20 | 21 | 22 | 23 | 24 | 30 | 31 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 48 | 50 | 51 | 52 | 60 | 70 | 80 | 90 | 99 | 600
     Operation: {
       op?: string
       value?: Record<string, unknown> | null
@@ -5327,9 +5257,11 @@ export type components = {
      * Matcha = 50
      *
      * Tillgänglighet = 60
+     *
+     * UserCv = 70
      * @enum {integer}
      */
-    PartnerConnectionTrustType: 10 | 20 | 30 | 40 | 50 | 60
+    PartnerConnectionTrustType: 10 | 20 | 30 | 40 | 50 | 60 | 70
     PartnerRecipientBaseModel: {
       /** Format: int32 */
       partnerId?: number
@@ -5367,33 +5299,6 @@ export type components = {
      * @enum {integer}
      */
     PdfOrientation: 0 | 1
-    PresentationBlockModel: {
-      /** Format: date-time */
-      discarded?: string | null
-      title?: string | null
-      description?: string | null
-      personalDescription?: string | null
-      /** @deprecated */
-      personalDescriptionHeading?: string | null
-      subHeading?: string | null
-      useAdvancedFormatting?: boolean
-      editorSettings?: string | null
-      hideSubHeading?: boolean
-      /** Format: int32 */
-      personalPresentationLength?: number
-      showPersonalPresentation?: boolean
-      /** Format: int32 */
-      titleLength?: number
-      /** Format: int32 */
-      descriptionLength?: number
-      /** Format: int32 */
-      employerLength?: number
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
     ProfileLanguageModel: {
       /** Format: int32 */
       languageId?: number | null
@@ -5487,10 +5392,17 @@ export type components = {
       subcontractorIds?: number[] | null
       announceToPartnerNetwork?: boolean | null
       announceToMarket?: boolean | null
-      isRemote?: boolean
+      /** @deprecated */
+      isRemote?: boolean | null
+      /**
+       * Format: int32
+       * @description Accepts values between 0 and 100. 0 indicates that the work is to be done on site. 100 means that the position is fully remote.
+       */
+      remotePercentage?: number | null
       isEndCustomerAssignment?: boolean | null
       /** @description Set to true if you actually want to publish the announcement to your recipients, if you are developing/testing the endpoint it should be false, then no persist will take place. */
       publishForReal?: boolean
+      referenceId?: string | null
     }
     ProjectAssignmentAnnouncementBaseModel: {
       /** Format: int32 */
@@ -5518,9 +5430,16 @@ export type components = {
       statusText?: string | null
       isAnnouncedToPartnerNetwork?: boolean | null
       isPriceNegotiable?: boolean
+      /** @deprecated */
       isRemote?: boolean | null
+      /**
+       * Format: int32
+       * @description 0 indicates that the work is to be done on site. 100 means that the position is fully remote.
+       */
+      remotePercentage?: number | null
       isAnnouncedToMarket?: boolean | null
       isEndCustomerAssignment?: boolean | null
+      referenceId?: string | null
     }
     ProjectAssignmentBaseModel: {
       /** Format: int32 */
@@ -5542,6 +5461,8 @@ export type components = {
       extentType?: components['schemas']['ExtentType']
       /** Format: int32 */
       extent?: number | null
+      /** Format: uuid */
+      projectCommitmentBookingId?: string | null
       links?: components['schemas']['Link'][] | null
     }
     ProjectAssignmentEditModel: {
@@ -5659,6 +5580,10 @@ export type components = {
      *
      * Offererad = 10
      *
+     * Intervju bokad = 12
+     *
+     * Intervju utförd = 13
+     *
      * Avböjd av kund = 20
      *
      * Avböjd av oss = 30
@@ -5666,7 +5591,7 @@ export type components = {
      * Pausad = 40
      * @enum {integer}
      */
-    ProjectAssignmentMemberState: 0 | 10 | 20 | 30 | 40
+    ProjectAssignmentMemberState: 0 | 10 | 12 | 13 | 20 | 30 | 40
     ProjectAssignmentMemberStateHistoryModel: {
       state?: components['schemas']['ProjectAssignmentMemberState']
       note?: string | null
@@ -5746,6 +5671,8 @@ export type components = {
       extentType?: components['schemas']['ExtentType']
       /** Format: int32 */
       extent?: number | null
+      /** Format: uuid */
+      projectCommitmentBookingId?: string | null
       links?: components['schemas']['Link'][] | null
     }
     /**
@@ -5886,7 +5813,15 @@ export type components = {
       rate?: number | null
       /** Format: date-time */
       estimatedCloseDate?: string | null
+      /** Format: int32 */
+      estimatedValue?: number | null
       assigned?: components['schemas']['ProjectAssignmentMemberModel'] | null
+      prospects?: components['schemas']['ProjectAssignmentMemberModel'][] | null
+      /**
+       * Format: uuid
+       * @description A value in this field indicates that the role is part of advanced planning and can't be updated through the API
+       */
+      projectCommitmentBookingId?: string | null
     }
     ProjectAttachmentModel: {
       /** Format: int32 */
@@ -5928,6 +5863,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -5987,6 +5924,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -6016,6 +5955,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -6031,6 +5972,9 @@ export type components = {
        * If empty, the timezone of the executing user (API account) will be used.
        */
       timezoneId?: string | null
+      /** Format: int32 */
+      assignedToCompanyUserId?: number | null
+      status?: components['schemas']['EventStatusValue']
       type?: components['schemas']['EventType']
       title: string
       description?: string | null
@@ -6044,6 +5988,9 @@ export type components = {
       noteType?: components['schemas']['EventNoteType'] | null
       /** Format: date-time */
       noteDate?: string | null
+      /** Format: int32 */
+      assignedToCompanyUserId?: number | null
+      status?: components['schemas']['EventStatusValue']
       /** Format: int32 */
       createdByCompanyUserId?: number
       /** Format: int32 */
@@ -6066,6 +6013,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -6129,6 +6078,8 @@ export type components = {
       companyId?: number | null
       title?: string | null
       description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
       /** Format: date-time */
       eventDate?: string
       links?: components['schemas']['Link'][] | null
@@ -6315,58 +6266,6 @@ export type components = {
       companyId?: number
       name?: string | null
     }
-    ReferenceBlockItemModel: {
-      firstName?: string | null
-      lastName?: string | null
-      email?: string | null
-      telephone?: string | null
-      company?: string | null
-      position?: string | null
-      text?: string | null
-      workExperience?: string | null
-      /** Format: int32 */
-      workExperienceId?: number | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
-    ReferenceBlockModel: {
-      hideDescription?: boolean
-      hideInEdit?: boolean
-      data?: components['schemas']['ReferenceBlockItemModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
-    ResumeModel: {
-      presentation?: components['schemas']['PresentationBlockModel'] | null
-      highlightedWorkExperience?: components['schemas']['HighlightedWorkExperienceBlockModel'] | null
-      skillsByCategory?: components['schemas']['SkillByCategoryBlockModel'] | null
-      topSkills?: components['schemas']['TopSkillBlockModel'] | null
-      workExperience?: components['schemas']['WorkExperienceBlockModel'] | null
-      skills?: components['schemas']['SkillModelModel'] | null
-      employer?: components['schemas']['EmployerBlockModel'] | null
-      training?: components['schemas']['TrainingBlockModel'] | null
-      education?: components['schemas']['EducationBlockModel'] | null
-      language?: components['schemas']['LanguageBlockModel'] | null
-      commitment?: components['schemas']['CommitmentBlockModel'] | null
-      extraSkills?: components['schemas']['ExtraSkillBlockModel'] | null
-      reference?: components['schemas']['ReferenceBlockModel'] | null
-      text?: components['schemas']['TextBlockModel'] | null
-      /** Format: int32 */
-      id?: number
-    }
     RoleModel: {
       /** Format: int32 */
       id?: number | null
@@ -6374,6 +6273,16 @@ export type components = {
       description?: string | null
       level?: components['schemas']['AccessLevel'] | null
     }
+    /**
+     * Format: int32
+     * @description
+     *
+     * AllResumesOfLanguage = 3
+     *
+     * Profile = 5
+     * @enum {integer}
+     */
+    SaveToApiOption: 3 | 5
     SearchCompanyCandidateQueryModel: {
       term?: string | null
       /** Format: int32 */
@@ -6400,6 +6309,9 @@ export type components = {
       managers?: number[] | null
       customers?: number[] | null
       tags?: number[] | null
+      lastTouchedAt?: components['schemas']['DateTimeFilterInterval'] | null
+      createdAt?: components['schemas']['DateTimeFilterInterval'] | null
+      updatedAt?: components['schemas']['DateTimeFilterInterval'] | null
       pageAndSortBy?: components['schemas']['CompanyCustomerContactQuerySortPageAndSortByModel'] | null
     }
     SearchCompanyCustomerContactResultModel: {
@@ -6417,6 +6329,7 @@ export type components = {
       identificationOperator?: components['schemas']['StringComparisonOperator']
       corporateIdentityNumber?: string | null
       corporateIdentityNumberOperator?: components['schemas']['StringComparisonOperator']
+      lastTouchedAt?: components['schemas']['DateTimeFilterInterval'] | null
       pageAndSortBy?: components['schemas']['CompanyCustomerQuerySortPageAndSortByModel'] | null
     }
     SearchCompanyCustomerResultModel: {
@@ -6485,69 +6398,6 @@ export type components = {
     SearchSkillResultModel: {
       query?: components['schemas']['SearchSkillQueryModel'] | null
       hits?: components['schemas']['CompanyUserSearchSkillModel'][] | null
-    }
-    SkillBlockItemModel: {
-      name?: string | null
-      /** Format: int32 */
-      level?: number
-      /** Format: int32 */
-      keywordTypeId?: number | null
-      keywordTypeName?: string | null
-      /** Format: int32 */
-      numberOfDaysWorkExperience?: number | null
-      /** Format: date-time */
-      lastWorkExperienceDate?: string | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
-    SkillByCategoryBlockItemModel: {
-      /** Format: int32 */
-      keywordTypeId?: number | null
-      name?: string | null
-      description?: string | null
-      skills?: components['schemas']['SkillBlockItemModel'][] | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
-    SkillByCategoryBlockModel: {
-      data?: components['schemas']['SkillByCategoryBlockItemModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
-    SkillModelModel: {
-      hideInEdit?: boolean
-      hideTitle?: boolean
-      hideDescription?: boolean
-      hideText?: boolean
-      data?: components['schemas']['SkillBlockItemModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
     }
     SkillResultModel: {
       /** Format: int32 */
@@ -6695,97 +6545,18 @@ export type components = {
      *
      * PageFlow = 4
      *
-     * CinodePremium3PageFlow = 6
-     *
-     * CinodePremium2PageFlow = 7
-     *
      * BlockWorkExperience = 50
      *
      * BlockSkillsByLevel = 51
      *
+     * CinodePremium3PageFlow = 70
+     *
+     * CinodePremium2PageFlow = 71
+     *
      * TemplateType = 100
      * @enum {integer}
      */
-    TemplateAssetType: 0 | 1 | 2 | 3 | 4 | 6 | 7 | 50 | 51 | 100
-    TextBlockModel: {
-      description?: string | null
-      text?: string | null
-      hideInEdit?: boolean
-      hideTitle?: boolean
-      hideDescription?: boolean
-      hideText?: boolean
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
-    TopSkillBlockItemModel: {
-      name?: string | null
-      /** Format: int32 */
-      level?: number | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
-    TopSkillBlockModel: {
-      useLevel?: boolean
-      /** Format: int32 */
-      minValue?: number
-      /** Format: int32 */
-      maxValue?: number
-      /** Format: int32 */
-      numberOfItemsInList?: number
-      data?: components['schemas']['TopSkillBlockItemModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
-    TrainingBlockModel: {
-      hideInEdit?: boolean
-      hideTitle?: boolean
-      hideDescription?: boolean
-      hideText?: boolean
-      data?: components['schemas']['TrainingItemBlockModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
-    TrainingItemBlockModel: {
-      trainingType?: components['schemas']['TrainingType']
-      url?: string | null
-      title?: string | null
-      description?: string | null
-      issuer?: string | null
-      /** Format: int32 */
-      year?: number
-      supplier?: string | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
+    TemplateAssetType: 0 | 1 | 2 | 3 | 4 | 50 | 51 | 70 | 71 | 100
     /**
      * Format: int32
      * @description
@@ -6819,7 +6590,7 @@ export type components = {
     ValidationModel: {
       /** @description Collection of validation errors */
       errors?: {
-        [key: string]: (string[] | null) | undefined
+        [key: string]: string[] | null
       } | null
     }
     WebhookAddModel: {
@@ -6893,48 +6664,6 @@ export type components = {
      * @enum {integer}
      */
     WordEngineType: 0 | 1 | 2
-    WorkExperienceBlockItemModel: {
-      skills?: components['schemas']['SkillBlockItemModel'][] | null
-      title?: string | null
-      description?: string | null
-      employer?: string | null
-      location?: components['schemas']['LocationBlockModel'] | null
-      /** Format: date-time */
-      startDate?: string
-      /** Format: date-time */
-      endDate?: string | null
-      url?: string | null
-      logotype?: components['schemas']['ImageBlockModel'] | null
-      /** Format: int32 */
-      parentBlockItemId?: number | null
-      parentBlockItemUpdated?: boolean | null
-      /** Format: int32 */
-      profileTranslationId?: number | null
-      /** Format: date-time */
-      updated?: string | null
-      /** Format: date-time */
-      discarded?: string | null
-      /** Format: uuid */
-      id?: string
-      disabled?: boolean
-    }
-    WorkExperienceBlockModel: {
-      /** @deprecated */
-      skillsHeading?: string | null
-      subHeading?: string | null
-      hideSubHeading?: boolean
-      hideInEdit?: boolean
-      hideTitle?: boolean
-      hideDescription?: boolean
-      hideText?: boolean
-      useLogotype?: boolean
-      data?: components['schemas']['WorkExperienceBlockItemModel'][] | null
-      /** Format: uuid */
-      blockId?: string
-      /** Format: date-time */
-      updated?: string | null
-      heading?: string | null
-    }
   }
   responses: never
   parameters: never
@@ -6942,6 +6671,8 @@ export type components = {
   headers: never
   pathItems: never
 }
+
+export type $defs = Record<string, never>
 
 export type external = Record<string, never>
 
@@ -6980,9 +6711,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7038,11 +6773,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7069,7 +6810,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -7081,7 +6824,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7116,11 +6861,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7154,7 +6905,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -7176,11 +6929,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7222,9 +6981,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7266,11 +7029,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7313,9 +7082,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7360,7 +7133,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7408,7 +7183,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7437,7 +7214,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -7449,7 +7228,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7501,7 +7282,7 @@ export type operations = {
          *     "op": "replace"
          *   },
          *   {
-         *     "value": "2023-08-28T13:13:38.3094173+02:00",
+         *     "value": "2024-06-17T11:05:23.903108+02:00",
          *     "path": "/availablefromdate",
          *     "op": "replace"
          *   },
@@ -7537,7 +7318,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7583,7 +7366,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7618,7 +7403,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -7640,7 +7427,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7678,7 +7467,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -7690,7 +7481,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7740,9 +7533,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7792,9 +7589,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7853,7 +7654,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7883,7 +7686,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -7895,7 +7700,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7943,7 +7750,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -7980,7 +7789,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -8002,7 +7813,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8052,9 +7865,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8113,7 +7930,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8143,7 +7962,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -8155,7 +7976,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8203,7 +8026,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8240,7 +8065,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -8262,7 +8089,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8310,7 +8139,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8360,9 +8191,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8421,7 +8256,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8451,7 +8288,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -8463,7 +8302,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8511,7 +8352,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8548,7 +8391,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -8570,7 +8415,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8607,11 +8454,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8668,7 +8521,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server Error */
       500: {
         content: {
@@ -8714,7 +8569,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8779,11 +8636,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8815,7 +8678,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -8827,7 +8692,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8883,7 +8750,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server Error */
       500: {
         content: {
@@ -8920,11 +8789,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -8953,7 +8828,9 @@ export type operations = {
     }
     responses: {
       /** @description Success */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Bad Request */
       400: {
         content: {
@@ -8965,8 +8842,70 @@ export type operations = {
         }
       }
       /** @description Unauthorized */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server Error */
+      500: {
+        content: {
+          'text/plain': components['schemas']['ErrorModel']
+          'application/json': components['schemas']['ErrorModel']
+          'text/json': components['schemas']['ErrorModel']
+          'application/xml': components['schemas']['ErrorModel']
+          'text/xml': components['schemas']['ErrorModel']
+        }
+      }
+    }
+  }
+  /**
+   * Create an account for a candidate.
+   * No email is sent to the candidate, you will have to communicate login details to the candidate yourself.
+   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
+   */
+  AddCandidateUserFromCandidate: {
+    parameters: {
+      path: {
+        /** @description Company Id */
+        companyId: number
+        /** @description Candidate Id */
+        id: number
+      }
+    }
+    /** @description Basic account information */
+    requestBody?: {
+      content: {
+        'application/json-patch+json': components['schemas']['CompanyCandidateAddCandidateUserModel']
+        'application/json': components['schemas']['CompanyCandidateAddCandidateUserModel']
+        'text/json': components['schemas']['CompanyCandidateAddCandidateUserModel']
+        'application/*+json': components['schemas']['CompanyCandidateAddCandidateUserModel']
+      }
+    }
+    responses: {
+      /** @description All went well */
+      200: {
+        content: {
+          'text/plain': components['schemas']['CompanyUserCandidateModel']
+          'application/json': components['schemas']['CompanyUserCandidateModel']
+          'text/json': components['schemas']['CompanyUserCandidateModel']
+          'application/xml': components['schemas']['CompanyUserCandidateModel']
+          'text/xml': components['schemas']['CompanyUserCandidateModel']
+        }
+      }
+      /** @description Incorrect request */
+      400: {
+        content: {
+          'text/plain': components['schemas']['ValidationModel']
+          'application/json': components['schemas']['ValidationModel']
+          'text/json': components['schemas']['ValidationModel']
+          'application/xml': components['schemas']['ValidationModel']
+          'text/xml': components['schemas']['ValidationModel']
+        }
+      }
+      /** @description Unauthorized request */
+      401: {
+        content: never
+      }
+      /** @description Server error */
       500: {
         content: {
           'text/plain': components['schemas']['ErrorModel']
@@ -9008,9 +8947,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9053,11 +8996,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9103,9 +9052,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9160,7 +9113,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9197,7 +9152,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -9209,7 +9166,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9342,7 +9301,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9388,7 +9349,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9443,7 +9406,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9493,9 +9458,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9554,7 +9523,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9584,7 +9555,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -9596,7 +9569,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9653,7 +9628,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9703,9 +9680,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9764,7 +9745,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9794,7 +9777,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -9806,7 +9791,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9854,7 +9841,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9911,7 +9900,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -9987,11 +9978,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10041,9 +10038,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10091,7 +10092,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10141,9 +10144,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10202,7 +10209,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10232,7 +10241,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -10244,7 +10255,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10292,7 +10305,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10349,7 +10364,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10399,9 +10416,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10460,7 +10481,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10490,7 +10513,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -10502,7 +10527,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10550,7 +10577,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10607,7 +10636,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10657,9 +10688,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10718,7 +10753,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10748,7 +10785,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -10760,7 +10799,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10808,7 +10849,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10865,7 +10908,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10902,11 +10947,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10920,7 +10971,7 @@ export type operations = {
     }
   }
   /**
-   * Get customer managers
+   * Get customer managers (responsibles) for given customer
    * @description Requires access level: CompanyManager. Requires module: Customers.
    */
   CompanyCustomerManagers: {
@@ -10954,11 +11005,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Not Found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -10972,7 +11029,7 @@ export type operations = {
     }
   }
   /**
-   * Add customer responsible
+   * Add a person as customer manager (responsible) for given customer
    * @description Sample request:
    *
    *     POST /v0.1/companies/1/customers/22228/managers
@@ -11022,11 +11079,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Not Found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11040,8 +11103,9 @@ export type operations = {
     }
   }
   /**
-   * Remove customer responsible
-   * @description Sample request:
+   * Remove a person as customer manager (responsible) for given customer.
+   * @description Note that the id property is the CompanyUserId of the manager (responsible) to remove.
+   * Sample request:
    *
    *     DELETE /v0.1/companies/1/customers/22228/managers/54632
    */
@@ -11052,13 +11116,15 @@ export type operations = {
         companyId: number
         /** @description Customer Id */
         customerId: number
-        /** @description User Id */
+        /** @description CompanyUserId of the manager (responsible) to remove */
         id: number
       }
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -11070,7 +11136,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11116,7 +11184,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11190,11 +11260,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11229,11 +11305,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11270,11 +11352,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11309,9 +11397,13 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11365,7 +11457,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11413,11 +11507,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11484,9 +11584,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11523,11 +11627,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11573,7 +11683,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11619,7 +11731,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11667,9 +11781,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11706,7 +11824,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      204: never
+      204: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -11718,7 +11838,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11748,7 +11870,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      204: never
+      204: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -11760,7 +11884,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11806,9 +11932,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11848,7 +11978,9 @@ export type operations = {
         }
       }
       /** @description All went well */
-      201: never
+      201: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -11860,11 +11992,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Not Found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11912,11 +12050,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -11961,9 +12105,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12020,7 +12168,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12063,9 +12213,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Not Found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12120,7 +12274,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12165,7 +12321,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12227,7 +12385,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12259,7 +12419,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -12271,7 +12433,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12318,9 +12482,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12379,7 +12547,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12409,7 +12579,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -12421,7 +12593,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12466,7 +12640,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12523,7 +12699,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12562,9 +12740,13 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description No Content */
-      204: never
+      204: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -12576,7 +12758,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12624,7 +12808,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12682,7 +12868,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12733,7 +12921,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12778,9 +12968,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12837,7 +13031,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12873,7 +13069,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -12885,7 +13083,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -12922,12 +13122,12 @@ export type operations = {
          *     "op": "replace"
          *   },
          *   {
-         *     "value": "2023-08-28T13:13:38.5546243+02:00",
+         *     "value": "2024-06-17T11:05:24.2154322+02:00",
          *     "path": "/employmentstartdate",
          *     "op": "replace"
          *   },
          *   {
-         *     "value": "2023-08-28T13:13:38.5546283+02:00",
+         *     "value": "2024-06-17T11:05:24.2154352+02:00",
          *     "path": "/employmentenddate",
          *     "op": "replace"
          *   },
@@ -12952,7 +13152,7 @@ export type operations = {
          *     "op": "replace"
          *   },
          *   {
-         *     "value": "2023-08-28T13:13:38.5546312+02:00",
+         *     "value": "2024-06-17T11:05:24.2154386+02:00",
          *     "path": "/availablefromdate",
          *     "op": "replace"
          *   },
@@ -13017,7 +13217,7 @@ export type operations = {
          *     "op": "replace"
          *   },
          *   {
-         *     "value": "2023-08-28T13:13:38.5546364+02:00",
+         *     "value": "2024-06-17T11:05:24.2154465+02:00",
          *     "path": "/dateofbirth",
          *     "op": "replace"
          *   },
@@ -13103,7 +13303,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13146,7 +13348,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13201,7 +13405,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13237,7 +13443,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -13249,7 +13457,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13299,9 +13509,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13351,9 +13565,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13412,7 +13630,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13442,7 +13662,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -13454,7 +13676,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13502,7 +13726,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13539,7 +13765,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -13561,7 +13789,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13611,9 +13841,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13672,7 +13906,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13702,7 +13938,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -13714,7 +13952,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13762,7 +14002,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13799,7 +14041,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -13821,7 +14065,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13869,9 +14115,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13919,7 +14169,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -13956,7 +14208,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -13978,7 +14232,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14028,9 +14284,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14089,7 +14349,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14119,7 +14381,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -14131,7 +14395,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14179,9 +14445,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14238,7 +14508,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14283,11 +14555,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14321,7 +14599,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -14343,11 +14623,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14394,11 +14680,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14454,11 +14746,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14485,7 +14783,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -14497,7 +14797,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14531,7 +14833,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -14553,11 +14857,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14604,11 +14914,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14663,11 +14979,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14694,7 +15016,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -14706,7 +15030,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14740,7 +15066,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -14762,11 +15090,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14813,11 +15147,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14872,11 +15212,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14903,7 +15249,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -14915,7 +15263,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -14949,7 +15299,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -14971,11 +15323,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15022,11 +15380,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15081,11 +15445,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15112,7 +15482,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -15124,7 +15496,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15158,7 +15532,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -15180,11 +15556,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15215,13 +15597,16 @@ export type operations = {
         'multipart/form-data': {
           /** Format: binary */
           File: string
+          ImportSkills?: boolean
           MapSkillExperienceYearsToLevel?: boolean
         }
       }
     }
     responses: {
       /** @description Accepted */
-      202: never
+      202: {
+        content: never
+      }
       /** @description Bad Request */
       400: {
         content: {
@@ -15233,9 +15618,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Not Found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server Error */
       500: {
         content: {
@@ -15273,7 +15662,9 @@ export type operations = {
         }
       }
       /** @description Accepted */
-      202: never
+      202: {
+        content: never
+      }
       /** @description Bad Request */
       400: {
         content: {
@@ -15285,9 +15676,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Not Found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server Error */
       500: {
         content: {
@@ -15334,11 +15729,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15365,10 +15766,10 @@ export type operations = {
     /** @description CompanyUserProfileExtraSkillAddEditModel */
     requestBody?: {
       content: {
-        'application/json-patch+json': components['schemas']['CompanyUserProfileLanguageAddEditModel']
-        'application/json': components['schemas']['CompanyUserProfileLanguageAddEditModel']
-        'text/json': components['schemas']['CompanyUserProfileLanguageAddEditModel']
-        'application/*+json': components['schemas']['CompanyUserProfileLanguageAddEditModel']
+        'application/json-patch+json': components['schemas']['CompanyUserProfileLanguageEditModel']
+        'application/json': components['schemas']['CompanyUserProfileLanguageEditModel']
+        'text/json': components['schemas']['CompanyUserProfileLanguageEditModel']
+        'application/*+json': components['schemas']['CompanyUserProfileLanguageEditModel']
       }
     }
     responses: {
@@ -15393,11 +15794,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15424,7 +15831,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -15436,7 +15845,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15462,15 +15873,17 @@ export type operations = {
     /** @description CompanyUserProfileLanguageAddEditModel */
     requestBody?: {
       content: {
-        'application/json-patch+json': components['schemas']['CompanyUserProfileLanguageAddEditModel']
-        'application/json': components['schemas']['CompanyUserProfileLanguageAddEditModel']
-        'text/json': components['schemas']['CompanyUserProfileLanguageAddEditModel']
-        'application/*+json': components['schemas']['CompanyUserProfileLanguageAddEditModel']
+        'application/json-patch+json': components['schemas']['CompanyUserProfileLanguageAddModel']
+        'application/json': components['schemas']['CompanyUserProfileLanguageAddModel']
+        'text/json': components['schemas']['CompanyUserProfileLanguageAddModel']
+        'application/*+json': components['schemas']['CompanyUserProfileLanguageAddModel']
       }
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -15492,11 +15905,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15523,11 +15942,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15572,11 +15997,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15630,11 +16061,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15681,11 +16118,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15740,11 +16183,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15771,7 +16220,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -15783,7 +16234,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15817,7 +16270,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -15839,11 +16294,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15888,9 +16349,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15937,11 +16402,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -15996,11 +16467,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16027,7 +16504,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -16039,7 +16518,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16073,7 +16554,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -16095,11 +16578,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16146,11 +16635,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16205,11 +16700,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16236,7 +16737,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -16248,7 +16751,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16282,7 +16787,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -16304,11 +16811,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16355,11 +16868,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16414,11 +16933,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16445,7 +16970,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -16457,7 +16984,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16491,7 +17020,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -16513,11 +17044,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16531,7 +17068,7 @@ export type operations = {
     }
   }
   /**
-   * Get resume by id
+   * Get resume by id.
    * @description Requires module: CompanyUserResume.
    */
   GetResume: {
@@ -16546,14 +17083,14 @@ export type operations = {
       }
     }
     responses: {
-      /** @description All went well */
+      /** @description All went well. The different types of resumes have different response types: ClassicCompanyUserResumeModel for resumes based on classic templates and DynamicCompanyUserResumeModel for resumes based on dynamic templates. An example is provided for both models. */
       200: {
         content: {
-          'text/plain': components['schemas']['ClassicCompanyUserResumeModel']
-          'application/json': components['schemas']['ClassicCompanyUserResumeModel']
-          'text/json': components['schemas']['ClassicCompanyUserResumeModel']
-          'application/xml': components['schemas']['ClassicCompanyUserResumeModel']
-          'text/xml': components['schemas']['ClassicCompanyUserResumeModel']
+          'text/plain': components['schemas']['CompanyUserResumeBaseModel']
+          'application/json': components['schemas']['CompanyUserResumeBaseModel']
+          'text/json': components['schemas']['CompanyUserResumeBaseModel']
+          'application/xml': components['schemas']['CompanyUserResumeBaseModel']
+          'text/xml': components['schemas']['CompanyUserResumeBaseModel']
         }
       }
       /** @description Incorrect request */
@@ -16567,9 +17104,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16617,9 +17158,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16667,9 +17212,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16712,7 +17261,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16759,9 +17310,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16806,7 +17361,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16854,9 +17411,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16891,7 +17452,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -16903,7 +17466,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -16949,7 +17514,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17004,7 +17571,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17054,9 +17623,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17106,9 +17679,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17167,7 +17744,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17197,7 +17776,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -17209,7 +17790,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17257,7 +17840,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17294,7 +17879,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -17316,7 +17903,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17366,9 +17955,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17427,7 +18020,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17457,7 +18052,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -17469,7 +18066,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17517,7 +18116,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17554,7 +18155,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -17576,7 +18179,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17624,7 +18229,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17672,7 +18279,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17709,7 +18318,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Created */
       201: {
         content: {
@@ -17731,7 +18342,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17781,9 +18394,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17842,7 +18459,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17872,7 +18491,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -17884,7 +18505,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17921,11 +18544,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -17982,7 +18611,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server Error */
       500: {
         content: {
@@ -18030,9 +18661,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18082,9 +18717,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18157,11 +18796,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18206,7 +18851,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18254,11 +18901,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18332,11 +18985,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Not Found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18386,11 +19045,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Not Found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server Error */
       500: {
         content: {
@@ -18420,7 +19085,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -18432,11 +19099,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Not Found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18451,6 +19124,7 @@ export type operations = {
   }
   /**
    * Get resume by id
+   * @deprecated
    * @description Requires module: CompanyUserResume.
    */
   DynamicResume: {
@@ -18486,9 +19160,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18533,7 +19211,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18589,7 +19269,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18634,11 +19316,17 @@ export type operations = {
         }
       }
       /** @description Incorrect request */
-      400: never
+      400: {
+        content: never
+      }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18686,9 +19374,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18745,7 +19437,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18773,7 +19467,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -18785,7 +19481,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18831,7 +19529,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18886,7 +19586,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18937,9 +19639,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -18989,9 +19695,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19050,7 +19760,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19100,7 +19812,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19157,7 +19871,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19206,7 +19922,9 @@ export type operations = {
         }
       }
       /** @description All went well */
-      201: never
+      201: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -19218,7 +19936,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19277,7 +19997,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19336,7 +20058,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19397,7 +20121,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19458,7 +20184,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19510,7 +20238,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19566,9 +20296,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19627,7 +20361,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19688,7 +20424,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19740,7 +20478,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19790,9 +20530,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19840,7 +20584,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19890,9 +20636,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19951,7 +20701,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -19981,7 +20733,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -19993,7 +20747,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20041,7 +20797,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20098,7 +20856,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20148,9 +20908,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20209,7 +20973,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20239,7 +21005,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -20251,7 +21019,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20299,7 +21069,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20356,7 +21128,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20406,9 +21180,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20467,7 +21245,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20497,7 +21277,9 @@ export type operations = {
     }
     responses: {
       /** @description All went well */
-      200: never
+      200: {
+        content: never
+      }
       /** @description Incorrect request */
       400: {
         content: {
@@ -20509,7 +21291,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20557,7 +21341,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20614,7 +21400,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20660,7 +21448,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20710,9 +21500,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20760,7 +21554,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20834,11 +21630,17 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Forbidden request */
-      403: never
+      403: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20884,7 +21686,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -20956,7 +21760,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -21011,7 +21817,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -21066,7 +21874,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -21118,7 +21928,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -21133,25 +21945,27 @@ export type operations = {
   }
   /**
    * Get projects list from search criteria
-   * @description Sample request
-   * {
-   *     "pipelines": [4],
-   *     "projectStates": [0],
-   *     "PageAndSortBy": {
-   *     "SortBy": "0",
-   *     "SortOrder": "1",
-   *     "Page": "1",
-   *     "ItemsPerPage": "15",
+   * @description Sample request:
+   *
+   *     POST /v0.1/companies/1/projects/search
+   *     {
+   *         "pipelines": [4],
+   *         "projectStates": [0],
+   *         "PageAndSortBy": {
+   *             "SortBy": "0",
+   *             "SortOrder": "1",
+   *             "Page": "1",
+   *             "ItemsPerPage": "15",
+   *         }
    *     }
-   * }
-   * SortBy Parameter can be:
-   *     CreatedDateTime=0 // Default
-   *     Title=1
-   *     Identifier=2
-   *     CustomerIdentifier=3
-   *     SeoId=4
-   *     UpdatedDateTime=6
-   *     LastTouchDateTime=7
+   *     SortBy Parameter can be:
+   *         CreatedDateTime=0 // Default
+   *         Title=1
+   *         Identifier=2
+   *         CustomerIdentifier=3
+   *         SeoId=4
+   *         UpdatedDateTime=6
+   *         LastTouchDateTime=7
    */
   SearchProject: {
     parameters: {
@@ -21191,7 +22005,9 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -21243,9 +22059,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {
@@ -21297,9 +22117,13 @@ export type operations = {
         }
       }
       /** @description Unauthorized request */
-      401: never
+      401: {
+        content: never
+      }
       /** @description Resource not found */
-      404: never
+      404: {
+        content: never
+      }
       /** @description Server error */
       500: {
         content: {

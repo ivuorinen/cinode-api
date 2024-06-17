@@ -18,8 +18,8 @@ if TYPE_CHECKING:
     from ..models.i_contact_info_view_model import IContactInfoViewModel
     from ..models.i_dynamic_block_view_model import IDynamicBlockViewModel
     from ..models.i_template_company import ITemplateCompany
-    from ..models.i_template_image import ITemplateImage
     from ..models.i_template_logotype import ITemplateLogotype
+    from ..models.i_template_profile_image import ITemplateProfileImage
     from ..models.i_template_shared_asset_view_model import ITemplateSharedAssetViewModel
     from ..models.i_template_style_asset_view_model import ITemplateStyleAssetViewModel
     from ..models.i_template_user_info import ITemplateUserInfo
@@ -139,7 +139,7 @@ class DynamicTemplateViewModel:
         contact_info (Union[Unset, None, IContactInfoViewModel]):
         user_info (Union[Unset, None, ITemplateUserInfo]):
         company_user_info (Union[Unset, None, CompanyUserInfoBlockViewModel]):
-        profile_image (Union[Unset, None, ITemplateImage]):
+        profile_image (Union[Unset, None, ITemplateProfileImage]):
         company (Union[Unset, None, ITemplateCompany]):
         created (Union[Unset, datetime.datetime]):
         updated (Union[Unset, None, datetime.datetime]):
@@ -155,6 +155,7 @@ class DynamicTemplateViewModel:
         primary_style_assets (Union[Unset, None, DynamicTemplateViewModelPrimaryStyleAssets]):
         primary_script_assets (Union[Unset, None, DynamicTemplateViewModelPrimaryScriptAssets]):
         template_asset_types (Union[Unset, None, List[TemplateAssetType]]):
+        is_answering_to_request (Union[Unset, bool]):
     """
 
     title: str
@@ -186,7 +187,7 @@ class DynamicTemplateViewModel:
     contact_info: Union[Unset, None, "IContactInfoViewModel"] = UNSET
     user_info: Union[Unset, None, "ITemplateUserInfo"] = UNSET
     company_user_info: Union[Unset, None, "CompanyUserInfoBlockViewModel"] = UNSET
-    profile_image: Union[Unset, None, "ITemplateImage"] = UNSET
+    profile_image: Union[Unset, None, "ITemplateProfileImage"] = UNSET
     company: Union[Unset, None, "ITemplateCompany"] = UNSET
     created: Union[Unset, datetime.datetime] = UNSET
     updated: Union[Unset, None, datetime.datetime] = UNSET
@@ -202,6 +203,7 @@ class DynamicTemplateViewModel:
     primary_style_assets: Union[Unset, None, "DynamicTemplateViewModelPrimaryStyleAssets"] = UNSET
     primary_script_assets: Union[Unset, None, "DynamicTemplateViewModelPrimaryScriptAssets"] = UNSET
     template_asset_types: Union[Unset, None, List[TemplateAssetType]] = UNSET
+    is_answering_to_request: Union[Unset, bool] = UNSET
 
     def to_dict(self) -> Dict[str, Any]:
         title = self.title
@@ -359,6 +361,8 @@ class DynamicTemplateViewModel:
 
                     template_asset_types.append(template_asset_types_item)
 
+        is_answering_to_request = self.is_answering_to_request
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(
             {
@@ -453,6 +457,8 @@ class DynamicTemplateViewModel:
             field_dict["primaryScriptAssets"] = primary_script_assets
         if template_asset_types is not UNSET:
             field_dict["templateAssetTypes"] = template_asset_types
+        if is_answering_to_request is not UNSET:
+            field_dict["isAnsweringToRequest"] = is_answering_to_request
 
         return field_dict
 
@@ -466,8 +472,8 @@ class DynamicTemplateViewModel:
         from ..models.i_contact_info_view_model import IContactInfoViewModel
         from ..models.i_dynamic_block_view_model import IDynamicBlockViewModel
         from ..models.i_template_company import ITemplateCompany
-        from ..models.i_template_image import ITemplateImage
         from ..models.i_template_logotype import ITemplateLogotype
+        from ..models.i_template_profile_image import ITemplateProfileImage
         from ..models.i_template_shared_asset_view_model import ITemplateSharedAssetViewModel
         from ..models.i_template_style_asset_view_model import ITemplateStyleAssetViewModel
         from ..models.i_template_user_info import ITemplateUserInfo
@@ -590,13 +596,13 @@ class DynamicTemplateViewModel:
             company_user_info = CompanyUserInfoBlockViewModel.from_dict(_company_user_info)
 
         _profile_image = d.pop("profileImage", UNSET)
-        profile_image: Union[Unset, None, ITemplateImage]
+        profile_image: Union[Unset, None, ITemplateProfileImage]
         if _profile_image is None:
             profile_image = None
         elif isinstance(_profile_image, Unset):
             profile_image = UNSET
         else:
-            profile_image = ITemplateImage.from_dict(_profile_image)
+            profile_image = ITemplateProfileImage.from_dict(_profile_image)
 
         _company = d.pop("company", UNSET)
         company: Union[Unset, None, ITemplateCompany]
@@ -693,6 +699,8 @@ class DynamicTemplateViewModel:
 
             template_asset_types.append(template_asset_types_item)
 
+        is_answering_to_request = d.pop("isAnsweringToRequest", UNSET)
+
         dynamic_template_view_model = cls(
             title=title,
             blocks=blocks,
@@ -739,6 +747,7 @@ class DynamicTemplateViewModel:
             primary_style_assets=primary_style_assets,
             primary_script_assets=primary_script_assets,
             template_asset_types=template_asset_types,
+            is_answering_to_request=is_answering_to_request,
         )
 
         return dynamic_template_view_model

@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.company_user_profile_language_add_edit_model import CompanyUserProfileLanguageAddEditModel
+from ...models.company_user_profile_language_edit_model import CompanyUserProfileLanguageEditModel
 from ...models.company_user_profile_language_model import CompanyUserProfileLanguageModel
 from ...models.error_model import ErrorModel
 from ...models.validation_model import ValidationModel
@@ -17,7 +17,7 @@ def _get_kwargs(
     company_user_id: int,
     id: int,
     *,
-    json_body: CompanyUserProfileLanguageAddEditModel,
+    json_body: CompanyUserProfileLanguageEditModel,
 ) -> Dict[str, Any]:
     pass
 
@@ -81,7 +81,7 @@ def sync_detailed(
     id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CompanyUserProfileLanguageAddEditModel,
+    json_body: CompanyUserProfileLanguageEditModel,
 ) -> Response[Union[Any, CompanyUserProfileLanguageModel, ErrorModel, ValidationModel]]:
     """Update Language Profile Item
 
@@ -89,7 +89,7 @@ def sync_detailed(
         company_id (int):
         company_user_id (int):
         id (int):
-        json_body (CompanyUserProfileLanguageAddEditModel):
+        json_body (CompanyUserProfileLanguageEditModel):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -119,7 +119,7 @@ def sync(
     id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CompanyUserProfileLanguageAddEditModel,
+    json_body: CompanyUserProfileLanguageEditModel,
 ) -> Optional[Union[Any, CompanyUserProfileLanguageModel, ErrorModel, ValidationModel]]:
     """Update Language Profile Item
 
@@ -127,7 +127,7 @@ def sync(
         company_id (int):
         company_user_id (int):
         id (int):
-        json_body (CompanyUserProfileLanguageAddEditModel):
+        json_body (CompanyUserProfileLanguageEditModel):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -152,7 +152,7 @@ async def asyncio_detailed(
     id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CompanyUserProfileLanguageAddEditModel,
+    json_body: CompanyUserProfileLanguageEditModel,
 ) -> Response[Union[Any, CompanyUserProfileLanguageModel, ErrorModel, ValidationModel]]:
     """Update Language Profile Item
 
@@ -160,7 +160,7 @@ async def asyncio_detailed(
         company_id (int):
         company_user_id (int):
         id (int):
-        json_body (CompanyUserProfileLanguageAddEditModel):
+        json_body (CompanyUserProfileLanguageEditModel):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -188,7 +188,7 @@ async def asyncio(
     id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CompanyUserProfileLanguageAddEditModel,
+    json_body: CompanyUserProfileLanguageEditModel,
 ) -> Optional[Union[Any, CompanyUserProfileLanguageModel, ErrorModel, ValidationModel]]:
     """Update Language Profile Item
 
@@ -196,7 +196,7 @@ async def asyncio(
         company_id (int):
         company_user_id (int):
         id (int):
-        json_body (CompanyUserProfileLanguageAddEditModel):
+        json_body (CompanyUserProfileLanguageEditModel):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

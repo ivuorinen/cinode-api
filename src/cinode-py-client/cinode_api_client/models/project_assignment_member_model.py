@@ -49,6 +49,10 @@ class ProjectAssignmentMemberModel:
 
             Offererad = 10
 
+            Intervju bokad = 12
+
+            Intervju utförd = 13
+
             Avböjd av kund = 20
 
             Avböjd av oss = 30

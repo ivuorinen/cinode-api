@@ -1,6 +1,8 @@
+import datetime
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
+from dateutil.parser import isoparse
 
 from ..models.status import Status
 from ..types import UNSET, Unset
@@ -22,6 +24,9 @@ class CompanyCustomerBaseModel:
         description (Union[Unset, None, str]):
         identification (Union[Unset, None, str]):
         seo_id (Union[Unset, None, str]):
+        created_date_time (Union[Unset, None, datetime.datetime]):
+        updated_date_time (Union[Unset, None, datetime.datetime]):
+        last_touch_date_time (Union[Unset, None, datetime.datetime]):
         status (Union[Unset, Status]):
 
             Inaktiv = 0
@@ -36,6 +41,9 @@ class CompanyCustomerBaseModel:
     description: Union[Unset, None, str] = UNSET
     identification: Union[Unset, None, str] = UNSET
     seo_id: Union[Unset, None, str] = UNSET
+    created_date_time: Union[Unset, None, datetime.datetime] = UNSET
+    updated_date_time: Union[Unset, None, datetime.datetime] = UNSET
+    last_touch_date_time: Union[Unset, None, datetime.datetime] = UNSET
     status: Union[Unset, Status] = UNSET
     links: Union[Unset, None, List["Link"]] = UNSET
 
@@ -46,6 +54,18 @@ class CompanyCustomerBaseModel:
         description = self.description
         identification = self.identification
         seo_id = self.seo_id
+        created_date_time: Union[Unset, None, str] = UNSET
+        if not isinstance(self.created_date_time, Unset):
+            created_date_time = self.created_date_time.isoformat() if self.created_date_time else None
+
+        updated_date_time: Union[Unset, None, str] = UNSET
+        if not isinstance(self.updated_date_time, Unset):
+            updated_date_time = self.updated_date_time.isoformat() if self.updated_date_time else None
+
+        last_touch_date_time: Union[Unset, None, str] = UNSET
+        if not isinstance(self.last_touch_date_time, Unset):
+            last_touch_date_time = self.last_touch_date_time.isoformat() if self.last_touch_date_time else None
+
         status: Union[Unset, int] = UNSET
         if not isinstance(self.status, Unset):
             status = self.status.value
@@ -75,6 +95,12 @@ class CompanyCustomerBaseModel:
             field_dict["identification"] = identification
         if seo_id is not UNSET:
             field_dict["seoId"] = seo_id
+        if created_date_time is not UNSET:
+            field_dict["createdDateTime"] = created_date_time
+        if updated_date_time is not UNSET:
+            field_dict["updatedDateTime"] = updated_date_time
+        if last_touch_date_time is not UNSET:
+            field_dict["lastTouchDateTime"] = last_touch_date_time
         if status is not UNSET:
             field_dict["status"] = status
         if links is not UNSET:
@@ -99,6 +125,33 @@ class CompanyCustomerBaseModel:
 
         seo_id = d.pop("seoId", UNSET)
 
+        _created_date_time = d.pop("createdDateTime", UNSET)
+        created_date_time: Union[Unset, None, datetime.datetime]
+        if _created_date_time is None:
+            created_date_time = None
+        elif isinstance(_created_date_time, Unset):
+            created_date_time = UNSET
+        else:
+            created_date_time = isoparse(_created_date_time)
+
+        _updated_date_time = d.pop("updatedDateTime", UNSET)
+        updated_date_time: Union[Unset, None, datetime.datetime]
+        if _updated_date_time is None:
+            updated_date_time = None
+        elif isinstance(_updated_date_time, Unset):
+            updated_date_time = UNSET
+        else:
+            updated_date_time = isoparse(_updated_date_time)
+
+        _last_touch_date_time = d.pop("lastTouchDateTime", UNSET)
+        last_touch_date_time: Union[Unset, None, datetime.datetime]
+        if _last_touch_date_time is None:
+            last_touch_date_time = None
+        elif isinstance(_last_touch_date_time, Unset):
+            last_touch_date_time = UNSET
+        else:
+            last_touch_date_time = isoparse(_last_touch_date_time)
+
         _status = d.pop("status", UNSET)
         status: Union[Unset, Status]
         if isinstance(_status, Unset):
@@ -120,6 +173,9 @@ class CompanyCustomerBaseModel:
             description=description,
             identification=identification,
             seo_id=seo_id,
+            created_date_time=created_date_time,
+            updated_date_time=updated_date_time,
+            last_touch_date_time=last_touch_date_time,
             status=status,
             links=links,
         )
