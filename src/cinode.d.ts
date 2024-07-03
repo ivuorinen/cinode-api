@@ -5,81 +5,211 @@
 
 export type paths = {
   '/v0.1/companies/{companyId}/users/{companyUserId}/absences/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get absence period by id */
     get: operations['Absence']
     /** Update Absence Item for User */
     put: operations['UpdateAbsence']
+    post?: never
     /** Delete absence */
     delete: operations['DeleteAbsence']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/absences': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get absence period by company user id */
     get: operations['Absences']
+    put?: never
     /** Create Absence Item for User */
     post: operations['NewAbsence']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/absence/types': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get absence types for company */
     get: operations['AbsenceTypes']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/availability': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Get availability for company users. Omitting companyUserId gets availability for all company users in company. */
     post: operations['SearchAvailability']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get company by id */
     get: operations['Company']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/addresses/{id}/users': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get company users list for an address */
     get: operations['CompanyAddressUsers']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get Candidate by Id
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['Candidate']
+    put?: never
+    post?: never
     /**
      * Delete candidate from the system
-     * This action is irreversible, use with caution
+     *     This action is irreversible, use with caution
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     delete: operations['DeleteCompanyCandidate']
+    options?: never
+    head?: never
     /**
      * Patch company candidate
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     patch: operations['PatchCompanyCandidate']
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get Candidates
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['Candidates']
+    put?: never
     /**
      * Create Candidate
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     post: operations['AddCompanyCandidate']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{id}/invite': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Invite the CompanyCandidate to create their own Cinode account
-     * A email is sent with your message and details for how to login
+     *     A email is sent with your message and details for how to login
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     post: operations['InviteCandidate']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{candidateId}/events/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company candidates event by id
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['CompanyCandidateEvent']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{candidateId}/events/meetings/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company candidates meeting event with specified id
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
@@ -90,25 +220,48 @@ export type paths = {
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     put: operations['UpdateCompanyCandidateEventMeeting']
+    post?: never
     /**
      * Delete company candidate meeting event
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     delete: operations['DeleteCompanyCandidateEventMeeting']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{candidateId}/events/meetings': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company candidates events meetings list
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['CompanyCandidateMeetingEventList']
+    put?: never
     /**
      * Add new meeting event for company candidate
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     post: operations['NewCompanyCandidateEventMeeting']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{candidateId}/events/notes/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company candidates note event with specified id
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
@@ -119,32 +272,68 @@ export type paths = {
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     put: operations['UpdateCompanyCandidateEventNote']
+    post?: never
     /**
      * Delete company candidate note event
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     delete: operations['DeleteCompanyCandidateEventNote']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{candidateId}/events/notes': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company candidates events notes list
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['CompanyCandidateNoteEventList']
+    put?: never
     /**
      * Add new note event for company candidate
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     post: operations['NewCompanyCandidateEventNote']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{candidateId}/events': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company candidates events list
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['CompanyCandidateEvents']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{candidateId}/events/tasks/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company candidates task event with specified id
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
@@ -155,105 +344,257 @@ export type paths = {
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     put: operations['UpdateCompanyCandidateEventTask']
+    post?: never
     /**
      * Delete company candidate task event
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     delete: operations['DeleteCompanyCandidateEventTask']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{candidateId}/events/tasks': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company candidates events tasks list
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['CompanyCandidateTaskEventList']
+    put?: never
     /**
      * Add new task event for company candidate
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     post: operations['NewCompanyCandidateEventTask']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{id}/attachments/{attachmentId}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get Candidate File Attachment by Id
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['GetCandidateAttachment']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{id}/attachments': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Upload Candidate File Attachment
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     post: operations['CandidateAttachment']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/pipelines': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get candidate pipelines
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['CandidatePipelines']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{candidateId}/skills': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Add a Skill to company candidate
      * @description Sample request:
      *
-     *     POST /v0.1/companies/1/candidates/19870/skills
-     *     {
-     *         "name": "SQL",
-     *         "companyCandidateId": 19870,
-     *         "keywordSynonymId": 577,
-     *         "languageId":1
-     *     }
+     *         POST /v0.1/companies/1/candidates/19870/skills
+     *         {
+     *             "name": "SQL",
+     *             "companyCandidateId": 19870,
+     *             "keywordSynonymId": 577,
+     *             "languageId":1
+     *         }
      */
     post: operations['NewCompanyCandidateSkill']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{candidateId}/skills/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    post?: never
     /**
      * Delete Candidate Skill
      * @description Sample request:
      *
-     *     DELETE /v0.1/companies/1/candidates/19870/skills/577
+     *         DELETE /v0.1/companies/1/candidates/19870/skills/577
      */
     delete: operations['DeleteCompanyCandidateSkill']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{id}/uriattachments': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Add Candidate Uri (Link)
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     post: operations['CandidateUriAttachment']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{id}/uriattachments/{attachmentId}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get Candidate Uri Attachment by Id
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['GetCandidateUriAttachment']
+    put?: never
+    post?: never
     /**
      * Delete Candidate Uri (Link)
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     delete: operations['DeleteCandidateUriAttachment']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/{id}/user': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Create an account for a candidate.
-     * No email is sent to the candidate, you will have to communicate login details to the candidate yourself.
+     *     No email is sent to the candidate, you will have to communicate login details to the candidate yourself.
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     post: operations['AddCandidateUserFromCandidate']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/capabilities': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get company capabilities */
     get: operations['CompanyCapabilities']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/currencies': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get company currencies */
     get: operations['CompanyCurrencies']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company customer by id
      * @description Requires access level: CompanyManager. Requires module: Customers.
@@ -264,30 +605,52 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     put: operations['UpdateCompanyCustomer']
+    post?: never
     /**
      * Delete customer
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     delete: operations['DeleteCompanyCustomer']
+    options?: never
+    head?: never
     /**
      * Patch company customer
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     patch: operations['PatchCompanyCustomer']
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company customers list
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['CompanyCustomers']
+    put?: never
     /**
      * Add company customer
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     post: operations['NewCompanyCustomer']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/addresses/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer address by id
      * @description Requires access level: CompanyManager. Requires module: Customers.
@@ -298,20 +661,44 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     put: operations['EditCompanyCustomerAddress']
+    post?: never
     /**
      * Delete customer address
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     delete: operations['DeleteCompanyCustomerAddress']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/addresses': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Add customer address
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     post: operations['NewCompanyCustomerAddress']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/contacts/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer contact by id
      * @description Requires access level: CompanyManager. Requires module: Customers.
@@ -322,63 +709,125 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     put: operations['EditCompanyCustomerContact']
+    post?: never
     /**
      * Delete customer contact
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     delete: operations['DeleteCompanyCustomerContact']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/contacts': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer contact list
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['Contacts']
+    put?: never
     /**
      * Add customer contact
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     post: operations['NewCompanyCustomerContact']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/contacts/{contactId}/tags': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Edit Tags for CustomerContact
      * @description Note:
      *
-     *     Posted tags will replace any existing tags for the contact.
-     *     A new tag will be created if the Id for a tag is not provided.
+     *         Posted tags will replace any existing tags for the contact.
+     *         A new tag will be created if the Id for a tag is not provided.
      *
-     * Sample request:
+     *     Sample request:
      *
-     *     POST /v0.1/companies/1/customers/19870/contacts/5360/tags
-     *     [
-     *         {
-     *             "name": "tag-name",
-     *             "id": 2
-     *         },
-     *         {
-     *             "name": "tag-test",
-     *             "id": 1
-     *         },
-     *     ]
+     *         POST /v0.1/companies/1/customers/19870/contacts/5360/tags
+     *         [
+     *             {
+     *                 "name": "tag-name",
+     *                 "id": 2
+     *             },
+     *             {
+     *                 "name": "tag-test",
+     *                 "id": 1
+     *             },
+     *         ]
      */
     post: operations['EditCustomerContactTags']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/events/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer event by id
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['CompanyCustomerEvent']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/events': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer events list
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['CompanyCustomerEvents']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/events/meetings/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer event meeting by id
      * @description Requires access level: CompanyManager. Requires module: Customers.
@@ -389,25 +838,48 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     put: operations['UpdateMeeting']
+    post?: never
     /**
      * Delete customer event meeting
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     delete: operations['DeleteMeeting']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/events/meetings': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer event meetings list
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['CompanyCustomerEventMeetings']
+    put?: never
     /**
      * Add customer event meeting
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     post: operations['NewMeeting']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/events/notes/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer event note by id
      * @description Requires access level: CompanyManager. Requires module: Customers.
@@ -418,25 +890,48 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     put: operations['UpdateNote']
+    post?: never
     /**
      * Delete customer event note
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     delete: operations['DeleteNote']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/events/notes': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer event notes list
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['CompanyCustomerEventNotes']
+    put?: never
     /**
      * Add customer event note
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     post: operations['NewNote']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/events/tasks/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer event task by id
      * @description Requires access level: CompanyManager. Requires module: Customers.
@@ -447,201 +942,469 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     put: operations['UpdateTask']
+    post?: never
     /**
      * Delete customer event task
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     delete: operations['DeleteTask']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/events/tasks': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer event tasks list
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['CompanyCustomerEventTasks']
+    put?: never
     /**
      * Add customer event task
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     post: operations['NewTask']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{id}/attachments/{attachmentId}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer file attachment by Id
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['GetCustomerAttachment']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/managers': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get customer managers (responsibles) for given customer
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['CompanyCustomerManagers']
+    put?: never
     /**
      * Add a person as customer manager (responsible) for given customer
      * @description Sample request:
      *
-     *     POST /v0.1/companies/1/customers/22228/managers
-     *     {
-     *         [
-     *            51096
-     *         ]
-     *     }
+     *         POST /v0.1/companies/1/customers/22228/managers
+     *         {
+     *             [
+     *                51096
+     *             ]
+     *         }
      */
     post: operations['AddCompanyCustomerResponsible']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/managers/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    post?: never
     /**
      * Remove a person as customer manager (responsible) for given customer.
      * @description Note that the id property is the CompanyUserId of the manager (responsible) to remove.
-     * Sample request:
+     *     Sample request:
      *
-     *     DELETE /v0.1/companies/1/customers/22228/managers/54632
+     *         DELETE /v0.1/companies/1/customers/22228/managers/54632
      */
     delete: operations['RemoveCustomerManager']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/extended': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get extended company customers list
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     get: operations['CustomersExtended']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/{customerId}/tags': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Edit Tags for Customer
      * @description Note:
      *
-     *     Posted tags will replace any existing tags for the customer.
-     *     A new tag will be created if the Id for a tag is not provided.
+     *         Posted tags will replace any existing tags for the customer.
+     *         A new tag will be created if the Id for a tag is not provided.
      *
-     * Sample request:
+     *     Sample request:
      *
-     *     POST /v0.1/companies/1/customers/19870/tags
-     *     [
-     *         {
-     *             "name": "tag-name",
-     *             "id": 2
-     *         },
-     *         {
-     *             "name": "tag-test",
-     *             "id": 1
-     *         },
-     *     ]
+     *         POST /v0.1/companies/1/customers/19870/tags
+     *         [
+     *             {
+     *                 "name": "tag-name",
+     *                 "id": 2
+     *             },
+     *             {
+     *                 "name": "tag-test",
+     *                 "id": 1
+     *             },
+     *         ]
      */
     post: operations['EditCustomerTags']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/images/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get Company Image by Id */
     get: operations['CompanyImage']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/images/{id}/{imageFileName}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Download Company Image */
     get: operations['CompanyImageDownload']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{id}/images': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get Company Images Assigned to User */
     get: operations['CompanyImages']
+    put?: never
     /** Add Image to User */
     post: operations['AddCompanyImage']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/managers': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company managers
      * @description Sample request:
      *
-     *     GET /v0.1/companies/1/managers
+     *         GET /v0.1/companies/1/managers
      */
     get: operations['CompanyManagers']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/profiles': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Get profiles list
      * @description Sample request:
      *
-     *     POST /v0.1/companies/1/profiles
-     *     {
-     *         "createdOffsetDays": 90,
-     *         "updatedOffsetDays": 30,
-     *         "pageAndSortBy": {
-     *             "page": 1,
-     *             "itemsPerPage": 15,
-     *             "order": 0,
-     *             "sortBy": 1
+     *         POST /v0.1/companies/1/profiles
+     *         {
+     *             "createdOffsetDays": 90,
+     *             "updatedOffsetDays": 30,
+     *             "pageAndSortBy": {
+     *                 "page": 1,
+     *                 "itemsPerPage": 15,
+     *                 "order": 0,
+     *                 "sortBy": 1
+     *             }
      *         }
-     *     }
      */
     post: operations['CompanyProfiles']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{id}/attachments/{attachmentId}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get Project file attachment by Id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['GetProjectAttachment']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/recruitment/managers': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get recruitment managers
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['RecruitmentManagers']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/resumes': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get resumes list
      * @description Requires module: CompanyUserResume.
      */
     get: operations['CompanyResumes']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/groups/{subcontractorGroupId}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get Subcontractor Group by Id
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     get: operations['GetCompanySubcontractorGroup']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/groups/{subcontractorGroupId}/members': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Add subcontractor group member
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     post: operations['AddCompanySubcontractorGroupMember']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/groups/{subcontractorGroupId}/members/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    post?: never
     /**
      * Delete subcontractor group member
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     delete: operations['DeleteCompanySubcontractorGroupMember']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/groups': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get Subcontractor Groups by Company Id
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     get: operations['GetCompanySubcontractorGroups']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/tags/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company tag by Id
      * @description Sample request:
      *
-     *     GET /v0.1/companies/1/tags/1
+     *         GET /v0.1/companies/1/tags/1
      */
     get: operations['CompanyTag']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/tags': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company tags
      * @description Sample request:
      *
-     *     GET /v0.1/companies/1/tags
+     *         GET /v0.1/companies/1/tags
      */
     get: operations['CompanyTags']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/teams/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get team by id */
     get: operations['Team']
     /**
@@ -649,41 +1412,90 @@ export type paths = {
      * @description Requires access level: CompanyAdmin.
      */
     put: operations['UpdateTeam']
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/teams': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get teams list */
     get: operations['CompanyTeams']
+    put?: never
     /**
      * Add team
      * @description Requires access level: CompanyAdmin.
      */
     post: operations['NewTeam']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/teams/{teamId}/managers': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get team managers */
     get: operations['TeamManagers']
+    put?: never
     /**
      * Add team manager
      * @description Sample request:
      *
-     *     POST /v0.1/companies/1/teams/1234/managers
-     *     {
-     *         "teamId" : 1234,
-     *         "companyUserId" : 54632
-     *     }
+     *         POST /v0.1/companies/1/teams/1234/managers
+     *         {
+     *             "teamId" : 1234,
+     *             "companyUserId" : 54632
+     *         }
      */
     post: operations['AddTeamManager']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/teams/{teamId}/managers/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    post?: never
     /**
      * Remove team manager
      * @description Sample request:
      *
-     *     DELETE /v0.1/companies/1/teams/1234/managers/54632
+     *         DELETE /v0.1/companies/1/teams/1234/managers/54632
      */
     delete: operations['RemoveTeamManager']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/teams/{teamId}/members/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get team member */
     get: operations['GetTeamMember']
     /**
@@ -691,50 +1503,111 @@ export type paths = {
      * @description Requires access level: CompanyAdmin.
      */
     put: operations['UpdateTeamMember']
+    post?: never
     /**
      * Remove team member
      * @description Requires access level: CompanyAdmin.
      */
     delete: operations['RemoveTeamMember']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/teams/{teamId}/members': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get team members */
     get: operations['GetTeamMembers']
+    put?: never
     /**
      * Add team member
      * @description Requires access level: CompanyAdmin.
      */
     post: operations['AddTeamMember']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/teams/{teamId}/members/{id}/move': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Move team member and associated bookings to another team
      * @description Requires access level: CompanyAdmin.
      */
     post: operations['MoveTeamMember']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/teams/{teamId}/users': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get team members
      * @deprecated
      */
     get: operations['GetTeamUsers']
+    put?: never
     /**
      * Add team member
      * @deprecated
      * @description Requires access level: CompanyAdmin.
      */
     post: operations['AddTeamUser']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/teams/{teamId}/users/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    post?: never
     /**
      * Remove team member
      * @deprecated
      * @description Requires access level: CompanyAdmin.
      */
     delete: operations['RemoveTeamUser']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get company user by id */
     get: operations['User']
     /**
@@ -742,43 +1615,91 @@ export type paths = {
      * @description Requires access level: CompanyAdmin.
      */
     put: operations['UpdateCompanyUser']
+    post?: never
     /**
      * Delete user from the system
-     * Firstly, the user has to be disconnected, which can be done through a PATCH or PUT
-     * This action is irreversible, use with caution
+     *     Firstly, the user has to be disconnected, which can be done through a PATCH or PUT
+     *     This action is irreversible, use with caution
      * @description Requires access level: CompanyAdmin.
      */
     delete: operations['DeleteCompanyUser']
+    options?: never
+    head?: never
     /**
      * Patch company user
      * @description Requires access level: CompanyAdmin.
      */
     patch: operations['PatchCompanyUser']
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get company users list */
     get: operations['CompanyUsers']
+    put?: never
     /**
      * Add company user employee
      * @description Requires access level: CompanyAdmin.
      */
     post: operations['AddCompanyUser']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/convert-aad': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Convert company user employee to an AAD account
      * @description Requires access level: CompanyAdmin.
      */
     post: operations['ConvertUserToAadAccount']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/employees/{companyUserId}/events/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get employee event
      * @description Requires access level: CompanyManager.
      */
     get: operations['CompanyUserEmployeeEvent']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/employees/{companyUserId}/events/meetings/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get employee meeting event
      * @description Requires access level: CompanyManager.
@@ -789,25 +1710,48 @@ export type paths = {
      * @description Requires access level: CompanyManager.
      */
     put: operations['UpdateCompanyUserEmployeeEventMeeting']
+    post?: never
     /**
      * Deletes meeting event
      * @description Requires access level: CompanyManager.
      */
     delete: operations['DeleteCompanyUserEmployeeEventMeeting']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/employees/{companyUserId}/events/meetings': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get employee meetings events list
      * @description Requires access level: CompanyManager.
      */
     get: operations['CompanyUserEmployeeEventMeetingList']
+    put?: never
     /**
      * Creates new employee meeting event
      * @description Requires access level: CompanyManager.
      */
     post: operations['NewCompanyUserEmployeeEventMeeting']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/employees/{companyUserId}/events/notes/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get employee note event
      * @description Requires access level: CompanyManager.
@@ -818,44 +1762,92 @@ export type paths = {
      * @description Requires access level: CompanyManager.
      */
     put: operations['UpdateCompanyUserEmployeeEventNote']
+    post?: never
     /**
      * Deletes meeting event
      * @description Requires access level: CompanyManager.
      */
     delete: operations['DeleteCompanyUserEmployeeEventNote']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/employees/{companyUserId}/events/notes': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get employee notes events list
      * @description Requires access level: CompanyManager.
      */
     get: operations['CompanyUserEmployeeEventNoteList']
+    put?: never
     /**
      * Creates new employee note event
      * @description Requires access level: CompanyManager.
      */
     post: operations['NewCompanyUserEmployeeEventNote']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/employees/{companyUserId}/events': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get employee events list
      * @description Requires access level: CompanyManager.
      */
     get: operations['CompanyUserEmployeeEvents']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/employees/{companyUserId}/events/tasks': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get employee tasks events list
      * @description Requires access level: CompanyManager.
      */
     get: operations['CompanyUserEmployeeEventTaskList']
+    put?: never
     /**
      * Creates new employee task event
      * @description Requires access level: CompanyManager.
      */
     post: operations['NewCompanyUserEmployeeEventTask']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/employees/{companyUserId}/events/tasks/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get employee task event
      * @description Requires access level: CompanyManager.
@@ -866,239 +1858,683 @@ export type paths = {
      * @description Requires access level: CompanyManager.
      */
     put: operations['UpdateCompanyUserEmployeeEventTask']
+    post?: never
     /**
      * Deletes meeting event
      * @description Requires access level: CompanyManager.
      */
     delete: operations['DeleteCompanyUserEmployeeEventTask']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users-full/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company user, including financial fields, by id
      * @description Requires access level: CompanyAdmin.
      */
     get: operations['UserFull']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/permissions': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
     /**
      * Update Permissions for Company User
      * @description Requires access level: CompanyAdmin.
      */
     put: operations['UpdatePermissions']
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile by company user id */
     get: operations['CompanyUserProfile']
+    put?: never
     /** Create Profile for user */
     post: operations['NewCompanyUserProfile']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/commitments/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile commitment by id */
     get: operations['CompanyUserProfileCommitment']
     /** Update Profile Commitment */
     put: operations['UpdateCompanyUserProfileCommitment']
+    post?: never
     /** Delete Commitment */
     delete: operations['DeleteCompanyUserProfileCommitment']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/commitments': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Create Profile Commitment */
     post: operations['NewCompanyUserProfileCommitment']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/educations/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile education by id */
     get: operations['CompanyUserProfileEducation']
     /** Update Profile Education */
     put: operations['UpdateCompanyUserProfileEducation']
+    post?: never
     /** Delete Profile Education */
     delete: operations['DeleteCompanyUserProfileEducation']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/educations': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Create Profile Education */
     post: operations['NewCompanyUserProfileEducation']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/employers/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile employer by id */
     get: operations['CompanyUserProfileEmployer']
     /** Update Profile Employer */
     put: operations['UpdateCompanyUserProfileEmployer']
+    post?: never
     /** Delete Profile Employer */
     delete: operations['DeleteCompanyUserProfileEmployer']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/employers': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Create Employer profile item */
     post: operations['NewCompanyUserProfileEmployer']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/extskills/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile external skill by id */
     get: operations['CompanyUserProfileExtSkill']
     /** Update Extra Skill Profile Item */
     put: operations['UpdateCompanyUserProfileExtSkill']
+    post?: never
     /** Delete Extra Skill Profile Item */
     delete: operations['DeleteCompanyUserProfileExtSkill']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/extskills': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Create Extra Skill Profile Item */
     post: operations['NewCompanyUserProfileExtSkill']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/import': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Create new profile import for a user.
      * @description This will start an async operation.
-     * - If the operation is started successfully, the response will be `202 Accepted` and the `Location` header will contain the URL to get the status of the operation.
-     * - If the operation is not started successfully, the response will be `400 Bad Request`
+     *     - If the operation is started successfully, the response will be `202 Accepted` and the `Location` header will contain the URL to get the status of the operation.
+     *     - If the operation is not started successfully, the response will be `400 Bad Request`
      */
     post: operations['CreateCompanyUserProfileImport']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/import/{operationId}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get current status of the async profile import operation.
      * @description This will return the status of an async operation.
-     * - If the operation is still in progress, the response will be `202 Accepted`
-     * - If the operation is completed successfully, the response will be `200 OK` and the `status` property will be `Completed`
-     * - If the operation is completed with errors, the response will be `200 OK` and the `status` property will be `Failed`
+     *     - If the operation is still in progress, the response will be `202 Accepted`
+     *     - If the operation is completed successfully, the response will be `200 OK` and the `status` property will be `Completed`
+     *     - If the operation is completed with errors, the response will be `200 OK` and the `status` property will be `Failed`
      */
     get: operations['GetCompanyUserProfileImport']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/languages/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile language by id */
     get: operations['CompanyUserProfileLanguage']
     /** Update Language Profile Item */
     put: operations['UpdateCompanyUserProfileLanguage']
+    post?: never
     /** Delete Language Profile Item */
     delete: operations['DeleteCompanyUserProfileLanguage']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/languages': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Create Language Profile Item */
     post: operations['NewCompanyUserProfileLanguage']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/languages': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get Available Profile Languages */
     get: operations['ProfileLanguages']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/presentation': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile presentation */
     get: operations['CompanyUserProfilePresentation']
     /** Edit Profile Presentation */
     put: operations['UpdateCompanyUserProfilePresentation']
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/references/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile reference by id */
     get: operations['CompanyUserProfileReference']
     /** Update Profile Reference Item */
     put: operations['UpdateCompanyUserProfileReference']
+    post?: never
     /** Delete Profile Reference Item */
     delete: operations['DeleteCompanyUserProfileReference']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/references': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Create Profile Reference Item */
     post: operations['NewCompanyUserProfileReference']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profiles': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profiles list */
     get: operations['CompanyUserProfiles']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/skills/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile skill by id */
     get: operations['CompanyUserProfileSkill']
     /** Update Profile Skill */
     put: operations['UpdateCompanyUserProfileSkill']
+    post?: never
     /** Delete Profile Skill */
     delete: operations['DeleteCompanyUserProfileSkill']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/skills': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Add Skill to profile */
     post: operations['NewCompanyUserProfileSkill']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/trainings/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile training by id */
     get: operations['CompanyUserProfileTraining']
     /** Update Profile Training Item */
     put: operations['UpdateCompanyUserProfileTraining']
+    post?: never
     /** Delete Profile Training Item */
     delete: operations['DeleteCompanyUserProfileTraining']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/trainings': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Create Profile Training Item */
     post: operations['NewCompanyUserProfileTraining']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/workexperiences/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get profile work experience by id */
     get: operations['CompanyUserProfileWorkExperience']
     /** Update Profile Work Experience */
     put: operations['UpdateCompanyUserProfileWorkExperience']
+    post?: never
     /** Delete Profile Work Experience Item */
     delete: operations['DeleteCompanyUserProfileWorkExperience']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/profile/workexperiences': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Create WorkExperience Profile Item */
     post: operations['NewCompanyUserProfileWorkExperience']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/resumes/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get resume by id.
      * @description Requires module: CompanyUserResume.
      */
     get: operations['GetResume']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/resumes': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company user resumes list
      * @description Requires module: CompanyUserResume.
      */
     get: operations['CompanyUserResumes']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{id}/roles': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get Roles for CompanyUser by id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['CompanyUserRoles']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/extended': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get extended company users list */
     get: operations['CompanyUsersExtended']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/skills/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get skill by id */
     get: operations['Skill']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/skills': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get skills list */
     get: operations['Skills']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company user by id
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     get: operations['CompanySubcontractor']
+    put?: never
+    post?: never
     /**
      * Delete subcontractor from the system
-     * This action is irreversible, use with caution
+     *     This action is irreversible, use with caution
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     delete: operations['DeleteCompanySubcontractor']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get subcontractors list
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     get: operations['CompanyUserSubcontractors']
+    put?: never
     /**
      * Add subcontractor
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     post: operations['AddCompanyUserSubcontractor']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{companyUserId}/events/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get subcontractors events list
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     get: operations['CompanyUserSubcontractorEvent']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{companyUserId}/events/meetings/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get subcontractor meeting event
      * @description Requires access level: PartnerManager. Requires module: Partners.
@@ -1109,25 +2545,48 @@ export type paths = {
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     put: operations['UpdateCompanyUserSubcontractorEventMeeting']
+    post?: never
     /**
      * Deletes meeting event
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     delete: operations['DeleteCompanyUserSubcontractorEventMeeting']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{companyUserId}/events/meetings': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get subcontractors meetings events list
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     get: operations['CompanyUserSubcontractorEventMeetingList']
+    put?: never
     /**
      * Creates new subcontractor meeting event
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     post: operations['NewCompanyUserSubcontractorEventMeeting']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{companyUserId}/events/notes/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get subcontractors notes events list
      * @description Requires access level: PartnerManager. Requires module: Partners.
@@ -1138,44 +2597,92 @@ export type paths = {
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     put: operations['UpdateCompanyUserSubcontractorEventNote']
+    post?: never
     /**
      * Deletes meeting event
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     delete: operations['DeleteCompanyUserSubcontractorEventNote']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{companyUserId}/events/notes': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get subcontractors notes events list
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     get: operations['CompanyUserSubcontractorEventsNotes']
+    put?: never
     /**
      * Creates new subcontractors note event
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     post: operations['NewCompanyUserSubcontractorEventNote']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{subcontractorId}/events': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get subcontractors events list
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     get: operations['CompanyUserSubcontractorEvents']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{companyUserId}/events/tasks': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get subcontractors tasks events list
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     get: operations['CompanyUserSubcontractorEventsTasks']
+    put?: never
     /**
      * Creates new subcontractor task event
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     post: operations['NewCompanyUserSubcontractorEventTask']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{companyUserId}/events/tasks/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get subcontractors tasks events list
      * @description Requires access level: PartnerManager. Requires module: Partners.
@@ -1186,141 +2693,318 @@ export type paths = {
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     put: operations['UpdateCompanyUserSubcontractorEventTask']
+    post?: never
     /**
      * Deletes meeting event
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     delete: operations['DeleteCompanyUserSubcontractorEventTask']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{id}/attachments/{attachmentId}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get subcontractor File Attachment by Id
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     get: operations['GetSubcontractorAttachment']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{id}/attachments': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Upload subcontractor file attachment
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     post: operations['SubcontractorAttachment']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{subcontractorId}/roles': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get assigned and prospect roles for subcontractor
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['GetSubcontractorRoles']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/subcontractors/{subcontractorId}/roles/{projectAssignmentId}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get a specific role, assigned and or prospected, for subcontractor by role id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['GetSubcontractorRole']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/tags': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Edit Tags for User
      * @description Note:
      *
-     *     Posted tags will replace any existing tags for the user.
-     *     A new tag will be created if the id for a tag is not provided.
+     *         Posted tags will replace any existing tags for the user.
+     *         A new tag will be created if the id for a tag is not provided.
      *
-     * Sample request:
+     *     Sample request:
      *
-     *     POST /v0.1/companies/1/users/19870/tags
-     *     [
-     *         {
-     *             "name": "tag-name",
-     *             "id": 2
-     *         },
-     *         {
-     *             "name": "tag-new",
-     *         },
-     *     ]
+     *         POST /v0.1/companies/1/users/19870/tags
+     *         [
+     *             {
+     *                 "name": "tag-name",
+     *                 "id": 2
+     *             },
+     *             {
+     *                 "name": "tag-new",
+     *             },
+     *         ]
      */
     post: operations['EditCompanyUserTags']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/teams': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Get teams for team member */
     get: operations['UserTeams']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/webhooks': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get company webhooks
      * @description Sample request:
      *
-     *     GET /v0.1/companies/1/webhooks
+     *         GET /v0.1/companies/1/webhooks
      */
     get: operations['CompanyWebhooks']
+    put?: never
     /**
      * Add Webhook
      * @description Sample request:
      *
-     *     POST /v0.1/companies/1/webhooks
-     *     {
-     *         "isActive": false,
-     *         "endpointUrl": "https://webhook.site/7a619ffb-e67c-41fc-8113-083d6013f76c",
-     *         "configurations": [
-     *             {
-     *                 "entityType": 1,
-     *                 "actionType": 1
-     *             }
-     *         ],
-     *         "credentials": [
-     *             {
-     *                 "isBasicAuthentication": true,
-     *                 "headerName": "user",
-     *                 "headerValue": "somevalue"
-     *             }
-     *         ]
-     *     }
+     *         POST /v0.1/companies/1/webhooks
+     *         {
+     *             "isActive": false,
+     *             "endpointUrl": "https://webhook.site/7a619ffb-e67c-41fc-8113-083d6013f76c",
+     *             "configurations": [
+     *                 {
+     *                     "entityType": 1,
+     *                     "actionType": 1
+     *                 }
+     *             ],
+     *             "credentials": [
+     *                 {
+     *                     "isBasicAuthentication": true,
+     *                     "headerName": "user",
+     *                     "headerValue": "somevalue"
+     *                 }
+     *             ]
+     *         }
      */
     post: operations['NewWebhook']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/webhooks/manifest': {
-    /** @description Requires access level: CompanyAdmin. Requires module: Webhooks. */
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /** @description Requires access level: CompanyAdmin. Requires module: Webhooks.  */
     post: operations['InstallWebhookManifest']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/webhooks/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    post?: never
     /**
      * Remove webhook
      * @description Sample request:
      *
-     *     DELETE /v0.1/companies/1/webhooks/42a3a220-766c-eb11-8e13-000c29b4e92f
+     *         DELETE /v0.1/companies/1/webhooks/42a3a220-766c-eb11-8e13-000c29b4e92f
      */
     delete: operations['RemoveWebhook']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/{companyUserId}/resumes/{id}/dynamic': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get resume by id
      * @deprecated
      * @description Requires module: CompanyUserResume.
      */
     get: operations['DynamicResume']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/keywords/search/{term}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /** Search keywords by term */
     get: operations['SearchKeyword']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/mentions/to-natural-text': {
-    /**
-     * Translates any mention-ids in a text to their human readable form.
-     * Translations are access restricted, if you don't have enough access
-     * to get the name of an id, it won't be translated.
-     */
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /** Translates any mention-ids in a text to their human readable form.
+     *     Translations are access restricted, if you don't have enough access
+     *     to get the name of an id, it won't be translated. */
     post: operations['TranslateMentions']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/partners': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Get Partners by filter
      * @description Requires access level: PartnerManager. Requires module: Partners.
      */
     post: operations['SearchPartners']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project by id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
@@ -1331,33 +3015,69 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     put: operations['UpdateCompanyProject']
+    post?: never
     /**
      * Delete project
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     delete: operations['DeleteCompanyProject']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get projects list  - please note this endpoint currently only returns projects with the status WON. Please use the SearchProjects endpoint for more options of filtering desired Projects
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['Projects']
+    put?: never
     /**
      * Add project
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     post: operations['NewCompanyProject']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/projectassignments/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get projectassignment by id (Obsolete)
      * @deprecated
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['OldProjectAssignment']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/roles/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get Role by id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
@@ -1368,104 +3088,270 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     put: operations['UpdateProjectAssignment']
+    post?: never
     /**
      * Delete Role
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     delete: operations['DeleteProjectAssignment']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/roles': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Add Role
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     post: operations['NewProjectAssignment']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/roles/{projectAssignmentId}/announce': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Announce a role (ProjectAssignment) to the Partner Network and optionally also to Cinode Market(https://cinode.market/requests).
-     * If you are testing, set the "PublishForReal" to "false", otherwise you will publish this announcement for real. When you're testing ("PublishForReal = false) RequestId will be 0 in the response.
+     *     If you are testing, set the "PublishForReal" to "false", otherwise you will publish this announcement for real. When you're testing ("PublishForReal = false) RequestId will be 0 in the response.
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     post: operations['AnnounceProjectAssignment']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/roles/{roleId}/members/employee': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Add Role Member Employee
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     post: operations['AddProjectAssignmentMemberEmployee']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/roles/{roleId}/members/subcontractor': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Add Role Member Subcontractor
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     post: operations['AddProjectAssignmentMemberSubcontractor']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/roles/{roleId}/members/employee/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
     /**
      * Edit Role Member Employee
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     put: operations['UpdateProjectAssignmentMemberEmployee']
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/roles/{roleId}/members/subcontractor/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
     /**
      * Edit Role Member Subcontractor
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     put: operations['UpdateProjectAssignmentMemberSubcontractor']
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/roles/{roleId}/members/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    post?: never
     /**
      * Delete Role Member
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     delete: operations['DeleteProjectAssignmentMemberEmployee']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/roles': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Get Roles by Filter
-     * Rate limited, restricted to once per minute, max 1000 requests per day
+     *     Rate limited, restricted to once per minute, max 1000 requests per day
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     post: operations['SearchRoles']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/roles/{roleId}/skills': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Add Role Skill
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     post: operations['AddProjectAssignmentSkill']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/roles/{roleId}/skills/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
     /**
      * Update Role Skill
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     put: operations['UpdateProjectAssignmentSkill']
+    post?: never
     /**
      * Delete Role Skill
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     delete: operations['DeleteProjectAssignmentSkill']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/events/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project event by id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['ProjectEvent']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/events': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project events list
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['ProjectEvents']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/events/meetings/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project event meeting by id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
@@ -1476,25 +3362,48 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     put: operations['UpdateProjectMeeting']
+    post?: never
     /**
      * Delete project event meeting
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     delete: operations['DeleteProjectMeeting']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/events/meetings': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project events meetings list
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['ProjectEventMeetings']
+    put?: never
     /**
      * Add project event meeting
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     post: operations['NewProjectMeeting']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/events/notes/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project event note by id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
@@ -1505,25 +3414,48 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     put: operations['UpdateProjectNote']
+    post?: never
     /**
      * Delete project event note
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     delete: operations['DeleteProjectNote']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/events/notes': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project event notes list
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['ProjectEventNotes']
+    put?: never
     /**
      * Add project event note
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     post: operations['NewProjectNote']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/events/tasks/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project event task by id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
@@ -1534,157 +3466,345 @@ export type paths = {
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     put: operations['UpdateProjectTask']
+    post?: never
     /**
      * Delete project event task
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     delete: operations['DeleteProjectTask']
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/events/tasks': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project event tasks list
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['ProjectEventTasks']
+    put?: never
     /**
      * Add project event task
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     post: operations['NewProjectTask']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/pipelines': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project pipelines
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['ProjectPipelines']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/references/{id}': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project reference by id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['ProjectReference']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/references': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get project reference by id
      * @description Requires access level: CompanyManager. Requires module: Assignments.
      */
     get: operations['ProjectReferences']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/{projectId}/tags': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Edit Tags for Project
      * @description Note:
      *
-     *     Posted tags will replace any existing tags for the project.
-     *     A new tag will be created, if the id for a tag not provided.
+     *         Posted tags will replace any existing tags for the project.
+     *         A new tag will be created, if the id for a tag not provided.
      *
-     * Sample request:
+     *     Sample request:
      *
-     *     POST /v0.1/companies/1/projects/19870/tags
-     *     [
-     *         {
-     *             "name": "tag-name",
-     *             "id": 2
-     *         },
-     *         {
-     *             "name": "tag-test",
-     *             "id": 1
-     *         },
-     *     ]
+     *         POST /v0.1/companies/1/projects/19870/tags
+     *         [
+     *             {
+     *                 "name": "tag-name",
+     *                 "id": 2
+     *             },
+     *             {
+     *                 "name": "tag-test",
+     *                 "id": 1
+     *             },
+     *         ]
      */
     post: operations['EditProjectTags']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/recruitment-sources': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
     /**
      * Get recruitment sources
      * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
      */
     get: operations['RecruitmentSources']
+    put?: never
+    post?: never
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/candidates/search': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Get company candidates list from search criteria
      * @description Sample request:
      *
-     *     POST /v0.1/companies/1/candidates/search
-     *     {
-     *         "term": "candidate property value",
-     *         "rating": 3
-     *         "status": 0,
-     *         "sources": [],
-     *         "noRecruiter": false,
-     *         "recruiters": [],
-     *         "states": [0],
-     *         "pipeline": null,
-     *         "pageAndSortBy": {
-     *             "page": 1,
-     *             "itemsPerPage": 15
-     *         },
-     *         "pipelines": []
-     *     }
+     *         POST /v0.1/companies/1/candidates/search
+     *         {
+     *             "term": "candidate property value",
+     *             "rating": 3
+     *             "status": 0,
+     *             "sources": [],
+     *             "noRecruiter": false,
+     *             "recruiters": [],
+     *             "states": [0],
+     *             "pipeline": null,
+     *             "pageAndSortBy": {
+     *                 "page": 1,
+     *                 "itemsPerPage": 15
+     *             },
+     *             "pipelines": []
+     *         }
      */
     post: operations['SearchCompanyCandidate']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/contacts/search': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Get company customer contacts list from search criteria
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     post: operations['SearchCompanyCustomerContact']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/customers/search': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Get company customers list from search criteria
      * @description Requires access level: CompanyManager. Requires module: Customers.
      */
     post: operations['SearchCompanyCustomer']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/users/search': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Get company users list from search criteria */
     post: operations['SearchCompanyUser']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
+  }
+  '/v0.1/companies/{companyId}/events/search': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
+    /** Get company events list from search criteria */
+    post: operations['SearchCompanyEvent']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/projects/search': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /**
      * Get projects list from search criteria
      * @description Sample request:
      *
-     *     POST /v0.1/companies/1/projects/search
-     *     {
-     *         "pipelines": [4],
-     *         "projectStates": [0],
-     *         "PageAndSortBy": {
-     *             "SortBy": "0",
-     *             "SortOrder": "1",
-     *             "Page": "1",
-     *             "ItemsPerPage": "15",
+     *         POST /v0.1/companies/1/projects/search
+     *         {
+     *             "pipelines": [4],
+     *             "projectStates": [0],
+     *             "PageAndSortBy": {
+     *                 "SortBy": "0",
+     *                 "SortOrder": "1",
+     *                 "Page": "1",
+     *                 "ItemsPerPage": "15",
+     *             }
      *         }
-     *     }
-     *     SortBy Parameter can be:
-     *         CreatedDateTime=0 // Default
-     *         Title=1
-     *         Identifier=2
-     *         CustomerIdentifier=3
-     *         SeoId=4
-     *         UpdatedDateTime=6
-     *         LastTouchDateTime=7
+     *         SortBy Parameter can be:
+     *             CreatedDateTime=0 // Default
+     *             Title=1
+     *             Identifier=2
+     *             CustomerIdentifier=3
+     *             SeoId=4
+     *             UpdatedDateTime=6
+     *             LastTouchDateTime=7
      */
     post: operations['SearchProject']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/skills/search': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Search users by skill keyword id */
     post: operations['SearchSkill']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
   '/v0.1/companies/{companyId}/skills/search/term': {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    get?: never
+    put?: never
     /** Search users with skills by term (string value) */
     post: operations['SearchSkillTerm']
+    delete?: never
+    options?: never
+    head?: never
+    patch?: never
+    trace?: never
   }
 }
-
 export type webhooks = Record<string, never>
-
 export type components = {
   schemas: {
     AbscencePeriodDayModel: {
@@ -1746,33 +3866,33 @@ export type components = {
      * Format: int32
      * @description
      *
-     * NoAccess = 0
+     *     NoAccess = 0
      *
-     * Anonymous = 50
+     *     Anonymous = 50
      *
-     * Read = 100
+     *     Read = 100
      *
-     * Subcontractor = 110
+     *     Subcontractor = 110
      *
-     * Candidate = 115
+     *     Candidate = 115
      *
-     * RestrictedCompanyUser = 150
+     *     RestrictedCompanyUser = 150
      *
-     * CompanyApiUser = 180
+     *     CompanyApiUser = 180
      *
-     * CompanyUser = 200
+     *     CompanyUser = 200
      *
-     * PartnerManager = 240
+     *     PartnerManager = 240
      *
-     * CompanyRecruiter = 250
+     *     CompanyRecruiter = 250
      *
-     * TeamManager = 270
+     *     TeamManager = 270
      *
-     * CompanyManager = 300
+     *     CompanyManager = 300
      *
-     * CompanyAdmin = 400
+     *     CompanyAdmin = 400
      *
-     * Owner = 500
+     *     Owner = 500
      * @enum {integer}
      */
     AccessLevel: 0 | 50 | 100 | 110 | 115 | 150 | 180 | 200 | 240 | 250 | 270 | 300 | 400 | 500
@@ -1780,13 +3900,13 @@ export type components = {
      * Format: int32
      * @description
      *
-     * All = 1
+     *     All = 1
      *
-     * Created = 2
+     *     Created = 2
      *
-     * Updated = 3
+     *     Updated = 3
      *
-     * Borttagen = 4
+     *     Borttagen = 4
      * @enum {integer}
      */
     ActionType: 1 | 2 | 3 | 4
@@ -1807,13 +3927,13 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Övrig = 0
+     *     Övrig = 0
      *
-     * Besöksadress = 1
+     *     Besöksadress = 1
      *
-     * Faktureringsadress = 2
+     *     Faktureringsadress = 2
      *
-     * Placeringsort = 3
+     *     Placeringsort = 3
      * @enum {integer}
      */
     AddressType: 0 | 1 | 2 | 3
@@ -1821,9 +3941,9 @@ export type components = {
      * Format: int32
      * @description
      *
-     * File = 0
+     *     File = 0
      *
-     * Uri = 1
+     *     Uri = 1
      * @enum {integer}
      */
     AttachmentType: 0 | 1
@@ -1874,12 +3994,10 @@ export type components = {
       city?: string | null
       country?: string | null
       email?: string | null
-      /**
-       * @description Undefined = 0,
-       * StreetAddress = 1 (VisitingAddress)
-       * InvoiceAddress = 2,
-       * LocationAddress = 3 (Used to connect an Employee to an office registered in Cinode)
-       */
+      /** @description Undefined = 0,
+       *     StreetAddress = 1 (VisitingAddress)
+       *     InvoiceAddress = 2,
+       *     LocationAddress = 3 (Used to connect an Employee to an office registered in Cinode) */
       addressType?: components['schemas']['AddressType']
       comments?: string | null
       links?: components['schemas']['Link'][] | null
@@ -1894,7 +4012,7 @@ export type components = {
     }
     CompanyCandidateAddCandidateUserModel: {
       /** @default false */
-      createProfile?: boolean | null
+      createProfile: boolean | null
       /** Format: int32 */
       languageId?: number | null
       /** Format: email */
@@ -1968,10 +4086,10 @@ export type components = {
       companyId?: number
       seoId?: string | null
       /** @deprecated */
-      firstname?: string | null
+      readonly firstname?: string | null
       firstName?: string | null
       /** @deprecated */
-      lastname?: string | null
+      readonly lastname?: string | null
       lastName?: string | null
       /** Format: date-time */
       createdDateTime?: string
@@ -1984,11 +4102,9 @@ export type components = {
     CompanyCandidateEventBaseModel: {
       /** Format: int32 */
       companyCandidateId?: number
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -2023,11 +4139,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -2054,11 +4168,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -2091,11 +4203,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -2112,11 +4222,9 @@ export type components = {
     CompanyCandidateEventTaskModel: {
       /** Format: int32 */
       companyCandidateId?: number
-      /**
-       * @description NotSpecified = 0
-       * Phone = 1
-       * Email = 2
-       */
+      /** @description NotSpecified = 0
+       *     Phone = 1
+       *     Email = 2 */
       taskType?: components['schemas']['EventTaskType'] | null
       hasTime?: boolean | null
       /** Format: date-time */
@@ -2134,11 +4242,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -2174,11 +4280,9 @@ export type components = {
       /** Format: int32 */
       recruitmentManagerId?: number | null
       campaignCode?: string | null
-      /**
-       * @description Other = 0,
-       * Male = 1,
-       * Female = 2
-       */
+      /** @description Other = 0,
+       *     Male = 1,
+       *     Female = 2 */
       gender?: components['schemas']['UserGender']
       /** Format: int32 */
       birthYear?: number | null
@@ -2196,10 +4300,10 @@ export type components = {
       companyId?: number
       seoId?: string | null
       /** @deprecated */
-      firstname?: string | null
+      readonly firstname?: string | null
       firstName?: string | null
       /** @deprecated */
-      lastname?: string | null
+      readonly lastname?: string | null
       lastName?: string | null
       /** Format: date-time */
       createdDateTime?: string
@@ -2252,37 +4356,35 @@ export type components = {
      * Format: int32
      * @description
      *
-     * CreatedDateTime = 0
+     *     CreatedDateTime = 0
      *
-     * FirstName = 1
+     *     FirstName = 1
      *
-     * LastName = 2
+     *     LastName = 2
      *
-     * Status = 3
+     *     Status = 3
      *
-     * Email = 4
+     *     Email = 4
      *
-     * UpdatedDateTime = 5
+     *     UpdatedDateTime = 5
      * @enum {integer}
      */
     CompanyCandidateQuerySort: 0 | 1 | 2 | 3 | 4 | 5
     CompanyCandidateQuerySortPageAndSortByModel: {
       sortBy?: components['schemas']['CompanyCandidateQuerySort']
-      /**
-       * @description Ascending = 0 (Default)
-       * Descending = 1
-       */
+      /** @description Ascending = 0 (Default)
+       *     Descending = 1 */
       sortOrder?: components['schemas']['SortOrder']
       /**
        * Format: int32
        * @default 1
        */
-      page?: number
+      page: number
       /**
        * Format: int32
        * @default 15
        */
-      itemsPerPage?: number
+      itemsPerPage: number
     }
     CompanyCandidateSkillAddModel: {
       name?: string | null
@@ -2307,15 +4409,15 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Öppen = 0
+     *     Öppen = 0
      *
-     * Vunnen = 10
+     *     Vunnen = 10
      *
-     * Pausad = 20
+     *     Pausad = 20
      *
-     * Avböjd av kandidat = 30
+     *     Avböjd av kandidat = 30
      *
-     * Avböjd av oss = 40
+     *     Avböjd av oss = 40
      * @enum {integer}
      */
     CompanyCandidateState: 0 | 10 | 20 | 30 | 40
@@ -2342,7 +4444,7 @@ export type components = {
     }
     CompanyCustomerAddModel: {
       /** @deprecated */
-      status?: boolean
+      readonly status?: boolean
       name: string
       description?: string | null
       corporateIdentityNumber?: string | null
@@ -2384,12 +4486,10 @@ export type components = {
       city?: string | null
       country?: string | null
       email?: string | null
-      /**
-       * @description Undefined = 0,
-       * StreetAddress = 1 (VisitingAddress)
-       * InvoiceAddress = 2,
-       * LocationAddress = 3 (Used to connect an Employee to an office registered in Cinode)
-       */
+      /** @description Undefined = 0,
+       *     StreetAddress = 1 (VisitingAddress)
+       *     InvoiceAddress = 2,
+       *     LocationAddress = 3 (Used to connect an Employee to an office registered in Cinode) */
       addressType?: components['schemas']['AddressType']
       comments?: string | null
       links?: components['schemas']['Link'][] | null
@@ -2479,44 +4579,42 @@ export type components = {
      * Format: int32
      * @description
      *
-     * CreatedDateTime = 0
+     *     CreatedDateTime = 0
      *
-     * FirstName = 1
+     *     FirstName = 1
      *
-     * LastName = 2
+     *     LastName = 2
      *
-     * Email = 3
+     *     Email = 3
      *
-     * UpdatedDateTime = 4
+     *     UpdatedDateTime = 4
      *
-     * CustomerId = 5
+     *     CustomerId = 5
      * @enum {integer}
      */
     CompanyCustomerContactQuerySort: 0 | 1 | 2 | 3 | 4 | 5
     CompanyCustomerContactQuerySortPageAndSortByModel: {
       sortBy?: components['schemas']['CompanyCustomerContactQuerySort']
-      /**
-       * @description Ascending = 0 (Default)
-       * Descending = 1
-       */
+      /** @description Ascending = 0 (Default)
+       *     Descending = 1 */
       sortOrder?: components['schemas']['SortOrder']
       /**
        * Format: int32
        * @default 1
        */
-      page?: number
+      page: number
       /**
        * Format: int32
        * @default 15
        */
-      itemsPerPage?: number
+      itemsPerPage: number
     }
     CompanyCustomerDeleteModel: {
       customerVerificationName?: string | null
     }
     CompanyCustomerEditModel: {
       /** @deprecated */
-      status?: boolean
+      readonly status?: boolean
       name: string
       description?: string | null
       corporateIdentityNumber?: string | null
@@ -2570,11 +4668,9 @@ export type components = {
       seoId?: string | null
       firstName?: string | null
       lastName?: string | null
-      /**
-       * @description Employee = 0,
-       * Candidate = 10,
-       * Subcontractor = 20
-       */
+      /** @description Employee = 0,
+       *     Candidate = 10,
+       *     Subcontractor = 20 */
       companyUserType?: components['schemas']['CompanyUserType'] | null
       links?: components['schemas']['Link'][] | null
     }
@@ -2626,55 +4722,53 @@ export type components = {
      * Format: int32
      * @description
      *
-     * CreatedDateTime = 0
+     *     CreatedDateTime = 0
      *
-     * Name = 1
+     *     Name = 1
      *
-     * Description = 2
+     *     Description = 2
      *
-     * Identification = 3
+     *     Identification = 3
      *
-     * SeoId = 4
+     *     SeoId = 4
      *
-     * Status = 5
+     *     Status = 5
      *
-     * Phone = 6
+     *     Phone = 6
      *
-     * Email = 7
+     *     Email = 7
      *
-     * Fax = 8
+     *     Fax = 8
      *
-     * Homepage = 9
+     *     Homepage = 9
      *
-     * CorporateIdentityNumber = 10
+     *     CorporateIdentityNumber = 10
      *
-     * VATNumber = 11
+     *     VATNumber = 11
      *
-     * Intermediator = 12
+     *     Intermediator = 12
      *
-     * UpdatedDateTime = 13
+     *     UpdatedDateTime = 13
      *
-     * LastTouchDateTime = 14
+     *     LastTouchDateTime = 14
      * @enum {integer}
      */
     CompanyCustomerQuerySort: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
     CompanyCustomerQuerySortPageAndSortByModel: {
       sortBy?: components['schemas']['CompanyCustomerQuerySort']
-      /**
-       * @description Ascending = 0 (Default)
-       * Descending = 1
-       */
+      /** @description Ascending = 0 (Default)
+       *     Descending = 1 */
       sortOrder?: components['schemas']['SortOrder']
       /**
        * Format: int32
        * @default 1
        */
-      page?: number
+      page: number
       /**
        * Format: int32
        * @default 15
        */
-      itemsPerPage?: number
+      itemsPerPage: number
     }
     CompanyEnabledModuleModel: {
       moduleId?: components['schemas']['ModuleType']
@@ -2729,35 +4823,31 @@ export type components = {
     /**
      * Format: int32
      * @description 0 - Id (Default),
-     * 1 - CompanyUserId,
-     * 2 - CreatedDateTime,
-     * 3 - UpdatedDateTime
+     *     1 - CompanyUserId,
+     *     2 - CreatedDateTime,
+     *     3 - UpdatedDateTime
      * @enum {integer}
      */
     CompanyProfileSort: 0 | 1 | 2 | 3
     CompanyProfileSortPageAndSortByModel: {
-      /**
-       * @description 0 - Id (Default),
-       * 1 - CompanyUserId,
-       * 2 - CreatedDateTime,
-       * 3 - UpdatedDateTime
-       */
+      /** @description 0 - Id (Default),
+       *     1 - CompanyUserId,
+       *     2 - CreatedDateTime,
+       *     3 - UpdatedDateTime */
       sortBy?: components['schemas']['CompanyProfileSort']
-      /**
-       * @description Ascending = 0 (Default)
-       * Descending = 1
-       */
+      /** @description Ascending = 0 (Default)
+       *     Descending = 1 */
       sortOrder?: components['schemas']['SortOrder']
       /**
        * Format: int32
        * @default 1
        */
-      page?: number
+      page: number
       /**
        * Format: int32
        * @default 15
        */
-      itemsPerPage?: number
+      itemsPerPage: number
     }
     CompanyProfilesModel: {
       /** Format: int32 */
@@ -2772,11 +4862,9 @@ export type components = {
       seoId?: string | null
       firstName?: string | null
       lastName?: string | null
-      /**
-       * @description Employee = 0,
-       * Candidate = 10,
-       * Subcontractor = 20
-       */
+      /** @description Employee = 0,
+       *     Candidate = 10,
+       *     Subcontractor = 20 */
       companyUserType?: components['schemas']['CompanyUserType'] | null
       /**
        * Format: int32
@@ -2802,23 +4890,23 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Egenföretagare = 0
+     *     Egenföretagare = 0
      *
-     * 2-10 = 1
+     *     2-10 = 1
      *
-     * 11-50 = 2
+     *     11-50 = 2
      *
-     * 51-200 = 3
+     *     51-200 = 3
      *
-     * 201-500 = 4
+     *     201-500 = 4
      *
-     * 501-1 000 = 5
+     *     501-1 000 = 5
      *
-     * 1 001-5 000 = 6
+     *     1 001-5 000 = 6
      *
-     * 5 001-10 000 = 7
+     *     5 001-10 000 = 7
      *
-     * 10 001+ = 8
+     *     10 001+ = 8
      * @enum {integer}
      */
     CompanySize: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
@@ -2897,11 +4985,9 @@ export type components = {
       seoId?: string | null
       firstName?: string | null
       lastName?: string | null
-      /**
-       * @description Employee = 0,
-       * Candidate = 10,
-       * Subcontractor = 20
-       */
+      /** @description Employee = 0,
+       *     Candidate = 10,
+       *     Subcontractor = 20 */
       companyUserType?: components['schemas']['CompanyUserType'] | null
       /**
        * Format: int32
@@ -2936,11 +5022,9 @@ export type components = {
       seoId?: string | null
       firstName?: string | null
       lastName?: string | null
-      /**
-       * @description Employee = 0,
-       * Candidate = 10,
-       * Subcontractor = 20
-       */
+      /** @description Employee = 0,
+       *     Candidate = 10,
+       *     Subcontractor = 20 */
       companyUserType?: components['schemas']['CompanyUserType'] | null
       /**
        * Format: int32
@@ -2953,12 +5037,24 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Frånkopplad = 0
+     *     Frånkopplad = 0
      *
-     * Aktiv = 1
+     *     Aktiv = 1
      * @enum {integer}
      */
     CompanyUserCandidateStatus: 0 | 1
+    /**
+     * Format: int32
+     * @description
+     *
+     *     Aktiv = 0
+     *
+     *     Marked for deletion = 1
+     *
+     *     Borttagen = 2
+     * @enum {integer}
+     */
+    CompanyUserDeletionStatus: 0 | 1 | 2
     CompanyUserEditModel: {
       status?: components['schemas']['CompanyUserStatus']
       /** Format: date-time */
@@ -3004,11 +5100,9 @@ export type components = {
     CompanyUserEventBaseModel: {
       /** Format: int32 */
       companyUserId?: number | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -3029,10 +5123,8 @@ export type components = {
       startDateTime?: string
       /** Format: date-time */
       endDateTime?: string
-      /**
-       * @description The desired timezone to be used for StartDateTime and EndDateTime properties. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for StartDateTime and EndDateTime properties. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -3063,11 +5155,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -3094,11 +5184,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -3118,10 +5206,8 @@ export type components = {
       noteType?: components['schemas']['EventNoteType'] | null
       /** Format: date-time */
       noteDate?: string | null
-      /**
-       * @description The desired timezone to be used for NoteDate property. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for NoteDate property. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -3150,11 +5236,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -3175,10 +5259,8 @@ export type components = {
       hasTime?: boolean | null
       /** Format: date-time */
       dueDateTime?: string | null
-      /**
-       * @description The desired timezone to be used for DueDateTime property. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for DueDateTime property. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -3191,11 +5273,9 @@ export type components = {
     CompanyUserEventTaskModel: {
       /** Format: int32 */
       companyUserId?: number | null
-      /**
-       * @description NotSpecified = 0
-       * Phone = 1
-       * Email = 2
-       */
+      /** @description NotSpecified = 0
+       *     Phone = 1
+       *     Email = 2 */
       taskType?: components['schemas']['EventTaskType'] | null
       hasTime?: boolean | null
       /** Format: date-time */
@@ -3213,11 +5293,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -3232,11 +5310,9 @@ export type components = {
       links?: components['schemas']['Link'][] | null
     }
     CompanyUserExtendedModel: {
-      /**
-       * @description Disconnected = 0,
-       * PreActive = 2,
-       * Active = 3,
-       */
+      /** @description Disconnected = 0,
+       *     PreActive = 2,
+       *     Active = 3, */
       status?: components['schemas']['CompanyUserStatus'] | null
       title?: string | null
       companyUserEmail?: string | null
@@ -3262,11 +5338,9 @@ export type components = {
       seoId?: string | null
       firstName?: string | null
       lastName?: string | null
-      /**
-       * @description Employee = 0,
-       * Candidate = 10,
-       * Subcontractor = 20
-       */
+      /** @description Employee = 0,
+       *     Candidate = 10,
+       *     Subcontractor = 20 */
       companyUserType?: components['schemas']['CompanyUserType'] | null
       /**
        * Format: int32
@@ -3309,11 +5383,9 @@ export type components = {
       /** Format: date-time */
       dateOfBirth?: string | null
       tags?: components['schemas']['CompanyTagModel'][] | null
-      /**
-       * @description Disconnected = 0,
-       * PreActive = 2,
-       * Active = 3,
-       */
+      /** @description Disconnected = 0,
+       *     PreActive = 2,
+       *     Active = 3, */
       status?: components['schemas']['CompanyUserStatus'] | null
       title?: string | null
       companyUserEmail?: string | null
@@ -3339,11 +5411,9 @@ export type components = {
       seoId?: string | null
       firstName?: string | null
       lastName?: string | null
-      /**
-       * @description Employee = 0,
-       * Candidate = 10,
-       * Subcontractor = 20
-       */
+      /** @description Employee = 0,
+       *     Candidate = 10,
+       *     Subcontractor = 20 */
       companyUserType?: components['schemas']['CompanyUserType'] | null
       /**
        * Format: int32
@@ -3391,11 +5461,9 @@ export type components = {
       /** Format: date-time */
       dateOfBirth?: string | null
       tags?: components['schemas']['CompanyTagModel'][] | null
-      /**
-       * @description Disconnected = 0,
-       * PreActive = 2,
-       * Active = 3,
-       */
+      /** @description Disconnected = 0,
+       *     PreActive = 2,
+       *     Active = 3, */
       status?: components['schemas']['CompanyUserStatus'] | null
       title?: string | null
       companyUserEmail?: string | null
@@ -3421,11 +5489,9 @@ export type components = {
       seoId?: string | null
       firstName?: string | null
       lastName?: string | null
-      /**
-       * @description Employee = 0,
-       * Candidate = 10,
-       * Subcontractor = 20
-       */
+      /** @description Employee = 0,
+       *     Candidate = 10,
+       *     Subcontractor = 20 */
       companyUserType?: components['schemas']['CompanyUserType'] | null
       /**
        * Format: int32
@@ -3929,35 +5995,33 @@ export type components = {
      * Format: int32
      * @description
      *
-     * CreatedDateTime = 0
+     *     CreatedDateTime = 0
      *
-     * FirstName = 1
+     *     FirstName = 1
      *
-     * LastName = 2
+     *     LastName = 2
      *
-     * Email = 3
+     *     Email = 3
      *
-     * UpdatedDateTime = 4
+     *     UpdatedDateTime = 4
      * @enum {integer}
      */
     CompanyUserQuerySort: 0 | 1 | 2 | 3 | 4
     CompanyUserQuerySortPageAndSortByModel: {
       sortBy?: components['schemas']['CompanyUserQuerySort']
-      /**
-       * @description Ascending = 0 (Default)
-       * Descending = 1
-       */
+      /** @description Ascending = 0 (Default)
+       *     Descending = 1 */
       sortOrder?: components['schemas']['SortOrder']
       /**
        * Format: int32
        * @default 1
        */
-      page?: number
+      page: number
       /**
        * Format: int32
        * @default 15
        */
-      itemsPerPage?: number
+      itemsPerPage: number
     }
     CompanyUserResumeBaseModel: {
       /** Format: int32 */
@@ -3982,10 +6046,10 @@ export type components = {
       /** Format: int32 */
       companyUserId?: number | null
       /** @deprecated */
-      firstname?: string | null
+      readonly firstname?: string | null
       firstName?: string | null
       /** @deprecated */
-      lastname?: string | null
+      readonly lastname?: string | null
       lastName?: string | null
       title?: string | null
       seoId?: string | null
@@ -4025,11 +6089,11 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Frånkopplad = 0
+     *     Frånkopplad = 0
      *
-     * Kommande = 2
+     *     Kommande = 2
      *
-     * Aktiv = 3
+     *     Aktiv = 3
      * @enum {integer}
      */
     CompanyUserStatus: 0 | 2 | 3
@@ -4075,10 +6139,8 @@ export type components = {
       links?: components['schemas']['Link'][] | null
     }
     CompanyUserSubcontractorBaseModel: {
-      /**
-       * @description Disconnected = 0
-       * Active = 1
-       */
+      /** @description Disconnected = 0
+       *     Active = 1 */
       status?: components['schemas']['CompanyUserSubcontractorStatus'] | null
       /** Format: int32 */
       rating?: number | null
@@ -4102,11 +6164,9 @@ export type components = {
       seoId?: string | null
       firstName?: string | null
       lastName?: string | null
-      /**
-       * @description Employee = 0,
-       * Candidate = 10,
-       * Subcontractor = 20
-       */
+      /** @description Employee = 0,
+       *     Candidate = 10,
+       *     Subcontractor = 20 */
       companyUserType?: components['schemas']['CompanyUserType'] | null
       /**
        * Format: int32
@@ -4148,10 +6208,8 @@ export type components = {
       phone?: string | null
       tags?: components['schemas']['CompanyTagBaseModel'][] | null
       attachments?: components['schemas']['CompanyUserSubcontractorAttachmentModel'][] | null
-      /**
-       * @description Disconnected = 0
-       * Active = 1
-       */
+      /** @description Disconnected = 0
+       *     Active = 1 */
       status?: components['schemas']['CompanyUserSubcontractorStatus'] | null
       /** Format: int32 */
       rating?: number | null
@@ -4175,11 +6233,9 @@ export type components = {
       seoId?: string | null
       firstName?: string | null
       lastName?: string | null
-      /**
-       * @description Employee = 0,
-       * Candidate = 10,
-       * Subcontractor = 20
-       */
+      /** @description Employee = 0,
+       *     Candidate = 10,
+       *     Subcontractor = 20 */
       companyUserType?: components['schemas']['CompanyUserType'] | null
       /**
        * Format: int32
@@ -4205,9 +6261,9 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Frånkopplad = 0
+     *     Frånkopplad = 0
      *
-     * Aktiv = 1
+     *     Aktiv = 1
      * @enum {integer}
      */
     CompanyUserSubcontractorStatus: 0 | 1
@@ -4215,15 +6271,15 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Medarbetare = 0
+     *     Medarbetare = 0
      *
-     * Kandidat = 10
+     *     Kandidat = 10
      *
-     * Underkonsult = 20
+     *     Underkonsult = 20
      *
-     * Api = 30
+     *     Api = 30
      *
-     * Bot = 40
+     *     Bot = 40
      * @enum {integer}
      */
     CompanyUserType: 0 | 10 | 20 | 30 | 40
@@ -4231,9 +6287,9 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Timpris = 0
+     *     Timpris = 0
      *
-     * Fastpris = 1
+     *     Fastpris = 1
      * @enum {integer}
      */
     ContractType: 0 | 1
@@ -4264,11 +6320,9 @@ export type components = {
     CustomerEventBaseModel: {
       /** Format: int32 */
       customerId?: number | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -4289,10 +6343,8 @@ export type components = {
       startDateTime?: string
       /** Format: date-time */
       endDateTime?: string
-      /**
-       * @description The desired timezone to be used for StartDateTime and EndDateTime properties. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for StartDateTime and EndDateTime properties. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -4325,11 +6377,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -4356,11 +6406,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -4380,10 +6428,8 @@ export type components = {
       noteType?: components['schemas']['EventNoteType'] | null
       /** Format: date-time */
       noteDate?: string | null
-      /**
-       * @description The desired timezone to be used for NoteDate property. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for NoteDate property. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -4414,11 +6460,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -4439,10 +6483,8 @@ export type components = {
       hasTime?: boolean | null
       /** Format: date-time */
       dueDateTime?: string | null
-      /**
-       * @description The desired timezone to be used for DueDateTime property. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for DueDateTime property. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -4457,11 +6499,9 @@ export type components = {
       customerContactId?: number | null
       /** Format: int32 */
       customerId?: number | null
-      /**
-       * @description NotSpecified = 0
-       * Phone = 1
-       * Email = 2
-       */
+      /** @description NotSpecified = 0
+       *     Phone = 1
+       *     Email = 2 */
       taskType?: components['schemas']['EventTaskType'] | null
       hasTime?: boolean | null
       /** Format: date-time */
@@ -4479,11 +6519,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -4639,15 +6677,33 @@ export type components = {
       /** Format: date-time */
       created?: string
     }
+    /**
+     * Format: int32
+     * @description
+     *
+     *     Kandidat = 0
+     *
+     *     Kund = 1
+     *
+     *     Uppdrag = 2
+     *
+     *     Underkonsult = 3
+     *
+     *     Medarbetare = 4
+     *
+     *     Partner = 6
+     *
+     *     Ej angiven = 7
+     * @enum {integer}
+     */
+    EventEntityType: 0 | 1 | 2 | 3 | 4 | 6 | 7
     EventMeetingAddEditModel: {
       /** Format: date-time */
       startDateTime?: string
       /** Format: date-time */
       endDateTime?: string
-      /**
-       * @description The desired timezone to be used for StartDateTime and EndDateTime properties. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for StartDateTime and EndDateTime properties. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -4661,10 +6717,8 @@ export type components = {
       noteType?: components['schemas']['EventNoteType'] | null
       /** Format: date-time */
       noteDate?: string | null
-      /**
-       * @description The desired timezone to be used for NoteDate property. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for NoteDate property. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -4678,11 +6732,11 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Ej angiven = 0
+     *     Ej angiven = 0
      *
-     * Telefonsamtal = 1
+     *     Telefonsamtal = 1
      *
-     * E-mail = 2
+     *     E-mail = 2
      * @enum {integer}
      */
     EventNoteType: 0 | 1 | 2
@@ -4690,15 +6744,47 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Inte påbörjad = 0
+     *     CreatedDateTime = 0
      *
-     * Påbörjad = 1
+     *     Identification = 1
      *
-     * Färdig = 2
+     *     Status = 2
      *
-     * Uppskjuten = 3
+     *     UpdatedDateTime = 3
      *
-     * Väntar = 4
+     *     LastTouchDateTime = 4
+     * @enum {integer}
+     */
+    EventQuerySort: 0 | 1 | 2 | 3 | 4
+    EventQuerySortPageAndSortByModel: {
+      sortBy?: components['schemas']['EventQuerySort']
+      /** @description Ascending = 0 (Default)
+       *     Descending = 1 */
+      sortOrder?: components['schemas']['SortOrder']
+      /**
+       * Format: int32
+       * @default 1
+       */
+      page: number
+      /**
+       * Format: int32
+       * @default 15
+       */
+      itemsPerPage: number
+    }
+    /**
+     * Format: int32
+     * @description
+     *
+     *     Inte påbörjad = 0
+     *
+     *     Påbörjad = 1
+     *
+     *     Färdig = 2
+     *
+     *     Uppskjuten = 3
+     *
+     *     Väntar = 4
      * @enum {integer}
      */
     EventStatusValue: 0 | 1 | 2 | 3 | 4
@@ -4707,10 +6793,8 @@ export type components = {
       hasTime?: boolean | null
       /** Format: date-time */
       dueDateTime?: string | null
-      /**
-       * @description The desired timezone to be used for DueDateTime property. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for DueDateTime property. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -4724,11 +6808,11 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Ej angiven = 0
+     *     Ej angiven = 0
      *
-     * Telefonsamtal = 1
+     *     Telefonsamtal = 1
      *
-     * E-mail = 2
+     *     E-mail = 2
      * @enum {integer}
      */
     EventTaskType: 0 | 1 | 2
@@ -4736,13 +6820,13 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Möte = 0
+     *     Möte = 0
      *
-     * Notering = 1
+     *     Notering = 1
      *
-     * Uppgift = 2
+     *     Uppgift = 2
      *
-     * Samtal = 3
+     *     Samtal = 3
      * @enum {integer}
      */
     EventType: 0 | 1 | 2 | 3
@@ -4750,9 +6834,9 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Publik = 0
+     *     Publik = 0
      *
-     * Privat = 1
+     *     Privat = 1
      * @enum {integer}
      */
     EventVisibility: 0 | 1
@@ -4760,9 +6844,9 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Procent = 0
+     *     Procent = 0
      *
-     * Timmar = 1
+     *     Timmar = 1
      * @enum {integer}
      */
     ExtentType: 0 | 1
@@ -4851,15 +6935,15 @@ export type components = {
       address?: components['schemas']['ICompanyAddressViewModel'] | null
     }
     IDynamicBlockViewModel: {
-      viewComponentName?: string | null
-      templateAssetTypes?: readonly components['schemas']['TemplateAssetType'][] | null
+      readonly viewComponentName?: string | null
+      readonly templateAssetTypes?: components['schemas']['TemplateAssetType'][] | null
       /** Format: int32 */
       companyUserResumeId?: number
       /** Format: int32 */
       companyUserId?: number
       isEditable?: boolean
       partialEditViewPath?: string | null
-      friendlyBlockName?: string | null
+      readonly friendlyBlockName?: string | null
       hasUpdatesInProfile?: boolean
       heading?: string | null
       /** Format: date-time */
@@ -4880,17 +6964,17 @@ export type components = {
       isUsingFreemiumResumes?: boolean
     }
     ITemplateLogotype: {
-      imageUrl?: string | null
-      imageOriginalUrl?: string | null
-      imageSize?: components['schemas']['ImageSize']
+      readonly imageUrl?: string | null
+      readonly imageOriginalUrl?: string | null
+      readonly imageSize?: components['schemas']['ImageSize']
       /** Format: uuid */
-      imageFileName?: string
-      extension?: string | null
+      readonly imageFileName?: string
+      readonly extension?: string | null
     }
     ITemplateProfileImage: {
       allowNoProfileImage?: boolean
       showImage?: boolean
-      useDefaultImage?: boolean
+      readonly useDefaultImage?: boolean
       /** Format: int32 */
       companyUserResumeId?: number
       /** Format: int32 */
@@ -4899,29 +6983,29 @@ export type components = {
       imageId?: number
       imageUrl?: string | null
       imageOriginalUrl?: string | null
-      imageSize?: components['schemas']['ImageSize']
+      readonly imageSize?: components['schemas']['ImageSize']
       /** Format: uuid */
-      imageFileName?: string
-      extension?: string | null
+      readonly imageFileName?: string
+      readonly extension?: string | null
     }
     ITemplateSharedAssetViewModel: {
-      description?: string | null
+      readonly description?: string | null
       /** Format: int32 */
-      order?: number
-      fileName?: string | null
-      version?: string | null
+      readonly order?: number
+      readonly fileName?: string | null
+      readonly version?: string | null
     }
     ITemplateStyleAssetViewModel: {
       /** Format: int32 */
-      companyId?: number
+      readonly companyId?: number
       /** Format: int32 */
-      resumeTemplateId?: number
+      readonly resumeTemplateId?: number
       /** Format: int32 */
-      id?: number
+      readonly id?: number
       /** Format: int32 */
-      order?: number
-      fileName?: string | null
-      version?: string | null
+      readonly order?: number
+      readonly fileName?: string | null
+      readonly version?: string | null
     }
     ITemplateUserInfo: {
       firstname?: string | null
@@ -4944,72 +7028,70 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Original = 0
+     *     Original = 0
      *
-     * H40W40 = 1
+     *     H40W40 = 1
      *
-     * H100W100 = 2
+     *     H100W100 = 2
      *
-     * H200W200 = 3
+     *     H200W200 = 3
      *
-     * H300W300 = 4
+     *     H300W300 = 4
      *
-     * W100 = 5
+     *     W100 = 5
      *
-     * H60 = 6
+     *     H60 = 6
      *
-     * H100 = 7
+     *     H100 = 7
      *
-     * H40 = 8
+     *     H40 = 8
      *
-     * W340 = 9
+     *     W340 = 9
      *
-     * W1800 = 10
+     *     W1800 = 10
      *
-     * H750W1800 = 11
+     *     H750W1800 = 11
      *
-     * H250 = 12
+     *     H250 = 12
      *
-     * H400W400 = 13
+     *     H400W400 = 13
      *
-     * W150 = 14
+     *     W150 = 14
      *
-     * W1200 = 15
+     *     W1200 = 15
      * @enum {integer}
      */
     ImageSize: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
     ImportProfileAsyncOperation: {
       profile?: components['schemas']['CompanyUserProfileBaseModel'] | null
       /** Format: int32 */
-      operationId?: number
-      status?: components['schemas']['LongRunningStatus']
-      errors?: readonly string[] | null
+      readonly operationId?: number
+      readonly status?: components['schemas']['LongRunningStatus']
+      readonly errors?: string[] | null
     }
     /** @description Array of patch operations to perform */
     JsonPatchDocument: components['schemas']['Operation'][]
     KeywordModel: {
       /** Format: int32 */
       id?: number | null
-      /**
-       * @description Uncategorized = 0,
-       * Industries = 1
-       * Roles = 2
-       * Tools = 3
-       * Techniques = 4
-       * MethodsProcesses = 5
-       * Platforms = 6
-       * Products = 7
-       * Certifications = 10
-       * Materials = 11
-       * SpecificationsRegulations = 12
-       * Hardware = 13
-       * OperationalAreaAndFunction = 14
-       * Construction = 15
-       * ReportsInvestigations = 16
-       * SpecialitiesMedicine = 17
-       * StandardsRegulations = 18
-       * Accreditation = 19
-       */
+      /** @description Uncategorized = 0,
+       *     Industries = 1
+       *     Roles = 2
+       *     Tools = 3
+       *     Techniques = 4
+       *     MethodsProcesses = 5
+       *     Platforms = 6
+       *     Products = 7
+       *     Certifications = 10
+       *     Materials = 11
+       *     SpecificationsRegulations = 12
+       *     Hardware = 13
+       *     OperationalAreaAndFunction = 14
+       *     Construction = 15
+       *     ReportsInvestigations = 16
+       *     SpecialitiesMedicine = 17
+       *     StandardsRegulations = 18
+       *     Accreditation = 19 */
       type?: components['schemas']['KeywordType']
       /** Format: int32 */
       masterSynonymId?: number | null
@@ -5034,45 +7116,45 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Okategoriserad = 0
+     *     Okategoriserad = 0
      *
-     * Branscher = 1
+     *     Branscher = 1
      *
-     * Roller = 2
+     *     Roller = 2
      *
-     * Verktyg = 3
+     *     Verktyg = 3
      *
-     * Tekniker = 4
+     *     Tekniker = 4
      *
-     * Metoder och processer = 5
+     *     Metoder och processer = 5
      *
-     * Plattformar = 6
+     *     Plattformar = 6
      *
-     * Produkter och tjänster = 7
+     *     Produkter och tjänster = 7
      *
-     * Certifieringar = 10
+     *     Certifieringar = 10
      *
-     * Material = 11
+     *     Material = 11
      *
-     * Specifikationer och förordningar = 12
+     *     Specifikationer och förordningar = 12
      *
-     * Hårdvara = 13
+     *     Hårdvara = 13
      *
-     * Verksamhet och funktion = 14
+     *     Verksamhet och funktion = 14
      *
-     * Byggnationer = 15
+     *     Byggnationer = 15
      *
-     * Rapporter och utredningar = 16
+     *     Rapporter och utredningar = 16
      *
-     * Specialiteter - Medicin = 17
+     *     Specialiteter - Medicin = 17
      *
-     * Standarder och regelverk = 18
+     *     Standarder och regelverk = 18
      *
-     * Behörigheter = 19
+     *     Behörigheter = 19
      *
-     * Mjuka färdigheter = 20
+     *     Mjuka färdigheter = 20
      *
-     * CustomName = 100
+     *     CustomName = 100
      * @enum {integer}
      */
     KeywordType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 100
@@ -5080,15 +7162,15 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Enstaka ord och fraser = 0
+     *     Enstaka ord och fraser = 0
      *
-     * Grundläggande kunskaper = 1
+     *     Grundläggande kunskaper = 1
      *
-     * Goda kunskaper = 2
+     *     Goda kunskaper = 2
      *
-     * Flytande = 3
+     *     Flytande = 3
      *
-     * Modersmål = 4
+     *     Modersmål = 4
      * @enum {integer}
      */
     LanguageLevel: 0 | 1 | 2 | 3 | 4
@@ -5118,11 +7200,11 @@ export type components = {
      * Format: int32
      * @description
      *
-     * InProgress = 0
+     *     InProgress = 0
      *
-     * Completed = 1
+     *     Completed = 1
      *
-     * Failed = 2
+     *     Failed = 2
      * @enum {integer}
      */
     LongRunningStatus: 0 | 1 | 2
@@ -5133,87 +7215,87 @@ export type components = {
      * Format: int32
      * @description
      *
-     * CompanyUserResume = 1
+     *     CompanyUserResume = 1
      *
-     * Customers = 2
+     *     Customers = 2
      *
-     * Assignments = 3
+     *     Assignments = 3
      *
-     * Partners = 4
+     *     Partners = 4
      *
-     * Offers = 5
+     *     Offers = 5
      *
-     * Reports = 6
+     *     Reports = 6
      *
-     * Recruitment = 8
+     *     Recruitment = 8
      *
-     * Absence = 9
+     *     Absence = 9
      *
-     * Api = 10
+     *     Api = 10
      *
-     * ReferenceText = 11
+     *     ReferenceText = 11
      *
-     * ProfileCompleteness = 12
+     *     ProfileCompleteness = 12
      *
-     * CalendarSync = 13
+     *     CalendarSync = 13
      *
-     * AllowDashboardModification = 14
+     *     AllowDashboardModification = 14
      *
-     * ConfiguredFilters = 19
+     *     ConfiguredFilters = 19
      *
-     * SkillSets = 20
+     *     SkillSets = 20
      *
-     * ProfileUpdateReminders = 21
+     *     ProfileUpdateReminders = 21
      *
-     * OverdueProjectReminders = 22
+     *     OverdueProjectReminders = 22
      *
-     * EmailSync = 23
+     *     EmailSync = 23
      *
-     * ContactsSync = 24
+     *     ContactsSync = 24
      *
-     * ApplicationRegistration = 30
+     *     ApplicationRegistration = 30
      *
-     * ApplicationDirectory = 31
+     *     ApplicationDirectory = 31
      *
-     * NextGenResume = 40
+     *     NextGenResume = 40
      *
-     * HideLinkToMvcProfilePageInSidebarAndRemoveEditAndCopyCVInoldViewAndTheBetaChips = 41
+     *     HideLinkToMvcProfilePageInSidebarAndRemoveEditAndCopyCVInoldViewAndTheBetaChips = 41
      *
-     * ImportCv = 42
+     *     ImportCv = 42
      *
-     * AI = 43
+     *     AI = 43
      *
-     * AITextGeneration = 44
+     *     AITextGeneration = 44
      *
-     * AISkillsExtractionForWE = 45
+     *     AISkillsExtractionForWE = 45
      *
-     * AISkillsGenerationForRoles = 46
+     *     AISkillsGenerationForRoles = 46
      *
-     * ProjectPlanning = 48
+     *     ProjectPlanning = 48
      *
-     * ExternalAccounts = 50
+     *     ExternalAccounts = 50
      *
-     * ConvertAccount = 51
+     *     ConvertAccount = 51
      *
-     * UserProvisioning = 52
+     *     UserProvisioning = 52
      *
-     * Webhooks = 60
+     *     Webhooks = 60
      *
-     * GrowthPlan = 70
+     *     GrowthPlan = 70
      *
-     * GUIShowcase = 80
+     *     GUIShowcase = 80
      *
-     * Appmixer = 90
+     *     Appmixer = 90
      *
-     * Mixpanel = 99
+     *     Mixpanel = 99
      *
-     * Intercom = 600
+     *     Intercom = 600
      * @enum {integer}
      */
     ModuleType: 1 | 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 19 | 20 | 21 | 22 | 23 | 24 | 30 | 31 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 48 | 50 | 51 | 52 | 60 | 70 | 80 | 90 | 99 | 600
     Operation: {
       op?: string
-      value?: Record<string, unknown> | null
+      value?: Record<string, never>
       path?: string
     }
     PartnerBaseModel: {
@@ -5246,19 +7328,19 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Anonymiserat = 10
+     *     Anonymiserat = 10
      *
-     * Transparent = 20
+     *     Transparent = 20
      *
-     * Avisera = 30
+     *     Avisera = 30
      *
-     * Boka = 40
+     *     Boka = 40
      *
-     * Matcha = 50
+     *     Matcha = 50
      *
-     * Tillgänglighet = 60
+     *     Tillgänglighet = 60
      *
-     * UserCv = 70
+     *     UserCv = 70
      * @enum {integer}
      */
     PartnerConnectionTrustType: 10 | 20 | 30 | 40 | 50 | 60 | 70
@@ -5283,9 +7365,9 @@ export type components = {
      * Format: int32
      * @description
      *
-     * WkHtmlToPdf = 0
+     *     WkHtmlToPdf = 0
      *
-     * Puppeteer = 2
+     *     Puppeteer = 2
      * @enum {integer}
      */
     PdfEngineType: 0 | 2
@@ -5293,9 +7375,9 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Portrait = 0
+     *     Portrait = 0
      *
-     * Landscape = 1
+     *     Landscape = 1
      * @enum {integer}
      */
     PdfOrientation: 0 | 1
@@ -5337,7 +7419,7 @@ export type components = {
       /** Format: int32 */
       stateReasonId?: number | null
       /** @default 5 */
-      priority?: components['schemas']['ProjectPriority']
+      priority: components['schemas']['ProjectPriority']
       /** @description List of sales managers employee ids */
       salesManagerIds?: number[] | null
       /** @description List of project managers employee ids */
@@ -5367,11 +7449,11 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Ej bokad = 0
+     *     Ej bokad = 0
      *
-     * Preliminär = 1
+     *     Preliminär = 1
      *
-     * Tillsatt = 2
+     *     Tillsatt = 2
      * @enum {integer}
      */
     ProjectAssignmentAllocationStatus: 0 | 1 | 2
@@ -5420,7 +7502,7 @@ export type components = {
       deadline?: string
       /** Format: double */
       price?: number | null
-      contractType?: components['schemas']['ContractType']
+      readonly contractType?: components['schemas']['ContractType']
       description?: string | null
       descriptionHtml?: string | null
       currencyCode?: string | null
@@ -5491,35 +7573,29 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Procent = 0
+     *     Procent = 0
      *
-     * Timmar = 1
+     *     Timmar = 1
      * @enum {integer}
      */
     ProjectAssignmentExtentType: 0 | 1
     ProjectAssignmentFilterModel: {
       /** @description Pipeline Ids can be retrieved from the Project Pipelines endpoint */
       pipelines?: number[] | null
-      /**
-       * @description 0 - Employee
-       * 1 - Partner consultant
-       * 2- Subcontractor
-       */
+      /** @description 0 - Employee
+       *     1 - Partner consultant
+       *     2- Subcontractor */
       projectAssignmentMemberTypes?: components['schemas']['ProjectAssignmentMemberType'][] | null
-      /**
-       * @description 1 - Upcoming
-       * 2 - Ongoing
-       */
+      /** @description 1 - Upcoming
+       *     2 - Ongoing */
       projectAssignmentStatuses?: components['schemas']['ProjectAssignmentStatus'][] | null
       /** @description Team Id of Employee assigned to Role */
       teams?: number[] | null
-      /**
-       * @description 0 - Open
-       * 30 - Won
-       * 40 - Lost
-       * 50 - Abandoned
-       * 60 - Suspended
-       */
+      /** @description 0 - Open
+       *     30 - Won
+       *     40 - Lost
+       *     50 - Abandoned
+       *     60 - Suspended */
       projectStates?: components['schemas']['ProjectState'][] | null
       projectAssignmentAllocationStatuses?: components['schemas']['ProjectAssignmentAllocationStatus'][] | null
     }
@@ -5527,13 +7603,13 @@ export type components = {
      * Format: int32
      * @description
      *
-     * None = 0
+     *     None = 0
      *
-     * Preliminär = 1
+     *     Preliminär = 1
      *
-     * Tillsatt = 2
+     *     Tillsatt = 2
      *
-     * Offererad = 3
+     *     Offererad = 3
      * @enum {integer}
      */
     ProjectAssignmentMemberAllocationStatus: 0 | 1 | 2 | 3
@@ -5576,19 +7652,19 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Tillagd = 0
+     *     Tillagd = 0
      *
-     * Offererad = 10
+     *     Offererad = 10
      *
-     * Intervju bokad = 12
+     *     Intervju bokad = 12
      *
-     * Intervju utförd = 13
+     *     Intervju utförd = 13
      *
-     * Avböjd av kund = 20
+     *     Avböjd av kund = 20
      *
-     * Avböjd av oss = 30
+     *     Avböjd av oss = 30
      *
-     * Pausad = 40
+     *     Pausad = 40
      * @enum {integer}
      */
     ProjectAssignmentMemberState: 0 | 10 | 12 | 13 | 20 | 30 | 40
@@ -5625,13 +7701,13 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Unspecified = 0
+     *     Unspecified = 0
      *
-     * Medarbetare = 1
+     *     Medarbetare = 1
      *
-     * Partnerkonsult = 2
+     *     Partnerkonsult = 2
      *
-     * Underkonsult = 3
+     *     Underkonsult = 3
      * @enum {integer}
      */
     ProjectAssignmentMemberType: 0 | 1 | 2 | 3
@@ -5650,7 +7726,7 @@ export type components = {
       /** Format: date-time */
       optionToDate?: string | null
       contractType?: components['schemas']['ContractType']
-      isAssigned?: boolean
+      readonly isAssigned?: boolean
       currency?: components['schemas']['CurrencyModel'] | null
       /** Format: int32 */
       companyId?: number
@@ -5679,11 +7755,11 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Öppen = 0
+     *     Öppen = 0
      *
-     * Återkallad = 10
+     *     Återkallad = 10
      *
-     * Stängd = 20
+     *     Stängd = 20
      * @enum {integer}
      */
     ProjectAssignmentRequestStatus: 0 | 10 | 20
@@ -5745,13 +7821,13 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Inga datum valda = 0
+     *     Inga datum valda = 0
      *
-     * Kommande = 1
+     *     Kommande = 1
      *
-     * Pågående = 2
+     *     Pågående = 2
      *
-     * Avslutat = 3
+     *     Avslutat = 3
      * @enum {integer}
      */
     ProjectAssignmentStatus: 0 | 1 | 2 | 3
@@ -5763,36 +7839,30 @@ export type components = {
       customerId?: number
       /** Format: int32 */
       projectId?: number
-      /**
-       * @description 0 - Open
-       * 30 - Won
-       * 40 - Lost
-       * 50 - Abandoned
-       * 60 - Suspended
-       */
+      /** @description 0 - Open
+       *     30 - Won
+       *     40 - Lost
+       *     50 - Abandoned
+       *     60 - Suspended */
       projectState?: components['schemas']['ProjectState']
       /** Format: int32 */
       probability?: number
       /**
        * Format: int32
        * @description Unspecified = 0,
-       * Coming = 1,
-       * Ongoing = 2,
-       * Ended = 3
+       *     Coming = 1,
+       *     Ongoing = 2,
+       *     Ended = 3
        */
       projectAssignmentId?: number
-      /**
-       * @description None = 0,
-       * Preliminary = 1,
-       * Assigned = 2,
-       */
+      /** @description None = 0,
+       *     Preliminary = 1,
+       *     Assigned = 2, */
       projectAssignmentAllocationStatus?: components['schemas']['ProjectAssignmentMemberAllocationStatus']
-      /**
-       * @description Unspecified = 0,
-       * Employee = 1,
-       * Partner Consultant = 2,
-       * Subcontractor = 3
-       */
+      /** @description Unspecified = 0,
+       *     Employee = 1,
+       *     Partner Consultant = 2,
+       *     Subcontractor = 3 */
       projectAssignmentMemberType?: components['schemas']['ProjectAssignmentMemberType']
       /** Format: date-time */
       startDate?: string | null
@@ -5804,10 +7874,8 @@ export type components = {
       oralAgreementToDate?: string | null
       /** Format: int32 */
       projectAssignmentExtent?: number
-      /**
-       * @description Percent = 0,
-       * Hours = 1,
-       */
+      /** @description Percent = 0,
+       *     Hours = 1, */
       projectAssignmentExtentType?: components['schemas']['ProjectAssignmentExtentType']
       /** Format: int32 */
       rate?: number | null
@@ -5851,11 +7919,9 @@ export type components = {
     ProjectEventBaseModel: {
       /** Format: int32 */
       projectId?: number | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -5876,10 +7942,8 @@ export type components = {
       startDateTime?: string
       /** Format: date-time */
       endDateTime?: string
-      /**
-       * @description The desired timezone to be used for StartDateTime and EndDateTime properties. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for StartDateTime and EndDateTime properties. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -5912,11 +7976,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -5943,11 +8005,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -5967,10 +8027,8 @@ export type components = {
       noteType?: components['schemas']['EventNoteType'] | null
       /** Format: date-time */
       noteDate?: string | null
-      /**
-       * @description The desired timezone to be used for NoteDate property. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for NoteDate property. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -6001,11 +8059,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -6026,10 +8082,8 @@ export type components = {
       hasTime?: boolean | null
       /** Format: date-time */
       dueDateTime?: string | null
-      /**
-       * @description The desired timezone to be used for DueDateTime property. Valid timezone ids can be found at https://nodatime.org/TimeZones
-       * If empty, the timezone of the executing user (API account) will be used.
-       */
+      /** @description The desired timezone to be used for DueDateTime property. Valid timezone ids can be found at https://nodatime.org/TimeZones
+       *     If empty, the timezone of the executing user (API account) will be used. */
       timezoneId?: string | null
       /** Format: int32 */
       assignedToCompanyUserId?: number | null
@@ -6044,11 +8098,9 @@ export type components = {
       customerId?: number
       /** Format: int32 */
       projectId?: number | null
-      /**
-       * @description NotSpecified = 0
-       * Phone = 1
-       * Email = 2
-       */
+      /** @description NotSpecified = 0
+       *     Phone = 1
+       *     Email = 2 */
       taskType?: components['schemas']['EventTaskType'] | null
       hasTime?: boolean | null
       /** Format: date-time */
@@ -6066,11 +8118,9 @@ export type components = {
       updated?: string | null
       visibility?: components['schemas']['EventVisibility']
       comments?: components['schemas']['EventCommentModel'][] | null
-      /**
-       * @description Meeting = 0
-       * Note = 1
-       * Task = 2
-       */
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
       type?: components['schemas']['EventType']
       /** Format: uuid */
       id?: string | null
@@ -6116,13 +8166,11 @@ export type components = {
       currentStageId?: number | null
       currency?: components['schemas']['CurrencyModel'] | null
       projectReferences?: components['schemas']['ProjectReferenceModel'][] | null
-      /**
-       * @description 0 = Open
-       * 30 = Won
-       * 40 = Lost
-       * 50 = Abandoned
-       * 60 = Suspended
-       */
+      /** @description 0 = Open
+       *     30 = Won
+       *     40 = Lost
+       *     50 = Abandoned
+       *     60 = Suspended */
       currentState?: components['schemas']['ProjectState']
       stateHistory?: components['schemas']['ProjectStateHistoryModel'][] | null
       createdBy?: components['schemas']['CompanyUserBaseModel'] | null
@@ -6173,11 +8221,11 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Låg = 3
+     *     Låg = 3
      *
-     * Medel = 5
+     *     Medel = 5
      *
-     * Hög = 8
+     *     Hög = 8
      * @enum {integer}
      */
     ProjectPriority: 3 | 5 | 8
@@ -6185,39 +8233,37 @@ export type components = {
      * Format: int32
      * @description
      *
-     * CreatedDateTime = 0
+     *     CreatedDateTime = 0
      *
-     * Title = 1
+     *     Title = 1
      *
-     * Identifier = 2
+     *     Identifier = 2
      *
-     * CustomerIdentifier = 3
+     *     CustomerIdentifier = 3
      *
-     * SeoId = 4
+     *     SeoId = 4
      *
-     * UpdatedDateTime = 5
+     *     UpdatedDateTime = 5
      *
-     * LastTouchDateTime = 6
+     *     LastTouchDateTime = 6
      * @enum {integer}
      */
     ProjectQuerySort: 0 | 1 | 2 | 3 | 4 | 5 | 6
     ProjectQuerySortPageAndSortByModel: {
       sortBy?: components['schemas']['ProjectQuerySort']
-      /**
-       * @description Ascending = 0 (Default)
-       * Descending = 1
-       */
+      /** @description Ascending = 0 (Default)
+       *     Descending = 1 */
       sortOrder?: components['schemas']['SortOrder']
       /**
        * Format: int32
        * @default 1
        */
-      page?: number
+      page: number
       /**
        * Format: int32
        * @default 15
        */
-      itemsPerPage?: number
+      itemsPerPage: number
     }
     ProjectReferenceModel: {
       /** Format: int32 */
@@ -6235,15 +8281,15 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Öppen = 0
+     *     Öppen = 0
      *
-     * Vunnen = 30
+     *     Vunnen = 30
      *
-     * Förlorad = 40
+     *     Förlorad = 40
      *
-     * Avböjd = 50
+     *     Avböjd = 50
      *
-     * Uppskjuten = 60
+     *     Uppskjuten = 60
      * @enum {integer}
      */
     ProjectState: 0 | 30 | 40 | 50 | 60
@@ -6277,9 +8323,9 @@ export type components = {
      * Format: int32
      * @description
      *
-     * AllResumesOfLanguage = 3
+     *     AllResumesOfLanguage = 3
      *
-     * Profile = 5
+     *     Profile = 5
      * @enum {integer}
      */
     SaveToApiOption: 3 | 5
@@ -6329,7 +8375,11 @@ export type components = {
       identificationOperator?: components['schemas']['StringComparisonOperator']
       corporateIdentityNumber?: string | null
       corporateIdentityNumberOperator?: components['schemas']['StringComparisonOperator']
+      noManager?: boolean | null
+      managers?: number[] | null
       lastTouchedAt?: components['schemas']['DateTimeFilterInterval'] | null
+      createdAt?: components['schemas']['DateTimeFilterInterval'] | null
+      updatedAt?: components['schemas']['DateTimeFilterInterval'] | null
       pageAndSortBy?: components['schemas']['CompanyCustomerQuerySortPageAndSortByModel'] | null
     }
     SearchCompanyCustomerResultModel: {
@@ -6353,6 +8403,113 @@ export type components = {
       /** Format: int32 */
       totalItems?: number
     }
+    SearchEventModel: {
+      assignedToUserFullName?: string | null
+      assignedToUserInitials?: string | null
+      assignedToUserShowAsDeleted?: boolean | null
+      /** Format: date-time */
+      eventDateNativeTimezone?: string
+      /** Format: date-time */
+      dueDateTimeNativeTimezone?: string | null
+      /** Format: date-time */
+      startDateTimeNativeTimezone?: string | null
+      /** Format: date-time */
+      endDateTimeNativeTimezone?: string | null
+      /** Format: date-time */
+      eventDateUtc?: string
+      /** Format: date-time */
+      dueDateTime?: string | null
+      /** Format: date-time */
+      dueDateTimeUtc?: string | null
+      eventEntityType?: components['schemas']['EventEntityType']
+      /** Format: int32 */
+      eventEntityId?: number
+      eventEntityName?: string | null
+      eventEntitySeoId?: string | null
+      secondaryEventEntityType?: components['schemas']['EventEntityType'] | null
+      /** Format: int32 */
+      secondaryEventEntityId?: number | null
+      secondaryEventEntityName?: string | null
+      secondaryEventEntitySeoId?: string | null
+      /** Format: int32 */
+      assignedToCompanyUserId?: number | null
+      /** Format: uuid */
+      assignedToImageFileName?: string | null
+      assignedToImageFileExtension?: string | null
+      assignedToSeoId?: string | null
+      assignedToUserFirstName?: string | null
+      assignedToUserLastName?: string | null
+      assignedToUserDeletionStatus?: components['schemas']['CompanyUserDeletionStatus'] | null
+      /** Format: int32 */
+      numberOfComments?: number
+      status?: components['schemas']['EventStatusValue']
+      /** Format: date-time */
+      startDateTime?: string | null
+      /** Format: date-time */
+      startDateTimeUtc?: string | null
+      /** Format: date-time */
+      endDateTime?: string | null
+      /** Format: date-time */
+      endDateTimeUtc?: string | null
+      eventType?: components['schemas']['EventType']
+      hasTime?: boolean | null
+      timezoneId?: string | null
+      externalId?: string | null
+      /** Format: uuid */
+      externalSyncAccountId?: string | null
+      /** Format: int32 */
+      externalSyncAccountCompanyUserId?: number | null
+      externalSyncAccountCompanyUserFullName?: string | null
+      noteType?: components['schemas']['EventNoteType'] | null
+      hasAttendees?: boolean | null
+      isOverdue?: boolean | null
+      /** Format: int32 */
+      createdByCompanyUserId?: number
+      /** Format: int32 */
+      updatedByCompanyUserId?: number | null
+      /** Format: date-time */
+      created?: string
+      /** Format: date-time */
+      updated?: string | null
+      visibility?: components['schemas']['EventVisibility']
+      comments?: components['schemas']['EventCommentModel'][] | null
+      /** @description Meeting = 0
+       *     Note = 1
+       *     Task = 2 */
+      type?: components['schemas']['EventType']
+      /** Format: uuid */
+      id?: string | null
+      /** Format: int32 */
+      companyId?: number | null
+      title?: string | null
+      description?: string | null
+      descriptionHtml?: string | null
+      descriptionDelta?: string | null
+      /** Format: date-time */
+      eventDate?: string
+      links?: components['schemas']['Link'][] | null
+    }
+    SearchEventQueryModel: {
+      eventStatuses?: components['schemas']['EventStatusValue'][] | null
+      entityTypes?: components['schemas']['EventEntityType'][] | null
+      eventTypes?: components['schemas']['EventType'][] | null
+      createdDate?: components['schemas']['DateTimeFilterInterval'] | null
+      eventDate?: components['schemas']['DateTimeFilterInterval'] | null
+      iAmResponsible?: boolean | null
+      noResponsible?: boolean | null
+      responsibles?: number[] | null
+      query?: string | null
+      timezoneId?: string | null
+      pageAndSortBy?: components['schemas']['EventQuerySortPageAndSortByModel'] | null
+    }
+    SearchEventResultModel: {
+      pagedAndSortedBy?: components['schemas']['EventQuerySortPageAndSortByModel'] | null
+      result?: components['schemas']['SearchEventModel'][] | null
+      /** Format: int32 */
+      hits?: number
+      /** Format: int32 */
+      totalItems?: number
+    }
     SearchProjectQueryModel: {
       title?: string | null
       identification?: string | null
@@ -6366,13 +8523,11 @@ export type components = {
       salesManagers?: number[] | null
       customers?: number[] | null
       intermediators?: number[] | null
-      /**
-       * @description Open = 0,
-       * Won = 30,
-       * Lost = 40,
-       * Abandoned = 50,
-       * Suspended = 60
-       */
+      /** @description Open = 0,
+       *     Won = 30,
+       *     Lost = 40,
+       *     Abandoned = 50,
+       *     Suspended = 60 */
       projectStates?: components['schemas']['ProjectState'][] | null
     }
     SearchProjectsResultModel: {
@@ -6423,7 +8578,7 @@ export type components = {
     /**
      * Format: int32
      * @description 0 - Ascending,
-     * 1 - Descending
+     *     1 - Descending
      * @enum {integer}
      */
     SortOrder: 0 | 1
@@ -6431,9 +8586,9 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Inaktiv = 0
+     *     Inaktiv = 0
      *
-     * Aktiv = 1
+     *     Aktiv = 1
      * @enum {integer}
      */
     Status: 0 | 1
@@ -6441,13 +8596,13 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Contains = 0
+     *     Contains = 0
      *
-     * StartsWith = 1
+     *     StartsWith = 1
      *
-     * EndsWith = 2
+     *     EndsWith = 2
      *
-     * Equals = 3
+     *     Equals = 3
      * @enum {integer}
      */
     StringComparisonOperator: 0 | 1 | 2 | 3
@@ -6535,25 +8690,25 @@ export type components = {
      * Format: int32
      * @description
      *
-     * None = 0
+     *     None = 0
      *
-     * Primary = 1
+     *     Primary = 1
      *
-     * Classic = 2
+     *     Classic = 2
      *
-     * Dynamic = 3
+     *     Dynamic = 3
      *
-     * PageFlow = 4
+     *     PageFlow = 4
      *
-     * BlockWorkExperience = 50
+     *     BlockWorkExperience = 50
      *
-     * BlockSkillsByLevel = 51
+     *     BlockSkillsByLevel = 51
      *
-     * CinodePremium3PageFlow = 70
+     *     CinodePremium3PageFlow = 70
      *
-     * CinodePremium2PageFlow = 71
+     *     CinodePremium2PageFlow = 71
      *
-     * TemplateType = 100
+     *     TemplateType = 100
      * @enum {integer}
      */
     TemplateAssetType: 0 | 1 | 2 | 3 | 4 | 50 | 51 | 70 | 71 | 100
@@ -6561,9 +8716,9 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Kurs = 0
+     *     Kurs = 0
      *
-     * Certifiering = 1
+     *     Certifiering = 1
      * @enum {integer}
      */
     TrainingType: 0 | 1
@@ -6579,18 +8734,18 @@ export type components = {
      * Format: int32
      * @description
      *
-     * Ej angiven = 0
+     *     Ej angiven = 0
      *
-     * Man = 1
+     *     Man = 1
      *
-     * Kvinna = 2
+     *     Kvinna = 2
      * @enum {integer}
      */
     UserGender: 0 | 1 | 2
     ValidationModel: {
       /** @description Collection of validation errors */
       errors?: {
-        [key: string]: string[] | null
+        [key: string]: (string[] | null) | undefined
       } | null
     }
     WebhookAddModel: {
@@ -6622,25 +8777,25 @@ export type components = {
      * Format: int32
      * @description
      *
-     * All = 1
+     *     All = 1
      *
-     * CompanyCandidate = 2
+     *     CompanyCandidate = 2
      *
-     * CompanyEmployee = 3
+     *     CompanyEmployee = 3
      *
-     * CompanySubcontractor = 4
+     *     CompanySubcontractor = 4
      *
-     * CompanyCustomer = 5
+     *     CompanyCustomer = 5
      *
-     * CompanyProject = 6
+     *     CompanyProject = 6
      *
-     * Role = 7
+     *     Role = 7
      *
-     * PublicAnnouncement = 8
+     *     PublicAnnouncement = 8
      *
-     * Absence = 9
+     *     Absence = 9
      *
-     * CompanyCustomerContact = 10
+     *     CompanyCustomerContact = 10
      * @enum {integer}
      */
     WebhookEntityType: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
@@ -6656,11 +8811,11 @@ export type components = {
      * Format: int32
      * @description
      *
-     * None = 0
+     *     None = 0
      *
-     * GroupDocs = 1
+     *     GroupDocs = 1
      *
-     * Aspose = 2
+     *     Aspose = 2
      * @enum {integer}
      */
     WordEngineType: 0 | 1 | 2
@@ -6671,15 +8826,12 @@ export type components = {
   headers: never
   pathItems: never
 }
-
 export type $defs = Record<string, never>
-
-export type external = Record<string, never>
-
-export type operations = {
-  /** Get absence period by id */
+export interface operations {
   Absence: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Your company id */
         companyId: number
@@ -6688,10 +8840,15 @@ export type operations = {
         /** @description The id for the requested absence period */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['AbsencePeriodModel']
           'application/json': components['schemas']['AbsencePeriodModel']
@@ -6702,6 +8859,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -6712,14 +8872,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -6730,9 +8899,10 @@ export type operations = {
       }
     }
   }
-  /** Update Absence Item for User */
   UpdateAbsence: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -6741,6 +8911,7 @@ export type operations = {
         /** @description Absence Id */
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileCommitmentAddEditModel */
     requestBody?: {
@@ -6754,6 +8925,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['AbsencePeriodModel']
           'application/json': components['schemas']['AbsencePeriodModel']
@@ -6764,6 +8938,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -6774,18 +8951,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -6796,9 +8985,10 @@ export type operations = {
       }
     }
   }
-  /** Delete absence */
   DeleteAbsence: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -6807,14 +8997,22 @@ export type operations = {
         /** @description Customer Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -6825,10 +9023,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -6839,19 +9043,25 @@ export type operations = {
       }
     }
   }
-  /** Get absence period by company user id */
   Absences: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Your Cinode Company id */
         companyId: number
         /** @description The id of the actual User */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['AbsencePeriodDtoModel'][]
           'application/json': components['schemas']['AbsencePeriodDtoModel'][]
@@ -6862,18 +9072,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -6884,15 +9106,17 @@ export type operations = {
       }
     }
   }
-  /** Create Absence Item for User */
   NewAbsence: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileCommitmentAddEditModel */
     requestBody?: {
@@ -6906,10 +9130,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['AbsencePeriodModel']
           'application/json': components['schemas']['AbsencePeriodModel']
@@ -6920,6 +9150,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -6930,18 +9163,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -6952,16 +9197,22 @@ export type operations = {
       }
     }
   }
-  /** Get absence types for company */
   AbsenceTypes: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['AbsenceTypeModel'][]
           'application/json': components['schemas']['AbsenceTypeModel'][]
@@ -6972,6 +9223,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -6982,14 +9236,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7000,13 +9263,15 @@ export type operations = {
       }
     }
   }
-  /** Get availability for company users. Omitting companyUserId gets availability for all company users in company. */
   SearchAvailability: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Your Cinode Company id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description Filter options */
     requestBody?: {
@@ -7020,6 +9285,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['AvailabilityModel'][]
           'application/json': components['schemas']['AvailabilityModel'][]
@@ -7030,18 +9298,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7052,17 +9332,23 @@ export type operations = {
       }
     }
   }
-  /** Get company by id */
   Company: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description CompanyId */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyModel']
           'application/json': components['schemas']['CompanyModel']
@@ -7073,6 +9359,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7083,14 +9372,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7101,19 +9399,25 @@ export type operations = {
       }
     }
   }
-  /** Get company users list for an address */
   CompanyAddressUsers: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Address Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserExtendedModel'][]
           'application/json': components['schemas']['CompanyUserExtendedModel'][]
@@ -7124,6 +9428,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7134,10 +9441,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7148,22 +9461,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Candidate by Id
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   Candidate: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Candidate Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateExtendedModel']
           'application/json': components['schemas']['CompanyCandidateExtendedModel']
@@ -7174,6 +9490,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7184,10 +9503,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7198,27 +9523,32 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete candidate from the system
-   * This action is irreversible, use with caution
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   DeleteCompanyCandidate: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Candidate Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7229,10 +9559,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7243,62 +9579,62 @@ export type operations = {
       }
     }
   }
-  /**
-   * Patch company candidate
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   PatchCompanyCandidate: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Candidate Id */
         id: number
       }
+      cookie?: never
     }
     /** @description Only certain properties on the user are patchable. See the generated example for a list of available properties, using the `op: "replace"` as example. See the generated schema for `ICompanyCandidatePatchDocument` for full type information per property */
     requestBody?: {
       content: {
-        /**
-         * @example [
-         *   {
-         *     "value": 0,
-         *     "path": "/pipelineid",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/pipelinestageid",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/recruitmentmanagerid",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/state",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "2024-06-17T11:05:23.903108+02:00",
-         *     "path": "/availablefromdate",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/campaigncode",
-         *     "op": "replace"
-         *   }
-         * ]
-         */
+        /** @example [
+         *       {
+         *         "value": 0,
+         *         "path": "/pipelineid",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/pipelinestageid",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/recruitmentmanagerid",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/state",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "2024-07-03T14:03:30.5400867+02:00",
+         *         "path": "/availablefromdate",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/campaigncode",
+         *         "op": "replace"
+         *       }
+         *     ] */
         'application/json-patch+json': components['schemas']['JsonPatchDocument']
       }
     }
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateExtendedModel']
           'application/json': components['schemas']['CompanyCandidateExtendedModel']
@@ -7309,6 +9645,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7319,10 +9658,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7333,20 +9678,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Candidates
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   Candidates: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateBaseModel'][]
           'application/json': components['schemas']['CompanyCandidateBaseModel'][]
@@ -7357,6 +9705,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7367,10 +9718,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7381,16 +9738,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Create Candidate
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   AddCompanyCandidate: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description CompanyCandidateAddModel */
     requestBody?: {
@@ -7404,10 +9760,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateExtendedModel']
           'application/json': components['schemas']['CompanyCandidateExtendedModel']
@@ -7418,6 +9780,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7428,10 +9793,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7442,19 +9813,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Invite the CompanyCandidate to create their own Cinode account
-   * A email is sent with your message and details for how to login
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   InviteCandidate: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Candidate Id */
         id: number
       }
+      cookie?: never
     }
     /** @description Model with data about the candidate needed for the invitation */
     requestBody?: {
@@ -7468,10 +9837,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7482,10 +9857,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7496,12 +9877,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company candidates event by id
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CompanyCandidateEvent: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -7510,10 +9889,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventModel']
           'application/json': components['schemas']['CompanyCandidateEventModel']
@@ -7524,6 +9908,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7534,14 +9921,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7552,12 +9948,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company candidates meeting event with specified id
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CompanyCandidateEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -7566,10 +9960,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventMeetingModel']
           'application/json': components['schemas']['CompanyCandidateEventMeetingModel']
@@ -7580,6 +9979,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7590,14 +9992,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7608,12 +10019,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update meeting event for company candidate
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   UpdateCompanyCandidateEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -7622,6 +10031,7 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
     /** @description Meeting Event details */
     requestBody?: {
@@ -7635,6 +10045,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventMeetingModel']
           'application/json': components['schemas']['CompanyCandidateEventMeetingModel']
@@ -7645,6 +10058,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7655,10 +10071,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7669,12 +10091,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete company candidate meeting event
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   DeleteCompanyCandidateEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -7683,14 +10103,22 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7701,10 +10129,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7715,22 +10149,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company candidates events meetings list
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CompanyCandidateMeetingEventList: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CandidateId Id */
         candidateId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventBaseModel'][]
           'application/json': components['schemas']['CompanyCandidateEventBaseModel'][]
@@ -7741,6 +10178,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7751,10 +10191,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7765,18 +10211,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add new meeting event for company candidate
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   NewCompanyCandidateEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CandidateId Id */
         candidateId: number
       }
+      cookie?: never
     }
     /** @description Meeting Event details */
     requestBody?: {
@@ -7790,10 +10235,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventMeetingModel']
           'application/json': components['schemas']['CompanyCandidateEventMeetingModel']
@@ -7804,6 +10255,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7814,10 +10268,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7828,12 +10288,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company candidates note event with specified id
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CompanyCandidateEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -7842,10 +10300,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventNoteModel']
           'application/json': components['schemas']['CompanyCandidateEventNoteModel']
@@ -7856,6 +10319,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7866,14 +10332,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7884,12 +10359,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update note event for company candidate
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   UpdateCompanyCandidateEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -7898,6 +10371,7 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
     /** @description Note Event details */
     requestBody?: {
@@ -7911,6 +10385,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventNoteModel']
           'application/json': components['schemas']['CompanyCandidateEventNoteModel']
@@ -7921,6 +10398,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7931,10 +10411,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7945,12 +10431,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete company candidate note event
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   DeleteCompanyCandidateEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -7959,14 +10443,22 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -7977,10 +10469,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -7991,22 +10489,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company candidates events notes list
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CompanyCandidateNoteEventList: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CandidateId Id */
         candidateId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventBaseModel'][]
           'application/json': components['schemas']['CompanyCandidateEventBaseModel'][]
@@ -8017,6 +10518,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8027,10 +10531,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8041,18 +10551,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add new note event for company candidate
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   NewCompanyCandidateEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CandidateId Id */
         candidateId: number
       }
+      cookie?: never
     }
     /** @description Note Event details */
     requestBody?: {
@@ -8066,10 +10575,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventNoteModel']
           'application/json': components['schemas']['CompanyCandidateEventNoteModel']
@@ -8080,6 +10595,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8090,10 +10608,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8104,22 +10628,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company candidates events list
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CompanyCandidateEvents: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CandidateId Id */
         candidateId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventBaseModel'][]
           'application/json': components['schemas']['CompanyCandidateEventBaseModel'][]
@@ -8130,6 +10657,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8140,10 +10670,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8154,12 +10690,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company candidates task event with specified id
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CompanyCandidateEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -8168,10 +10702,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventTaskModel']
           'application/json': components['schemas']['CompanyCandidateEventTaskModel']
@@ -8182,6 +10721,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8192,14 +10734,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8210,12 +10761,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update task event for company candidate
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   UpdateCompanyCandidateEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -8224,6 +10773,7 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
     /** @description Task Event details */
     requestBody?: {
@@ -8237,6 +10787,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventTaskModel']
           'application/json': components['schemas']['CompanyCandidateEventTaskModel']
@@ -8247,6 +10800,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8257,10 +10813,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8271,12 +10833,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete company candidate task event
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   DeleteCompanyCandidateEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -8285,14 +10845,22 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8303,10 +10871,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8317,22 +10891,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company candidates events tasks list
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CompanyCandidateTaskEventList: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CandidateId Id */
         candidateId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventBaseModel'][]
           'application/json': components['schemas']['CompanyCandidateEventBaseModel'][]
@@ -8343,6 +10920,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8353,10 +10933,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8367,18 +10953,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add new task event for company candidate
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   NewCompanyCandidateEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CandidateId Id */
         candidateId: number
       }
+      cookie?: never
     }
     /** @description Task Event details */
     requestBody?: {
@@ -8392,10 +10977,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateEventTaskModel']
           'application/json': components['schemas']['CompanyCandidateEventTaskModel']
@@ -8406,6 +10997,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8416,10 +11010,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8430,21 +11030,24 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Candidate File Attachment by Id
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   GetCandidateAttachment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         id: number
         companyId: number
         attachmentId: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': string
           'application/json': string
@@ -8455,18 +11058,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8477,18 +11092,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Upload Candidate File Attachment
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CandidateAttachment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Candidate Id */
         id: number
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     requestBody?: {
       content: {
@@ -8502,6 +11116,9 @@ export type operations = {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateFileAttachmentListModel']
           'application/json': components['schemas']['CompanyCandidateFileAttachmentListModel']
@@ -8512,6 +11129,9 @@ export type operations = {
       }
       /** @description Bad Request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8522,10 +11142,16 @@ export type operations = {
       }
       /** @description Unauthorized */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server Error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8536,20 +11162,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get candidate pipelines
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CandidatePipelines: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidatePipelineModel'][]
           'application/json': components['schemas']['CompanyCandidatePipelineModel'][]
@@ -8560,6 +11189,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8570,10 +11202,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8584,26 +11222,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add a Skill to company candidate
-   * @description Sample request:
-   *
-   *     POST /v0.1/companies/1/candidates/19870/skills
-   *     {
-   *         "name": "SQL",
-   *         "companyCandidateId": 19870,
-   *         "keywordSynonymId": 577,
-   *         "languageId":1
-   *     }
-   */
   NewCompanyCandidateSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CandidateId Id */
         candidateId: number
       }
+      cookie?: never
     }
     /** @description CompanyCandidateSkillAddEditModel */
     requestBody?: {
@@ -8617,6 +11246,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateSkillModel']
           'application/json': components['schemas']['CompanyCandidateSkillModel']
@@ -8627,6 +11259,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8637,18 +11272,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8659,14 +11306,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete Candidate Skill
-   * @description Sample request:
-   *
-   *     DELETE /v0.1/companies/1/candidates/19870/skills/577
-   */
   DeleteCompanyCandidateSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -8675,14 +11318,22 @@ export type operations = {
         /** @description Skill Keyword Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8693,10 +11344,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8707,18 +11364,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add Candidate Uri (Link)
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   CandidateUriAttachment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Candidate Id */
         id: number
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     requestBody?: {
       content: {
@@ -8731,6 +11387,9 @@ export type operations = {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateUriAttachmentModel']
           'application/json': components['schemas']['CompanyCandidateUriAttachmentModel']
@@ -8741,6 +11400,9 @@ export type operations = {
       }
       /** @description Bad Request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8751,10 +11413,16 @@ export type operations = {
       }
       /** @description Unauthorized */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server Error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8765,21 +11433,24 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Candidate Uri Attachment by Id
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   GetCandidateUriAttachment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         id: number
         companyId: number
         attachmentId: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCandidateUriAttachmentModel']
           'application/json': components['schemas']['CompanyCandidateUriAttachmentModel']
@@ -8790,18 +11461,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8812,12 +11495,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete Candidate Uri (Link)
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   DeleteCandidateUriAttachment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Candidate Id */
         id: number
@@ -8825,14 +11506,22 @@ export type operations = {
         companyId: number
         attachmentId: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description Success */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Bad Request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8843,10 +11532,16 @@ export type operations = {
       }
       /** @description Unauthorized */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server Error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8857,19 +11552,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Create an account for a candidate.
-   * No email is sent to the candidate, you will have to communicate login details to the candidate yourself.
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   AddCandidateUserFromCandidate: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Candidate Id */
         id: number
       }
+      cookie?: never
     }
     /** @description Basic account information */
     requestBody?: {
@@ -8883,6 +11576,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserCandidateModel']
           'application/json': components['schemas']['CompanyUserCandidateModel']
@@ -8893,6 +11589,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8903,10 +11602,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8917,17 +11622,23 @@ export type operations = {
       }
     }
   }
-  /** Get company capabilities */
   CompanyCapabilities: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description CompanyId */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCapabilitiesModel']
           'application/json': components['schemas']['CompanyCapabilitiesModel']
@@ -8938,6 +11649,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8948,14 +11662,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -8966,17 +11689,23 @@ export type operations = {
       }
     }
   }
-  /** Get company currencies */
   CompanyCurrencies: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CurrencyModel'][]
           'application/json': components['schemas']['CurrencyModel'][]
@@ -8987,6 +11716,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -8997,18 +11729,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9019,20 +11763,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company customer by id
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   GetCompanyCustomer: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         companyId: number
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerModel']
           'application/json': components['schemas']['CompanyCustomerModel']
@@ -9043,6 +11790,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9053,14 +11803,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9071,16 +11830,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update company customer
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   UpdateCompanyCustomer: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         id: number
         companyId: number
       }
+      cookie?: never
     }
     /** @description CompanyCustomerAddEditModel */
     requestBody?: {
@@ -9094,6 +11852,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerModel']
           'application/json': components['schemas']['CompanyCustomerModel']
@@ -9104,6 +11865,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9114,10 +11878,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9128,18 +11898,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete customer
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   DeleteCompanyCustomer: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Customer Id */
         id: number
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description CompanyCustomerDeleteModel */
     requestBody?: {
@@ -9153,10 +11922,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9167,10 +11942,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9181,107 +11962,107 @@ export type operations = {
       }
     }
   }
-  /**
-   * Patch company customer
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   PatchCompanyCustomer: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Customer Id */
         id: number
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description Patch of CompanyCustomerPatchModel */
     requestBody?: {
       content: {
-        /**
-         * @example [
-         *   {
-         *     "value": false,
-         *     "path": "/status",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/name",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/description",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/corporateidentitynumber",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/vatnumber",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/identification",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/email",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/homepage",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/phone",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/fax",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": false,
-         *     "path": "/intermediator",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/size",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/countryid",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/turnover",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/turnovercurrencyid",
-         *     "op": "replace"
-         *   }
-         * ]
-         */
+        /** @example [
+         *       {
+         *         "value": false,
+         *         "path": "/status",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/name",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/description",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/corporateidentitynumber",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/vatnumber",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/identification",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/email",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/homepage",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/phone",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/fax",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": false,
+         *         "path": "/intermediator",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/size",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/countryid",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/turnover",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/turnovercurrencyid",
+         *         "op": "replace"
+         *       }
+         *     ] */
         'application/json-patch+json': components['schemas']['JsonPatchDocument']
       }
     }
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerModel']
           'application/json': components['schemas']['CompanyCustomerModel']
@@ -9292,6 +12073,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9302,10 +12086,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9316,20 +12106,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company customers list
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CompanyCustomers: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerBaseModel'][]
           'application/json': components['schemas']['CompanyCustomerBaseModel'][]
@@ -9340,6 +12133,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9350,10 +12146,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9364,16 +12166,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add company customer
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   NewCompanyCustomer: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description CompanyCustomerAddModel */
     requestBody?: {
@@ -9387,6 +12188,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerModel']
           'application/json': components['schemas']['CompanyCustomerModel']
@@ -9397,6 +12201,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9407,10 +12214,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9421,12 +12234,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer address by id
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CustomerAddress: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -9435,10 +12246,15 @@ export type operations = {
         /** @description Address Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerAddressModel']
           'application/json': components['schemas']['CompanyCustomerAddressModel']
@@ -9449,6 +12265,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9459,14 +12278,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9477,12 +12305,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update customer address
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   EditCompanyCustomerAddress: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -9491,6 +12317,7 @@ export type operations = {
         /** @description Customer Address Id */
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyCustomerAddressAddEditModel */
     requestBody?: {
@@ -9504,6 +12331,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerAddressModel']
           'application/json': components['schemas']['CompanyCustomerAddressModel']
@@ -9514,6 +12344,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9524,10 +12357,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9538,12 +12377,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete customer address
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   DeleteCompanyCustomerAddress: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -9552,14 +12389,22 @@ export type operations = {
         /** @description Address Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9570,10 +12415,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9584,18 +12435,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add customer address
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   NewCompanyCustomerAddress: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
     /** @description CompanyCustomerAddressAddEditModel */
     requestBody?: {
@@ -9609,6 +12459,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerAddressModel']
           'application/json': components['schemas']['CompanyCustomerAddressModel']
@@ -9619,6 +12472,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9629,10 +12485,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9643,12 +12505,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer contact by id
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   Contact: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -9657,10 +12517,15 @@ export type operations = {
         /** @description Contact Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerContactModel']
           'application/json': components['schemas']['CompanyCustomerContactModel']
@@ -9671,6 +12536,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9681,14 +12549,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9699,12 +12576,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update customer contact
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   EditCompanyCustomerContact: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -9713,6 +12588,7 @@ export type operations = {
         /** @description Contact Id */
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyCustomerContactAddEditModel */
     requestBody?: {
@@ -9726,6 +12602,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerContactModel']
           'application/json': components['schemas']['CompanyCustomerContactModel']
@@ -9736,6 +12615,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9746,10 +12628,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9760,12 +12648,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete customer contact
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   DeleteCompanyCustomerContact: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -9774,14 +12660,22 @@ export type operations = {
         /** @description Contact Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9792,10 +12686,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9806,22 +12706,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer contact list
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   Contacts: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerContactModel'][]
           'application/json': components['schemas']['CompanyCustomerContactModel'][]
@@ -9832,6 +12735,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9842,10 +12748,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9856,18 +12768,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add customer contact
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   NewCompanyCustomerContact: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
     /** @description CompanyCustomerContactAddEditModel */
     requestBody?: {
@@ -9881,6 +12792,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerContactModel']
           'application/json': components['schemas']['CompanyCustomerContactModel']
@@ -9891,6 +12805,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9901,10 +12818,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -9915,29 +12838,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Edit Tags for CustomerContact
-   * @description Note:
-   *
-   *     Posted tags will replace any existing tags for the contact.
-   *     A new tag will be created if the Id for a tag is not provided.
-   *
-   * Sample request:
-   *
-   *     POST /v0.1/companies/1/customers/19870/contacts/5360/tags
-   *     [
-   *         {
-   *             "name": "tag-name",
-   *             "id": 2
-   *         },
-   *         {
-   *             "name": "tag-test",
-   *             "id": 1
-   *         },
-   *     ]
-   */
   EditCustomerContactTags: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -9946,6 +12850,7 @@ export type operations = {
         /** @description CustomerContact Id */
         contactId: number
       }
+      cookie?: never
     }
     /** @description CompanyTagModel */
     requestBody?: {
@@ -9959,6 +12864,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyTagModel'][]
           'application/json': components['schemas']['CompanyTagModel'][]
@@ -9969,6 +12877,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -9979,18 +12890,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10001,12 +12924,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer event by id
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CompanyCustomerEvent: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -10015,10 +12936,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventModel']
           'application/json': components['schemas']['CustomerEventModel']
@@ -10029,6 +12955,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10039,14 +12968,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10057,22 +12995,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer events list
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CompanyCustomerEvents: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventBaseModel'][]
           'application/json': components['schemas']['CustomerEventBaseModel'][]
@@ -10083,6 +13024,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10093,10 +13037,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10107,12 +13057,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer event meeting by id
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CompanyCustomerEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -10121,10 +13069,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventMeetingModel']
           'application/json': components['schemas']['CustomerEventMeetingModel']
@@ -10135,6 +13088,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10145,14 +13101,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10163,12 +13128,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update customer event meeting
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   UpdateMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -10177,6 +13140,7 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
     /** @description CustomerEventMeetingAddEditModel */
     requestBody?: {
@@ -10190,6 +13154,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventMeetingModel']
           'application/json': components['schemas']['CustomerEventMeetingModel']
@@ -10200,6 +13167,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10210,10 +13180,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10224,12 +13200,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete customer event meeting
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   DeleteMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -10238,14 +13212,22 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10256,10 +13238,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10270,22 +13258,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer event meetings list
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CompanyCustomerEventMeetings: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventBaseModel'][]
           'application/json': components['schemas']['CustomerEventBaseModel'][]
@@ -10296,6 +13287,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10306,10 +13300,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10320,18 +13320,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add customer event meeting
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   NewMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
     /** @description CustomerEventMeetingAddEditModel */
     requestBody?: {
@@ -10345,6 +13344,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventMeetingModel']
           'application/json': components['schemas']['CustomerEventMeetingModel']
@@ -10355,6 +13357,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10365,10 +13370,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10379,12 +13390,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer event note by id
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CompanyCustomerEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -10393,10 +13402,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventNoteModel']
           'application/json': components['schemas']['CustomerEventNoteModel']
@@ -10407,6 +13421,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10417,14 +13434,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10435,12 +13461,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update customer event note
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   UpdateNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -10449,6 +13473,7 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
     /** @description CustomerEventMeetingAddEditModel */
     requestBody?: {
@@ -10462,6 +13487,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventNoteModel']
           'application/json': components['schemas']['CustomerEventNoteModel']
@@ -10472,6 +13500,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10482,10 +13513,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10496,12 +13533,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete customer event note
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   DeleteNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -10510,14 +13545,22 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10528,10 +13571,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10542,22 +13591,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer event notes list
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CompanyCustomerEventNotes: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventBaseModel'][]
           'application/json': components['schemas']['CustomerEventBaseModel'][]
@@ -10568,6 +13620,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10578,10 +13633,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10592,18 +13653,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add customer event note
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   NewNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
     /** @description CustomerEventNoteAddEditModel */
     requestBody?: {
@@ -10617,6 +13677,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventNoteModel']
           'application/json': components['schemas']['CustomerEventNoteModel']
@@ -10627,6 +13690,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10637,10 +13703,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10651,12 +13723,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer event task by id
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CompanyCustomerEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -10665,10 +13735,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventTaskModel']
           'application/json': components['schemas']['CustomerEventTaskModel']
@@ -10679,6 +13754,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10689,14 +13767,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10707,12 +13794,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update customer event task
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   UpdateTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -10721,6 +13806,7 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
     /** @description CustomerEventTaskAddEditModel */
     requestBody?: {
@@ -10734,6 +13820,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventTaskModel']
           'application/json': components['schemas']['CustomerEventTaskModel']
@@ -10744,6 +13833,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10754,10 +13846,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10768,12 +13866,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete customer event task
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   DeleteTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -10782,14 +13878,22 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10800,10 +13904,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10814,22 +13924,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer event tasks list
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CompanyCustomerEventTasks: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventBaseModel'][]
           'application/json': components['schemas']['CustomerEventBaseModel'][]
@@ -10840,6 +13953,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10850,10 +13966,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10864,18 +13986,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add customer event task
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   NewTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
     /** @description CustomerEventTaskAddEditModel */
     requestBody?: {
@@ -10889,6 +14010,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventTaskModel']
           'application/json': components['schemas']['CustomerEventTaskModel']
@@ -10899,6 +14023,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -10909,10 +14036,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10923,21 +14056,24 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer file attachment by Id
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   GetCustomerAttachment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         id: number
         companyId: number
         attachmentId: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': string
           'application/json': string
@@ -10948,18 +14084,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -10970,22 +14118,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get customer managers (responsibles) for given customer
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CompanyCustomerManagers: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerManagerModel'][]
           'application/json': components['schemas']['CompanyCustomerManagerModel'][]
@@ -10996,6 +14147,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11006,18 +14160,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Not Found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11028,25 +14194,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add a person as customer manager (responsible) for given customer
-   * @description Sample request:
-   *
-   *     POST /v0.1/companies/1/customers/22228/managers
-   *     {
-   *         [
-   *            51096
-   *         ]
-   *     }
-   */
   AddCompanyCustomerResponsible: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
     /** @description CompanyCustomerManagersAddEditModel */
     requestBody?: {
@@ -11060,6 +14218,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerManagerModel'][]
           'application/json': components['schemas']['CompanyCustomerManagerModel'][]
@@ -11070,6 +14231,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11080,18 +14244,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Not Found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11102,15 +14278,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Remove a person as customer manager (responsible) for given customer.
-   * @description Note that the id property is the CompanyUserId of the manager (responsible) to remove.
-   * Sample request:
-   *
-   *     DELETE /v0.1/companies/1/customers/22228/managers/54632
-   */
   RemoveCustomerManager: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -11119,14 +14290,22 @@ export type operations = {
         /** @description CompanyUserId of the manager (responsible) to remove */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11137,10 +14316,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11151,20 +14336,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get extended company customers list
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   CustomersExtended: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerExtendedModel'][]
           'application/json': components['schemas']['CompanyCustomerExtendedModel'][]
@@ -11175,6 +14363,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11185,10 +14376,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11199,35 +14396,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Edit Tags for Customer
-   * @description Note:
-   *
-   *     Posted tags will replace any existing tags for the customer.
-   *     A new tag will be created if the Id for a tag is not provided.
-   *
-   * Sample request:
-   *
-   *     POST /v0.1/companies/1/customers/19870/tags
-   *     [
-   *         {
-   *             "name": "tag-name",
-   *             "id": 2
-   *         },
-   *         {
-   *             "name": "tag-test",
-   *             "id": 1
-   *         },
-   *     ]
-   */
   EditCustomerTags: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Customer Id */
         customerId: number
       }
+      cookie?: never
     }
     /** @description CompanyTagModel */
     requestBody?: {
@@ -11241,6 +14420,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyCustomerModel']
           'application/json': components['schemas']['CompanyCustomerModel']
@@ -11251,6 +14433,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11261,18 +14446,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11283,19 +14480,25 @@ export type operations = {
       }
     }
   }
-  /** Get Company Image by Id */
   CompanyImage: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Image id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyImageModel']
           'application/json': components['schemas']['CompanyImageModel']
@@ -11306,18 +14509,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11328,9 +14543,10 @@ export type operations = {
       }
     }
   }
-  /** Download Company Image */
   CompanyImageDownload: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -11339,10 +14555,15 @@ export type operations = {
         /** @description Image File Name */
         imageFileName: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': string
           'application/json': string
@@ -11353,18 +14574,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11375,19 +14608,25 @@ export type operations = {
       }
     }
   }
-  /** Get Company Images Assigned to User */
   CompanyImages: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyImageModel'][]
           'application/json': components['schemas']['CompanyImageModel'][]
@@ -11398,14 +14637,23 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11416,15 +14664,17 @@ export type operations = {
       }
     }
   }
-  /** Add Image to User */
   AddCompanyImage: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         id: number
       }
+      cookie?: never
     }
     requestBody?: {
       content: {
@@ -11438,6 +14688,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyImageModel']
           'application/json': components['schemas']['CompanyImageModel']
@@ -11448,6 +14701,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11458,10 +14714,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11472,22 +14734,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company managers
-   * @description Sample request:
-   *
-   *     GET /v0.1/companies/1/managers
-   */
   CompanyManagers: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserBaseModel'][]
           'application/json': components['schemas']['CompanyUserBaseModel'][]
@@ -11498,6 +14761,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11508,18 +14774,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11530,28 +14808,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get profiles list
-   * @description Sample request:
-   *
-   *     POST /v0.1/companies/1/profiles
-   *     {
-   *         "createdOffsetDays": 90,
-   *         "updatedOffsetDays": 30,
-   *         "pageAndSortBy": {
-   *             "page": 1,
-   *             "itemsPerPage": 15,
-   *             "order": 0,
-   *             "sortBy": 1
-   *         }
-   *     }
-   */
   CompanyProfiles: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description Company Profile Filter */
     requestBody?: {
@@ -11565,6 +14830,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyProfilesModel']
           'application/json': components['schemas']['CompanyProfilesModel']
@@ -11575,6 +14843,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11585,14 +14856,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11603,21 +14883,24 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Project file attachment by Id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   GetProjectAttachment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         id: number
         companyId: number
         attachmentId: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': string
           'application/json': string
@@ -11628,18 +14911,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11650,20 +14945,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get recruitment managers
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   RecruitmentManagers: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyRecruitmentManagerModel'][]
           'application/json': components['schemas']['CompanyRecruitmentManagerModel'][]
@@ -11674,6 +14972,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11684,10 +14985,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11698,20 +15005,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get resumes list
-   * @description Requires module: CompanyUserResume.
-   */
   CompanyResumes: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserResumeBaseModel'][]
           'application/json': components['schemas']['CompanyUserResumeBaseModel'][]
@@ -11722,6 +15032,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11732,10 +15045,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11746,22 +15065,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Subcontractor Group by Id
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   GetCompanySubcontractorGroup: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Subcontractor Group Id */
         subcontractorGroupId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanySubcontractorGroupModel']
           'application/json': components['schemas']['CompanySubcontractorGroupModel']
@@ -11772,6 +15094,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11782,14 +15107,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11800,18 +15134,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add subcontractor group member
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   AddCompanySubcontractorGroupMember: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Subcontractor Group Id */
         subcontractorGroupId: number
       }
+      cookie?: never
     }
     /** @description AddCompanySubcontractorGroupMemberModel */
     requestBody?: {
@@ -11825,10 +15158,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       204: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11839,10 +15178,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11853,12 +15198,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete subcontractor group member
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   DeleteCompanySubcontractorGroupMember: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -11867,14 +15210,22 @@ export type operations = {
         /** @description Subcontractor Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       204: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11885,10 +15236,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11899,20 +15256,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Subcontractor Groups by Company Id
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   GetCompanySubcontractorGroups: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanySubcontractorGroupModel'][]
           'application/json': components['schemas']['CompanySubcontractorGroupModel'][]
@@ -11923,6 +15283,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11933,14 +15296,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -11951,24 +15323,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company tag by Id
-   * @description Sample request:
-   *
-   *     GET /v0.1/companies/1/tags/1
-   */
   CompanyTag: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Tag Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description Success */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyTagModel']
           'application/json': components['schemas']['CompanyTagModel']
@@ -11979,10 +15352,16 @@ export type operations = {
       }
       /** @description All went well */
       201: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -11993,18 +15372,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Not Found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12015,22 +15406,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company tags
-   * @description Sample request:
-   *
-   *     GET /v0.1/companies/1/tags
-   */
   CompanyTags: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyTagBaseModel'][]
           'application/json': components['schemas']['CompanyTagBaseModel'][]
@@ -12041,6 +15433,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12051,18 +15446,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12073,19 +15480,25 @@ export type operations = {
       }
     }
   }
-  /** Get team by id */
   Team: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Event Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamModel']
           'application/json': components['schemas']['TeamModel']
@@ -12096,6 +15509,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12106,14 +15522,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12124,18 +15549,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update team
-   * @description Requires access level: CompanyAdmin.
-   */
   UpdateTeam: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Team Id */
         id: number
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description TeamAddEditModel */
     requestBody?: {
@@ -12149,6 +15573,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamModel']
           'application/json': components['schemas']['TeamModel']
@@ -12159,6 +15586,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12169,10 +15599,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12183,17 +15619,23 @@ export type operations = {
       }
     }
   }
-  /** Get teams list */
   CompanyTeams: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamBaseModel'][]
           'application/json': components['schemas']['TeamBaseModel'][]
@@ -12204,6 +15646,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12214,14 +15659,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Not Found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12232,16 +15686,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add team
-   * @description Requires access level: CompanyAdmin.
-   */
   NewTeam: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description TeamAddEditModel */
     requestBody?: {
@@ -12255,6 +15708,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamModel']
           'application/json': components['schemas']['TeamModel']
@@ -12265,6 +15721,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12275,10 +15734,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12289,19 +15754,25 @@ export type operations = {
       }
     }
   }
-  /** Get team managers */
   TeamManagers: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Team Id */
         teamId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserExtendedModel'][]
           'application/json': components['schemas']['CompanyUserExtendedModel'][]
@@ -12312,6 +15783,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12322,10 +15796,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12336,23 +15816,16 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add team manager
-   * @description Sample request:
-   *
-   *     POST /v0.1/companies/1/teams/1234/managers
-   *     {
-   *         "teamId" : 1234,
-   *         "companyUserId" : 54632
-   *     }
-   */
   AddTeamManager: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         teamId: string
       }
+      cookie?: never
     }
     /** @description TeamMemberEditModel */
     requestBody?: {
@@ -12366,6 +15839,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamManagerModel'][]
           'application/json': components['schemas']['TeamManagerModel'][]
@@ -12376,6 +15852,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12386,10 +15865,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12400,14 +15885,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Remove team manager
-   * @description Sample request:
-   *
-   *     DELETE /v0.1/companies/1/teams/1234/managers/54632
-   */
   RemoveTeamManager: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -12416,14 +15897,22 @@ export type operations = {
         /** @description User Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12434,10 +15923,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12448,9 +15943,10 @@ export type operations = {
       }
     }
   }
-  /** Get team member */
   GetTeamMember: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -12459,10 +15955,15 @@ export type operations = {
         /** @description User id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamMemberModel']
           'application/json': components['schemas']['TeamMemberModel']
@@ -12473,6 +15974,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12483,14 +15987,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12501,12 +16014,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update team member
-   * @description Requires access level: CompanyAdmin.
-   */
   UpdateTeamMember: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -12515,6 +16026,7 @@ export type operations = {
         /** @description User id */
         id: number
       }
+      cookie?: never
     }
     /** @description TeamMemberEditModel */
     requestBody?: {
@@ -12528,6 +16040,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamMemberModel']
           'application/json': components['schemas']['TeamMemberModel']
@@ -12538,6 +16053,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12548,10 +16066,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12562,12 +16086,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Remove team member
-   * @description Requires access level: CompanyAdmin.
-   */
   RemoveTeamMember: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -12576,14 +16098,22 @@ export type operations = {
         /** @description User Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12594,10 +16124,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12608,19 +16144,25 @@ export type operations = {
       }
     }
   }
-  /** Get team members */
   GetTeamMembers: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Team Id */
         teamId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamMemberModel'][]
           'application/json': components['schemas']['TeamMemberModel'][]
@@ -12631,6 +16173,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12641,10 +16186,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12655,18 +16206,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add team member
-   * @description Requires access level: CompanyAdmin.
-   */
   AddTeamMember: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Team Id */
         teamId: number
       }
+      cookie?: never
     }
     /** @description TeamMemberAddModel */
     requestBody?: {
@@ -12680,6 +16230,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamMemberModel']
           'application/json': components['schemas']['TeamMemberModel']
@@ -12690,6 +16243,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12700,10 +16256,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12714,12 +16276,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Move team member and associated bookings to another team
-   * @description Requires access level: CompanyAdmin.
-   */
   MoveTeamMember: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -12728,6 +16288,7 @@ export type operations = {
         /** @description User id */
         id: number
       }
+      cookie?: never
     }
     /** @description TeamMemberMoveModel */
     requestBody?: {
@@ -12741,14 +16302,23 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description No Content */
       204: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12759,10 +16329,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12773,22 +16349,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get team members
-   * @deprecated
-   */
   GetTeamUsers: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Team Id */
         teamId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserExtendedModel'][]
           'application/json': components['schemas']['CompanyUserExtendedModel'][]
@@ -12799,6 +16378,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12809,10 +16391,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12823,19 +16411,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add team member
-   * @deprecated
-   * @description Requires access level: CompanyAdmin.
-   */
   AddTeamUser: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Team Id */
         teamId: number
       }
+      cookie?: never
     }
     /** @description TeamMemberAddModel */
     requestBody?: {
@@ -12849,6 +16435,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamMemberModel'][]
           'application/json': components['schemas']['TeamMemberModel'][]
@@ -12859,6 +16448,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12869,10 +16461,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12883,13 +16481,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Remove team member
-   * @deprecated
-   * @description Requires access level: CompanyAdmin.
-   */
   RemoveTeamUser: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -12898,10 +16493,15 @@ export type operations = {
         /** @description User Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserExtendedModel'][]
           'application/json': components['schemas']['CompanyUserExtendedModel'][]
@@ -12912,6 +16512,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12922,10 +16525,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12936,19 +16545,25 @@ export type operations = {
       }
     }
   }
-  /** Get company user by id */
   User: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserModel']
           'application/json': components['schemas']['CompanyUserModel']
@@ -12959,6 +16574,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -12969,14 +16587,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -12987,18 +16614,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update company user
-   * @description Requires access level: CompanyAdmin.
-   */
   UpdateCompanyUser: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyUserEditModel */
     requestBody?: {
@@ -13012,6 +16638,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserFullModel']
           'application/json': components['schemas']['CompanyUserFullModel']
@@ -13022,6 +16651,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13032,10 +16664,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13046,12 +16684,6 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete user from the system
-   * Firstly, the user has to be disconnected, which can be done through a PATCH or PUT
-   * This action is irreversible, use with caution
-   * @description Requires access level: CompanyAdmin.
-   */
   DeleteCompanyUser: {
     parameters: {
       query?: {
@@ -13060,20 +16692,29 @@ export type operations = {
         /** @description CompanyUser LastName */
         lastName?: string
       }
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13084,10 +16725,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13098,192 +16745,192 @@ export type operations = {
       }
     }
   }
-  /**
-   * Patch company user
-   * @description Requires access level: CompanyAdmin.
-   */
   PatchCompanyUser: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         id: number
       }
+      cookie?: never
     }
     /** @description Only certain properties on the user are patchable. See the generated example for a list of available properties, using the `op: "replace"` as example. See the generated schema for `ICompanyUserEmployeePatchDocument` for full type information per property */
     requestBody?: {
       content: {
-        /**
-         * @example [
-         *   {
-         *     "value": 0,
-         *     "path": "/status",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "2024-06-17T11:05:24.2154322+02:00",
-         *     "path": "/employmentstartdate",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "2024-06-17T11:05:24.2154352+02:00",
-         *     "path": "/employmentenddate",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/employmentnumber",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/invoicinggoal",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/mobility",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/availabilitypercent",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "2024-06-17T11:05:24.2154386+02:00",
-         *     "path": "/availablefromdate",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/title",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/email",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/taxtable",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/basesalary",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/provision",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/hourlytargetrate",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/selfcost",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/locationid",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/defaultcurrencyid",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/displaycurrencyid",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/firstname",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/lastname",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "2024-06-17T11:05:24.2154465+02:00",
-         *     "path": "/dateofbirth",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/gender",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": 0,
-         *     "path": "/companycalendarid",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/timezoneid",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/phone",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/desiredassignment",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/internalidentifier",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/twitter",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/linkedin",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/homepage",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/blog",
-         *     "op": "replace"
-         *   },
-         *   {
-         *     "value": "string",
-         *     "path": "/github",
-         *     "op": "replace"
-         *   }
-         * ]
-         */
+        /** @example [
+         *       {
+         *         "value": 0,
+         *         "path": "/status",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "2024-07-03T14:03:30.8370049+02:00",
+         *         "path": "/employmentstartdate",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "2024-07-03T14:03:30.8370091+02:00",
+         *         "path": "/employmentenddate",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/employmentnumber",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/invoicinggoal",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/mobility",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/availabilitypercent",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "2024-07-03T14:03:30.8370133+02:00",
+         *         "path": "/availablefromdate",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/title",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/email",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/taxtable",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/basesalary",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/provision",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/hourlytargetrate",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/selfcost",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/locationid",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/defaultcurrencyid",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/displaycurrencyid",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/firstname",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/lastname",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "2024-07-03T14:03:30.8370194+02:00",
+         *         "path": "/dateofbirth",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/gender",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": 0,
+         *         "path": "/companycalendarid",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/timezoneid",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/phone",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/desiredassignment",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/internalidentifier",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/twitter",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/linkedin",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/homepage",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/blog",
+         *         "op": "replace"
+         *       },
+         *       {
+         *         "value": "string",
+         *         "path": "/github",
+         *         "op": "replace"
+         *       }
+         *     ] */
         'application/json-patch+json': components['schemas']['JsonPatchDocument']
       }
     }
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserFullModel']
           'application/json': components['schemas']['CompanyUserFullModel']
@@ -13294,6 +16941,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13304,10 +16954,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13318,17 +16974,23 @@ export type operations = {
       }
     }
   }
-  /** Get company users list */
   CompanyUsers: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserExtendedModel'][]
           'application/json': components['schemas']['CompanyUserExtendedModel'][]
@@ -13339,6 +17001,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13349,10 +17014,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13363,16 +17034,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add company user employee
-   * @description Requires access level: CompanyAdmin.
-   */
   AddCompanyUser: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserAddModel */
     requestBody?: {
@@ -13386,6 +17056,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserFullModel']
           'application/json': components['schemas']['CompanyUserFullModel']
@@ -13396,6 +17069,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13406,10 +17082,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13420,17 +17102,16 @@ export type operations = {
       }
     }
   }
-  /**
-   * Convert company user employee to an AAD account
-   * @description Requires access level: CompanyAdmin.
-   */
   ConvertUserToAadAccount: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company User Id */
         companyUserId: number
         companyId: string
       }
+      cookie?: never
     }
     /** @description ConvertCompanyUserToAadAccountModel */
     requestBody?: {
@@ -13444,10 +17125,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13458,10 +17145,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13472,12 +17165,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get employee event
-   * @description Requires access level: CompanyManager.
-   */
   CompanyUserEmployeeEvent: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -13486,10 +17177,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventModel']
           'application/json': components['schemas']['CompanyUserEventModel']
@@ -13500,6 +17196,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13510,14 +17209,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13528,12 +17236,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get employee meeting event
-   * @description Requires access level: CompanyManager.
-   */
   CompanyUserEmployeeEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -13542,10 +17248,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventMeetingModel']
           'application/json': components['schemas']['CompanyUserEventMeetingModel']
@@ -13556,6 +17267,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13566,14 +17280,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13584,12 +17307,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Updates employee meeting event
-   * @description Requires access level: CompanyManager.
-   */
   UpdateCompanyUserEmployeeEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -13598,6 +17319,7 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
     /** @description Meeting event details */
     requestBody?: {
@@ -13611,6 +17333,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventMeetingModel']
           'application/json': components['schemas']['CompanyUserEventMeetingModel']
@@ -13621,6 +17346,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13631,10 +17359,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13645,12 +17379,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Deletes meeting event
-   * @description Requires access level: CompanyManager.
-   */
   DeleteCompanyUserEmployeeEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -13659,14 +17391,22 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13677,10 +17417,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13691,22 +17437,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get employee meetings events list
-   * @description Requires access level: CompanyManager.
-   */
   CompanyUserEmployeeEventMeetingList: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventBaseModel'][]
           'application/json': components['schemas']['CompanyUserEventBaseModel'][]
@@ -13717,6 +17466,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13727,10 +17479,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13741,18 +17499,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Creates new employee meeting event
-   * @description Requires access level: CompanyManager.
-   */
   NewCompanyUserEmployeeEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description Meeting event details */
     requestBody?: {
@@ -13766,10 +17523,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventMeetingModel']
           'application/json': components['schemas']['CompanyUserEventMeetingModel']
@@ -13780,6 +17543,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13790,10 +17556,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13804,12 +17576,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get employee note event
-   * @description Requires access level: CompanyManager.
-   */
   CompanyUserEmployeeEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -13818,10 +17588,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventNoteModel']
           'application/json': components['schemas']['CompanyUserEventNoteModel']
@@ -13832,6 +17607,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13842,14 +17620,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13860,12 +17647,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Updates employee note event
-   * @description Requires access level: CompanyManager.
-   */
   UpdateCompanyUserEmployeeEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -13874,6 +17659,7 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
     /** @description Note event details */
     requestBody?: {
@@ -13887,6 +17673,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventNoteModel']
           'application/json': components['schemas']['CompanyUserEventNoteModel']
@@ -13897,6 +17686,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13907,10 +17699,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13921,12 +17719,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Deletes meeting event
-   * @description Requires access level: CompanyManager.
-   */
   DeleteCompanyUserEmployeeEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -13935,14 +17731,22 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -13953,10 +17757,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -13967,22 +17777,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get employee notes events list
-   * @description Requires access level: CompanyManager.
-   */
   CompanyUserEmployeeEventNoteList: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventBaseModel'][]
           'application/json': components['schemas']['CompanyUserEventBaseModel'][]
@@ -13993,6 +17806,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14003,10 +17819,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14017,18 +17839,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Creates new employee note event
-   * @description Requires access level: CompanyManager.
-   */
   NewCompanyUserEmployeeEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description Note event details */
     requestBody?: {
@@ -14042,10 +17863,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventNoteModel']
           'application/json': components['schemas']['CompanyUserEventNoteModel']
@@ -14056,6 +17883,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14066,10 +17896,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14080,22 +17916,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get employee events list
-   * @description Requires access level: CompanyManager.
-   */
   CompanyUserEmployeeEvents: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventBaseModel'][]
           'application/json': components['schemas']['CompanyUserEventBaseModel'][]
@@ -14106,6 +17945,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14116,14 +17958,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14134,22 +17985,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get employee tasks events list
-   * @description Requires access level: CompanyManager.
-   */
   CompanyUserEmployeeEventTaskList: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventBaseModel'][]
           'application/json': components['schemas']['CompanyUserEventBaseModel'][]
@@ -14160,6 +18014,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14170,10 +18027,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14184,18 +18047,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Creates new employee task event
-   * @description Requires access level: CompanyManager.
-   */
   NewCompanyUserEmployeeEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description Task event details */
     requestBody?: {
@@ -14209,10 +18071,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventTaskModel']
           'application/json': components['schemas']['CompanyUserEventTaskModel']
@@ -14223,6 +18091,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14233,10 +18104,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14247,12 +18124,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get employee task event
-   * @description Requires access level: CompanyManager.
-   */
   CompanyUserEmployeeEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -14261,10 +18136,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventTaskModel']
           'application/json': components['schemas']['CompanyUserEventTaskModel']
@@ -14275,6 +18155,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14285,14 +18168,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14303,12 +18195,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Updates employee's task event
-   * @description Requires access level: CompanyManager.
-   */
   UpdateCompanyUserEmployeeEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -14317,6 +18207,7 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
     /** @description Task event details */
     requestBody?: {
@@ -14330,6 +18221,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventTaskModel']
           'application/json': components['schemas']['CompanyUserEventTaskModel']
@@ -14340,6 +18234,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14350,10 +18247,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14364,12 +18267,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Deletes meeting event
-   * @description Requires access level: CompanyManager.
-   */
   DeleteCompanyUserEmployeeEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -14378,14 +18279,22 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14396,10 +18305,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14410,22 +18325,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company user, including financial fields, by id
-   * @description Requires access level: CompanyAdmin.
-   */
   UserFull: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserFullModel']
           'application/json': components['schemas']['CompanyUserFullModel']
@@ -14436,6 +18354,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14446,14 +18367,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14464,18 +18394,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update Permissions for Company User
-   * @description Requires access level: CompanyAdmin.
-   */
   UpdatePermissions: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserPermissionsEditModel */
     requestBody?: {
@@ -14489,6 +18418,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['RoleModel'][]
           'application/json': components['schemas']['RoleModel'][]
@@ -14499,6 +18431,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14509,10 +18444,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14523,19 +18464,25 @@ export type operations = {
       }
     }
   }
-  /** Get profile by company user id */
   CompanyUserProfile: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileFullModel']
           'application/json': components['schemas']['CompanyUserProfileFullModel']
@@ -14546,6 +18493,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14556,18 +18506,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14578,15 +18540,17 @@ export type operations = {
       }
     }
   }
-  /** Create Profile for user */
   NewCompanyUserProfile: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileCommitmentAddEditModel */
     requestBody?: {
@@ -14600,10 +18564,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileBaseModel']
           'application/json': components['schemas']['CompanyUserProfileBaseModel']
@@ -14614,6 +18584,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14624,18 +18597,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14646,9 +18631,10 @@ export type operations = {
       }
     }
   }
-  /** Get profile commitment by id */
   CompanyUserProfileCommitment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -14657,10 +18643,15 @@ export type operations = {
         /** @description ProfileCommitment Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileCommitmentModel']
           'application/json': components['schemas']['CompanyUserProfileCommitmentModel']
@@ -14671,6 +18662,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14681,18 +18675,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14703,9 +18709,10 @@ export type operations = {
       }
     }
   }
-  /** Update Profile Commitment */
   UpdateCompanyUserProfileCommitment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Profile Item Id */
         id: number
@@ -14714,6 +18721,7 @@ export type operations = {
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileCommitmentAddEditModel */
     requestBody?: {
@@ -14727,6 +18735,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileCommitmentModel']
           'application/json': components['schemas']['CompanyUserProfileCommitmentModel']
@@ -14737,6 +18748,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14747,18 +18761,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14769,9 +18795,10 @@ export type operations = {
       }
     }
   }
-  /** Delete Commitment */
   DeleteCompanyUserProfileCommitment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Profile Item Id */
         id: number
@@ -14780,14 +18807,22 @@ export type operations = {
         /** @description Company User Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14798,10 +18833,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14812,15 +18853,17 @@ export type operations = {
       }
     }
   }
-  /** Create Profile Commitment */
   NewCompanyUserProfileCommitment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileCommitmentAddEditModel */
     requestBody?: {
@@ -14834,10 +18877,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileCommitmentModel']
           'application/json': components['schemas']['CompanyUserProfileCommitmentModel']
@@ -14848,6 +18897,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14858,18 +18910,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14880,9 +18944,10 @@ export type operations = {
       }
     }
   }
-  /** Get profile education by id */
   CompanyUserProfileEducation: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -14891,10 +18956,15 @@ export type operations = {
         /** @description ProfileEducation Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileEducationModel']
           'application/json': components['schemas']['CompanyUserProfileEducationModel']
@@ -14905,6 +18975,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14915,18 +18988,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -14937,9 +19022,10 @@ export type operations = {
       }
     }
   }
-  /** Update Profile Education */
   UpdateCompanyUserProfileEducation: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -14947,6 +19033,7 @@ export type operations = {
         companyUserId: number
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileEducationAddEditModel */
     requestBody?: {
@@ -14960,6 +19047,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileEducationModel']
           'application/json': components['schemas']['CompanyUserProfileEducationModel']
@@ -14970,6 +19060,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -14980,18 +19073,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15002,9 +19107,10 @@ export type operations = {
       }
     }
   }
-  /** Delete Profile Education */
   DeleteCompanyUserProfileEducation: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Profile Item Id */
         id: number
@@ -15013,14 +19119,22 @@ export type operations = {
         /** @description Company User Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15031,10 +19145,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15045,15 +19165,17 @@ export type operations = {
       }
     }
   }
-  /** Create Profile Education */
   NewCompanyUserProfileEducation: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileEducationAddEditModel */
     requestBody?: {
@@ -15067,10 +19189,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileEducationModel']
           'application/json': components['schemas']['CompanyUserProfileEducationModel']
@@ -15081,6 +19209,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15091,18 +19222,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15113,9 +19256,10 @@ export type operations = {
       }
     }
   }
-  /** Get profile employer by id */
   CompanyUserProfileEmployer: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -15124,10 +19268,15 @@ export type operations = {
         /** @description ProfileEmployer Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileEmployerModel']
           'application/json': components['schemas']['CompanyUserProfileEmployerModel']
@@ -15138,6 +19287,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15148,18 +19300,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15170,9 +19334,10 @@ export type operations = {
       }
     }
   }
-  /** Update Profile Employer */
   UpdateCompanyUserProfileEmployer: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -15180,6 +19345,7 @@ export type operations = {
         companyUserId: number
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileEmployerAddEditModel */
     requestBody?: {
@@ -15193,6 +19359,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileEmployerModel']
           'application/json': components['schemas']['CompanyUserProfileEmployerModel']
@@ -15203,6 +19372,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15213,18 +19385,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15235,9 +19419,10 @@ export type operations = {
       }
     }
   }
-  /** Delete Profile Employer */
   DeleteCompanyUserProfileEmployer: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Profile Item Id */
         id: number
@@ -15246,14 +19431,22 @@ export type operations = {
         /** @description Company User Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15264,10 +19457,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15278,15 +19477,17 @@ export type operations = {
       }
     }
   }
-  /** Create Employer profile item */
   NewCompanyUserProfileEmployer: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileEmployerAddEditModel */
     requestBody?: {
@@ -15300,10 +19501,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileEmployerModel']
           'application/json': components['schemas']['CompanyUserProfileEmployerModel']
@@ -15314,6 +19521,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15324,18 +19534,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15346,9 +19568,10 @@ export type operations = {
       }
     }
   }
-  /** Get profile external skill by id */
   CompanyUserProfileExtSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -15357,10 +19580,15 @@ export type operations = {
         /** @description ProfileExtSkill Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileExtSkillModel']
           'application/json': components['schemas']['CompanyUserProfileExtSkillModel']
@@ -15371,6 +19599,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15381,18 +19612,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15403,9 +19646,10 @@ export type operations = {
       }
     }
   }
-  /** Update Extra Skill Profile Item */
   UpdateCompanyUserProfileExtSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -15413,6 +19657,7 @@ export type operations = {
         companyUserId: number
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileExtraSkillAddEditModel */
     requestBody?: {
@@ -15426,6 +19671,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileExtSkillModel']
           'application/json': components['schemas']['CompanyUserProfileExtSkillModel']
@@ -15436,6 +19684,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15446,18 +19697,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15468,9 +19731,10 @@ export type operations = {
       }
     }
   }
-  /** Delete Extra Skill Profile Item */
   DeleteCompanyUserProfileExtSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Profile Item Id */
         id: number
@@ -15479,14 +19743,22 @@ export type operations = {
         /** @description Company User Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15497,10 +19769,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15511,15 +19789,17 @@ export type operations = {
       }
     }
   }
-  /** Create Extra Skill Profile Item */
   NewCompanyUserProfileExtSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileExtSkillAddEditModel */
     requestBody?: {
@@ -15533,10 +19813,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileExtSkillModel']
           'application/json': components['schemas']['CompanyUserProfileExtSkillModel']
@@ -15547,6 +19833,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15557,18 +19846,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15579,18 +19880,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Create new profile import for a user.
-   * @description This will start an async operation.
-   * - If the operation is started successfully, the response will be `202 Accepted` and the `Location` header will contain the URL to get the status of the operation.
-   * - If the operation is not started successfully, the response will be `400 Bad Request`
-   */
   CreateCompanyUserProfileImport: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         companyId: number
         companyUserId: number
       }
+      cookie?: never
     }
     requestBody?: {
       content: {
@@ -15605,10 +19903,16 @@ export type operations = {
     responses: {
       /** @description Accepted */
       202: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Bad Request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15619,14 +19923,23 @@ export type operations = {
       }
       /** @description Unauthorized */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Not Found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server Error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15637,24 +19950,24 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get current status of the async profile import operation.
-   * @description This will return the status of an async operation.
-   * - If the operation is still in progress, the response will be `202 Accepted`
-   * - If the operation is completed successfully, the response will be `200 OK` and the `status` property will be `Completed`
-   * - If the operation is completed with errors, the response will be `200 OK` and the `status` property will be `Failed`
-   */
   GetCompanyUserProfileImport: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         companyId: number
         companyUserId: number
         operationId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description Success */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ImportProfileAsyncOperation']
           'application/json': components['schemas']['ImportProfileAsyncOperation']
@@ -15663,10 +19976,16 @@ export type operations = {
       }
       /** @description Accepted */
       202: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Bad Request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15677,14 +19996,23 @@ export type operations = {
       }
       /** @description Unauthorized */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Not Found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server Error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15695,9 +20023,10 @@ export type operations = {
       }
     }
   }
-  /** Get profile language by id */
   CompanyUserProfileLanguage: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -15706,10 +20035,15 @@ export type operations = {
         /** @description ProfileLanguage Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileLanguageModel']
           'application/json': components['schemas']['CompanyUserProfileLanguageModel']
@@ -15720,6 +20054,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15730,18 +20067,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15752,9 +20101,10 @@ export type operations = {
       }
     }
   }
-  /** Update Language Profile Item */
   UpdateCompanyUserProfileLanguage: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -15762,6 +20112,7 @@ export type operations = {
         companyUserId: number
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileExtraSkillAddEditModel */
     requestBody?: {
@@ -15775,6 +20126,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileLanguageModel']
           'application/json': components['schemas']['CompanyUserProfileLanguageModel']
@@ -15785,6 +20139,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15795,18 +20152,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15817,9 +20186,10 @@ export type operations = {
       }
     }
   }
-  /** Delete Language Profile Item */
   DeleteCompanyUserProfileLanguage: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Profile Item Id */
         id: number
@@ -15828,14 +20198,22 @@ export type operations = {
         /** @description Company User Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15846,10 +20224,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15860,15 +20244,17 @@ export type operations = {
       }
     }
   }
-  /** Create Language Profile Item */
   NewCompanyUserProfileLanguage: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileLanguageAddEditModel */
     requestBody?: {
@@ -15882,10 +20268,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileLanguageModel']
           'application/json': components['schemas']['CompanyUserProfileLanguageModel']
@@ -15896,6 +20288,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15906,18 +20301,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15928,11 +20335,20 @@ export type operations = {
       }
     }
   }
-  /** Get Available Profile Languages */
   ProfileLanguages: {
+    parameters: {
+      query?: never
+      header?: never
+      path?: never
+      cookie?: never
+    }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProfileLanguageModel'][]
           'application/json': components['schemas']['ProfileLanguageModel'][]
@@ -15943,18 +20359,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -15965,19 +20393,25 @@ export type operations = {
       }
     }
   }
-  /** Get profile presentation */
   CompanyUserProfilePresentation: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfilePresentationModel']
           'application/json': components['schemas']['CompanyUserProfilePresentationModel']
@@ -15988,6 +20422,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -15998,18 +20435,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16020,15 +20469,17 @@ export type operations = {
       }
     }
   }
-  /** Edit Profile Presentation */
   UpdateCompanyUserProfilePresentation: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfilePresentationEditModel */
     requestBody?: {
@@ -16042,6 +20493,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfilePresentationModel']
           'application/json': components['schemas']['CompanyUserProfilePresentationModel']
@@ -16052,6 +20506,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16062,18 +20519,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16084,9 +20553,10 @@ export type operations = {
       }
     }
   }
-  /** Get profile reference by id */
   CompanyUserProfileReference: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -16095,10 +20565,15 @@ export type operations = {
         /** @description ProfileReference Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileReferenceModel']
           'application/json': components['schemas']['CompanyUserProfileReferenceModel']
@@ -16109,6 +20584,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16119,18 +20597,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16141,9 +20631,10 @@ export type operations = {
       }
     }
   }
-  /** Update Profile Reference Item */
   UpdateCompanyUserProfileReference: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -16151,6 +20642,7 @@ export type operations = {
         companyUserId: number
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileReferenceAddEditModel */
     requestBody?: {
@@ -16164,6 +20656,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileReferenceModel']
           'application/json': components['schemas']['CompanyUserProfileReferenceModel']
@@ -16174,6 +20669,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16184,18 +20682,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16206,9 +20716,10 @@ export type operations = {
       }
     }
   }
-  /** Delete Profile Reference Item */
   DeleteCompanyUserProfileReference: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Profile Item Id */
         id: number
@@ -16217,14 +20728,22 @@ export type operations = {
         /** @description Company User Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16235,10 +20754,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16249,15 +20774,17 @@ export type operations = {
       }
     }
   }
-  /** Create Profile Reference Item */
   NewCompanyUserProfileReference: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileReferenceAddEditModel */
     requestBody?: {
@@ -16271,10 +20798,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileReferenceModel']
           'application/json': components['schemas']['CompanyUserProfileReferenceModel']
@@ -16285,6 +20818,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16295,18 +20831,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16317,19 +20865,25 @@ export type operations = {
       }
     }
   }
-  /** Get profiles list */
   CompanyUserProfiles: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileBaseModel'][]
           'application/json': components['schemas']['CompanyUserProfileBaseModel'][]
@@ -16340,6 +20894,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16350,14 +20907,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16368,9 +20934,10 @@ export type operations = {
       }
     }
   }
-  /** Get profile skill by id */
   CompanyUserProfileSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -16379,10 +20946,15 @@ export type operations = {
         /** @description ProfileSkill Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileSkillModel']
           'application/json': components['schemas']['CompanyUserProfileSkillModel']
@@ -16393,6 +20965,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16403,18 +20978,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16425,9 +21012,10 @@ export type operations = {
       }
     }
   }
-  /** Update Profile Skill */
   UpdateCompanyUserProfileSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -16435,6 +21023,7 @@ export type operations = {
         companyUserId: number
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileSkillEditModel */
     requestBody?: {
@@ -16448,6 +21037,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileSkillModel']
           'application/json': components['schemas']['CompanyUserProfileSkillModel']
@@ -16458,6 +21050,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16468,18 +21063,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16490,9 +21097,10 @@ export type operations = {
       }
     }
   }
-  /** Delete Profile Skill */
   DeleteCompanyUserProfileSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Profile Item Id */
         id: number
@@ -16501,14 +21109,22 @@ export type operations = {
         /** @description Company User Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16519,10 +21135,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16533,15 +21155,17 @@ export type operations = {
       }
     }
   }
-  /** Add Skill to profile */
   NewCompanyUserProfileSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileSkillAddEditModel */
     requestBody?: {
@@ -16555,10 +21179,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileSkillModel']
           'application/json': components['schemas']['CompanyUserProfileSkillModel']
@@ -16569,6 +21199,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16579,18 +21212,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16601,9 +21246,10 @@ export type operations = {
       }
     }
   }
-  /** Get profile training by id */
   CompanyUserProfileTraining: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -16612,10 +21258,15 @@ export type operations = {
         /** @description ProfileTraining Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileTrainingModel']
           'application/json': components['schemas']['CompanyUserProfileTrainingModel']
@@ -16626,6 +21277,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16636,18 +21290,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16658,9 +21324,10 @@ export type operations = {
       }
     }
   }
-  /** Update Profile Training Item */
   UpdateCompanyUserProfileTraining: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -16668,6 +21335,7 @@ export type operations = {
         companyUserId: number
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileTrainingAddEditModel */
     requestBody?: {
@@ -16681,6 +21349,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileTrainingModel']
           'application/json': components['schemas']['CompanyUserProfileTrainingModel']
@@ -16691,6 +21362,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16701,18 +21375,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16723,9 +21409,10 @@ export type operations = {
       }
     }
   }
-  /** Delete Profile Training Item */
   DeleteCompanyUserProfileTraining: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Profile Item Id */
         id: number
@@ -16734,14 +21421,22 @@ export type operations = {
         /** @description Company User Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16752,10 +21447,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16766,15 +21467,17 @@ export type operations = {
       }
     }
   }
-  /** Create Profile Training Item */
   NewCompanyUserProfileTraining: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileTrainingAddEditModel */
     requestBody?: {
@@ -16788,10 +21491,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileTrainingModel']
           'application/json': components['schemas']['CompanyUserProfileTrainingModel']
@@ -16802,6 +21511,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16812,18 +21524,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16834,9 +21558,10 @@ export type operations = {
       }
     }
   }
-  /** Get profile work experience by id */
   CompanyUserProfileWorkExperience: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -16845,10 +21570,15 @@ export type operations = {
         /** @description ProfileWorkExperience Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileWorkExperienceModel']
           'application/json': components['schemas']['CompanyUserProfileWorkExperienceModel']
@@ -16859,6 +21589,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16869,18 +21602,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16891,9 +21636,10 @@ export type operations = {
       }
     }
   }
-  /** Update Profile Work Experience */
   UpdateCompanyUserProfileWorkExperience: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -16901,6 +21647,7 @@ export type operations = {
         companyUserId: number
         id: number
       }
+      cookie?: never
     }
     /** @description CompanyUserProfileWorkExperienceAddEditModel */
     requestBody?: {
@@ -16914,6 +21661,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileWorkExperienceModel']
           'application/json': components['schemas']['CompanyUserProfileWorkExperienceModel']
@@ -16924,6 +21674,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16934,18 +21687,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16956,9 +21721,10 @@ export type operations = {
       }
     }
   }
-  /** Delete Profile Work Experience Item */
   DeleteCompanyUserProfileWorkExperience: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Profile Item Id */
         id: number
@@ -16967,14 +21733,22 @@ export type operations = {
         /** @description Company User Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -16985,10 +21759,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -16999,15 +21779,17 @@ export type operations = {
       }
     }
   }
-  /** Create WorkExperience Profile Item */
   NewCompanyUserProfileWorkExperience: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserWorkExperienceAddEditModel */
     requestBody?: {
@@ -17021,10 +21803,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProfileWorkExperienceModel']
           'application/json': components['schemas']['CompanyUserProfileWorkExperienceModel']
@@ -17035,6 +21823,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17045,18 +21836,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17067,12 +21870,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get resume by id.
-   * @description Requires module: CompanyUserResume.
-   */
   GetResume: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -17081,10 +21882,15 @@ export type operations = {
         /** @description Resume Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well. The different types of resumes have different response types: ClassicCompanyUserResumeModel for resumes based on classic templates and DynamicCompanyUserResumeModel for resumes based on dynamic templates. An example is provided for both models. */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserResumeBaseModel']
           'application/json': components['schemas']['CompanyUserResumeBaseModel']
@@ -17095,6 +21901,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17105,14 +21914,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17123,22 +21941,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company user resumes list
-   * @description Requires module: CompanyUserResume.
-   */
   CompanyUserResumes: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserResumeBaseModel'][]
           'application/json': components['schemas']['CompanyUserResumeBaseModel'][]
@@ -17149,6 +21970,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17159,14 +21983,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17177,22 +22010,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Roles for CompanyUser by id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   CompanyUserRoles: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserProjectAssignmentModel']
           'application/json': components['schemas']['CompanyUserProjectAssignmentModel']
@@ -17203,6 +22039,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17213,14 +22052,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17231,17 +22079,23 @@ export type operations = {
       }
     }
   }
-  /** Get extended company users list */
   CompanyUsersExtended: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserExtendedModel'][]
           'application/json': components['schemas']['CompanyUserExtendedModel'][]
@@ -17252,6 +22106,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17262,10 +22119,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17276,9 +22139,10 @@ export type operations = {
       }
     }
   }
-  /** Get skill by id */
   Skill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -17287,10 +22151,15 @@ export type operations = {
         /** @description Skill Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserSkillModel']
           'application/json': components['schemas']['CompanyUserSkillModel']
@@ -17301,6 +22170,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17311,14 +22183,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17329,19 +22210,25 @@ export type operations = {
       }
     }
   }
-  /** Get skills list */
   Skills: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserSkillModel'][]
           'application/json': components['schemas']['CompanyUserSkillModel'][]
@@ -17352,6 +22239,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17362,10 +22252,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17376,22 +22272,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company user by id
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   CompanySubcontractor: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserSubcontractorModel']
           'application/json': components['schemas']['CompanyUserSubcontractorModel']
@@ -17402,6 +22301,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17412,14 +22314,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17430,11 +22341,6 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete subcontractor from the system
-   * This action is irreversible, use with caution
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   DeleteCompanySubcontractor: {
     parameters: {
       query?: {
@@ -17443,20 +22349,29 @@ export type operations = {
         /** @description Subcontractor LastName */
         lastName?: string
       }
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Subcontractor Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17467,10 +22382,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17481,20 +22402,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get subcontractors list
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   CompanyUserSubcontractors: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserSubcontractorBaseModel'][]
           'application/json': components['schemas']['CompanyUserSubcontractorBaseModel'][]
@@ -17505,6 +22429,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17515,10 +22442,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17529,16 +22462,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add subcontractor
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   AddCompanyUserSubcontractor: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description CompanyUserSubcontractorAddEditModel */
     requestBody?: {
@@ -17552,6 +22484,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserSubcontractorModel']
           'application/json': components['schemas']['CompanyUserSubcontractorModel']
@@ -17562,6 +22497,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17572,10 +22510,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17586,12 +22530,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get subcontractors events list
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   CompanyUserSubcontractorEvent: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -17600,10 +22542,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventModel']
           'application/json': components['schemas']['CompanyUserEventModel']
@@ -17614,6 +22561,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17624,14 +22574,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17642,12 +22601,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get subcontractor meeting event
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   CompanyUserSubcontractorEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -17656,10 +22613,15 @@ export type operations = {
         /** @description Meeting event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventMeetingModel']
           'application/json': components['schemas']['CompanyUserEventMeetingModel']
@@ -17670,6 +22632,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17680,14 +22645,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17698,12 +22672,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Updates subcontractor meeting event
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   UpdateCompanyUserSubcontractorEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -17712,6 +22684,7 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
     /** @description Meeting event details */
     requestBody?: {
@@ -17725,6 +22698,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventMeetingModel']
           'application/json': components['schemas']['CompanyUserEventMeetingModel']
@@ -17735,6 +22711,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17745,10 +22724,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17759,12 +22744,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Deletes meeting event
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   DeleteCompanyUserSubcontractorEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -17773,14 +22756,22 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17791,10 +22782,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17805,22 +22802,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get subcontractors meetings events list
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   CompanyUserSubcontractorEventMeetingList: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventBaseModel'][]
           'application/json': components['schemas']['CompanyUserEventBaseModel'][]
@@ -17831,6 +22831,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17841,10 +22844,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17855,18 +22864,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Creates new subcontractor meeting event
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   NewCompanyUserSubcontractorEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description Meeting event details */
     requestBody?: {
@@ -17880,10 +22888,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventMeetingModel']
           'application/json': components['schemas']['CompanyUserEventMeetingModel']
@@ -17894,6 +22908,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17904,10 +22921,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17918,12 +22941,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get subcontractors notes events list
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   CompanyUserSubcontractorEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -17932,10 +22953,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventNoteModel']
           'application/json': components['schemas']['CompanyUserEventNoteModel']
@@ -17946,6 +22972,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -17956,14 +22985,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -17974,12 +23012,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Updates subcontractor note event
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   UpdateCompanyUserSubcontractorEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -17988,6 +23024,7 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
     /** @description Note event details */
     requestBody?: {
@@ -18001,6 +23038,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventNoteModel']
           'application/json': components['schemas']['CompanyUserEventNoteModel']
@@ -18011,6 +23051,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18021,10 +23064,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18035,12 +23084,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Deletes meeting event
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   DeleteCompanyUserSubcontractorEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -18049,14 +23096,22 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18067,10 +23122,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18081,22 +23142,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get subcontractors notes events list
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   CompanyUserSubcontractorEventsNotes: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventBaseModel'][]
           'application/json': components['schemas']['CompanyUserEventBaseModel'][]
@@ -18107,6 +23171,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18117,10 +23184,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18131,18 +23204,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Creates new subcontractors note event
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   NewCompanyUserSubcontractorEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description Note event details */
     requestBody?: {
@@ -18156,10 +23228,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventNoteModel']
           'application/json': components['schemas']['CompanyUserEventNoteModel']
@@ -18170,6 +23248,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18180,10 +23261,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18194,22 +23281,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get subcontractors events list
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   CompanyUserSubcontractorEvents: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         subcontractorId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventBaseModel'][]
           'application/json': components['schemas']['CompanyUserEventBaseModel'][]
@@ -18220,6 +23310,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18230,10 +23323,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18244,22 +23343,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get subcontractors tasks events list
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   CompanyUserSubcontractorEventsTasks: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventBaseModel'][]
           'application/json': components['schemas']['CompanyUserEventBaseModel'][]
@@ -18270,6 +23372,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18280,10 +23385,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18294,18 +23405,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Creates new subcontractor task event
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   NewCompanyUserSubcontractorEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description Task event details */
     requestBody?: {
@@ -18319,10 +23429,16 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventTaskModel']
           'application/json': components['schemas']['CompanyUserEventTaskModel']
@@ -18333,6 +23449,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18343,10 +23462,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18357,12 +23482,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get subcontractors tasks events list
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   CompanyUserSubcontractorEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -18371,10 +23494,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventTaskModel']
           'application/json': components['schemas']['CompanyUserEventTaskModel']
@@ -18385,6 +23513,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18395,14 +23526,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18413,12 +23553,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Updates subcontractor task event
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   UpdateCompanyUserSubcontractorEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -18427,6 +23565,7 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
     /** @description Task event details */
     requestBody?: {
@@ -18440,6 +23579,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserEventTaskModel']
           'application/json': components['schemas']['CompanyUserEventTaskModel']
@@ -18450,6 +23592,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18460,10 +23605,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18474,12 +23625,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Deletes meeting event
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   DeleteCompanyUserSubcontractorEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -18488,14 +23637,22 @@ export type operations = {
         /** @description Event id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18506,10 +23663,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18520,21 +23683,24 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get subcontractor File Attachment by Id
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   GetSubcontractorAttachment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         id: number
         companyId: number
         attachmentId: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': string
           'application/json': string
@@ -18545,18 +23711,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18567,18 +23745,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Upload subcontractor file attachment
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   SubcontractorAttachment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Candidate Id */
         id: number
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     requestBody?: {
       content: {
@@ -18592,6 +23769,9 @@ export type operations = {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserSubcontractorFileAttachmentListModel']
           'application/json': components['schemas']['CompanyUserSubcontractorFileAttachmentListModel']
@@ -18602,6 +23782,9 @@ export type operations = {
       }
       /** @description Bad Request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18612,10 +23795,16 @@ export type operations = {
       }
       /** @description Unauthorized */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server Error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18626,22 +23815,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get assigned and prospect roles for subcontractor
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   GetSubcontractorRoles: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Subcontractor Id */
         subcontractorId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserSubcontractorRolesModel']
           'application/json': components['schemas']['CompanyUserSubcontractorRolesModel']
@@ -18652,6 +23844,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18662,14 +23857,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18680,12 +23884,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get a specific role, assigned and or prospected, for subcontractor by role id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   GetSubcontractorRole: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -18694,10 +23896,15 @@ export type operations = {
         /** @description Project assignment Id */
         projectAssignmentId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserSubcontractorRoleMemberModel']
           'application/json': components['schemas']['CompanyUserSubcontractorRoleMemberModel']
@@ -18708,6 +23915,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18718,14 +23928,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18736,34 +23955,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Edit Tags for User
-   * @description Note:
-   *
-   *     Posted tags will replace any existing tags for the user.
-   *     A new tag will be created if the id for a tag is not provided.
-   *
-   * Sample request:
-   *
-   *     POST /v0.1/companies/1/users/19870/tags
-   *     [
-   *         {
-   *             "name": "tag-name",
-   *             "id": 2
-   *         },
-   *         {
-   *             "name": "tag-new",
-   *         },
-   *     ]
-   */
   EditCompanyUserTags: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
     /** @description CompanyTagModel[] */
     requestBody?: {
@@ -18777,6 +23979,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CompanyUserModel']
           'application/json': components['schemas']['CompanyUserModel']
@@ -18787,6 +23992,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18797,18 +24005,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18819,19 +24039,25 @@ export type operations = {
       }
     }
   }
-  /** Get teams for team member */
   UserTeams: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description CompanyUser Id */
         companyUserId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['TeamBaseModel'][]
           'application/json': components['schemas']['TeamBaseModel'][]
@@ -18842,6 +24068,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18852,10 +24081,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18866,22 +24101,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company webhooks
-   * @description Sample request:
-   *
-   *     GET /v0.1/companies/1/webhooks
-   */
   CompanyWebhooks: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['WebhookModel'][]
           'application/json': components['schemas']['WebhookModel'][]
@@ -18892,6 +24128,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18902,18 +24141,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -18924,35 +24175,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add Webhook
-   * @description Sample request:
-   *
-   *     POST /v0.1/companies/1/webhooks
-   *     {
-   *         "isActive": false,
-   *         "endpointUrl": "https://webhook.site/7a619ffb-e67c-41fc-8113-083d6013f76c",
-   *         "configurations": [
-   *             {
-   *                 "entityType": 1,
-   *                 "actionType": 1
-   *             }
-   *         ],
-   *         "credentials": [
-   *             {
-   *                 "isBasicAuthentication": true,
-   *                 "headerName": "user",
-   *                 "headerValue": "somevalue"
-   *             }
-   *         ]
-   *     }
-   */
   NewWebhook: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description WebhookAddModel */
     requestBody?: {
@@ -18966,6 +24197,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['WebhookModel']
           'application/json': components['schemas']['WebhookModel']
@@ -18976,6 +24210,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -18986,18 +24223,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Not Found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19008,12 +24257,14 @@ export type operations = {
       }
     }
   }
-  /** @description Requires access level: CompanyAdmin. Requires module: Webhooks. */
   InstallWebhookManifest: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         companyId: number
       }
+      cookie?: never
     }
     requestBody?: {
       content: {
@@ -19026,6 +24277,9 @@ export type operations = {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['WebhookModel'][]
           'application/json': components['schemas']['WebhookModel'][]
@@ -19036,6 +24290,9 @@ export type operations = {
       }
       /** @description Bad Request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19046,18 +24303,30 @@ export type operations = {
       }
       /** @description Unauthorized */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Not Found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server Error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19068,28 +24337,32 @@ export type operations = {
       }
     }
   }
-  /**
-   * Remove webhook
-   * @description Sample request:
-   *
-   *     DELETE /v0.1/companies/1/webhooks/42a3a220-766c-eb11-8e13-000c29b4e92f
-   */
   RemoveWebhook: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Webhook Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19100,18 +24373,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Not Found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19122,13 +24407,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get resume by id
-   * @deprecated
-   * @description Requires module: CompanyUserResume.
-   */
   DynamicResume: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -19137,10 +24419,15 @@ export type operations = {
         /** @description Resume Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['DynamicCompanyUserResumeModel']
           'application/json': components['schemas']['DynamicCompanyUserResumeModel']
@@ -19151,6 +24438,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19161,14 +24451,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19179,19 +24478,25 @@ export type operations = {
       }
     }
   }
-  /** Search keywords by term */
   SearchKeyword: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Search term */
         term: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['KeywordModel'][]
           'application/json': components['schemas']['KeywordModel'][]
@@ -19202,6 +24507,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19212,10 +24520,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19226,17 +24540,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Translates any mention-ids in a text to their human readable form.
-   * Translations are access restricted, if you don't have enough access
-   * to get the name of an id, it won't be translated.
-   */
   TranslateMentions: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description The model with one property, value, which contains the text containing the mentions you're looking to translate.  Example of a text with a mention inside: `"Hello @(1|123456) can you please consider this role?"` */
     requestBody?: {
@@ -19250,6 +24562,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': string
           'application/json': string
@@ -19260,6 +24575,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19270,10 +24588,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19284,16 +24608,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Partners by filter
-   * @description Requires access level: PartnerManager. Requires module: Partners.
-   */
   SearchPartners: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description Filter options */
     requestBody?: {
@@ -19307,6 +24630,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['PartnersOverviewModel']
           'application/json': components['schemas']['PartnersOverviewModel']
@@ -19317,18 +24643,30 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19339,22 +24677,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project by id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   Project: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectModel']
           'application/json': components['schemas']['ProjectModel']
@@ -19365,6 +24706,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19375,14 +24719,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19393,18 +24746,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update project
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   UpdateCompanyProject: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Project Id */
         id: number
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description ProjectAddEditModel */
     requestBody?: {
@@ -19418,6 +24770,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectModel']
           'application/json': components['schemas']['ProjectModel']
@@ -19428,6 +24783,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19438,10 +24796,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19452,26 +24816,32 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete project
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   DeleteCompanyProject: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19482,10 +24852,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19496,20 +24872,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get projects list  - please note this endpoint currently only returns projects with the status WON. Please use the SearchProjects endpoint for more options of filtering desired Projects
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   Projects: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectBaseModel'][]
           'application/json': components['schemas']['ProjectBaseModel'][]
@@ -19520,6 +24899,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19530,10 +24912,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19544,16 +24932,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add project
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   NewCompanyProject: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description ProjectAddEditModel */
     requestBody?: {
@@ -19567,6 +24954,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectModel']
           'application/json': components['schemas']['ProjectModel']
@@ -19577,6 +24967,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19587,10 +24980,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19601,13 +25000,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get projectassignment by id (Obsolete)
-   * @deprecated
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   OldProjectAssignment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -19616,10 +25012,15 @@ export type operations = {
         /** @description ProjectAssignment Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentModel']
           'application/json': components['schemas']['ProjectAssignmentModel']
@@ -19630,6 +25031,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19640,14 +25044,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19658,12 +25071,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Role by id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectAssignment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -19672,10 +25083,15 @@ export type operations = {
         /** @description ProjectAssignment Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentModel']
           'application/json': components['schemas']['ProjectAssignmentModel']
@@ -19686,6 +25102,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19696,14 +25115,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19714,12 +25142,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Edit Role
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   UpdateProjectAssignment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -19728,6 +25154,7 @@ export type operations = {
         /** @description ProjectAssignment Id */
         id: number
       }
+      cookie?: never
     }
     /** @description ProjectAssignmentEditModel */
     requestBody?: {
@@ -19741,6 +25168,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentModel']
           'application/json': components['schemas']['ProjectAssignmentModel']
@@ -19751,6 +25181,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19761,10 +25194,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19775,12 +25214,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete Role
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   DeleteProjectAssignment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -19789,10 +25226,15 @@ export type operations = {
         /** @description ProjectAssignment Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentModel']
           'application/json': components['schemas']['ProjectAssignmentModel']
@@ -19803,6 +25245,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19813,10 +25258,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19827,18 +25278,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add Role
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   NewProjectAssignment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         projectId: number
       }
+      cookie?: never
     }
     /** @description ProjectAssignmentAddEditModel */
     requestBody?: {
@@ -19852,6 +25302,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentModel']
           'application/json': components['schemas']['ProjectAssignmentModel']
@@ -19862,6 +25315,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19872,10 +25328,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19886,13 +25348,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Announce a role (ProjectAssignment) to the Partner Network and optionally also to Cinode Market(https://cinode.market/requests).
-   * If you are testing, set the "PublishForReal" to "false", otherwise you will publish this announcement for real. When you're testing ("PublishForReal = false) RequestId will be 0 in the response.
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   AnnounceProjectAssignment: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Project Id */
         projectId: number
@@ -19900,6 +25359,7 @@ export type operations = {
         projectAssignmentId: number
         companyId: string
       }
+      cookie?: never
     }
     /** @description ProjectAssignmentAnnounceModel */
     requestBody?: {
@@ -19913,6 +25373,9 @@ export type operations = {
     responses: {
       /** @description Success */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentAnnouncementBaseModel']
           'application/json': components['schemas']['ProjectAssignmentAnnouncementBaseModel']
@@ -19923,10 +25386,16 @@ export type operations = {
       }
       /** @description All went well */
       201: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19937,10 +25406,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -19951,12 +25426,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add Role Member Employee
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   AddProjectAssignmentMemberEmployee: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -19965,6 +25438,7 @@ export type operations = {
         /** @description Role Id */
         roleId: number
       }
+      cookie?: never
     }
     /** @description ProjectAssignmentMemberEmployeeAddModel */
     requestBody?: {
@@ -19978,6 +25452,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentModel']
           'application/json': components['schemas']['ProjectAssignmentModel']
@@ -19988,6 +25465,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -19998,10 +25478,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20012,12 +25498,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add Role Member Subcontractor
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   AddProjectAssignmentMemberSubcontractor: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20026,6 +25510,7 @@ export type operations = {
         /** @description Role Id */
         roleId: number
       }
+      cookie?: never
     }
     /** @description ProjectAssignmentMemberSubcontractorAddModel */
     requestBody?: {
@@ -20039,6 +25524,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentModel']
           'application/json': components['schemas']['ProjectAssignmentModel']
@@ -20049,6 +25537,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20059,10 +25550,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20073,12 +25570,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Edit Role Member Employee
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   UpdateProjectAssignmentMemberEmployee: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20089,6 +25584,7 @@ export type operations = {
         /** @description Role Member Id */
         id: number
       }
+      cookie?: never
     }
     /** @description ProjectAssignmentMemberSubcontractorAddModel */
     requestBody?: {
@@ -20102,6 +25598,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentModel']
           'application/json': components['schemas']['ProjectAssignmentModel']
@@ -20112,6 +25611,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20122,10 +25624,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20136,12 +25644,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Edit Role Member Subcontractor
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   UpdateProjectAssignmentMemberSubcontractor: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20152,6 +25658,7 @@ export type operations = {
         /** @description Role Member Id */
         id: number
       }
+      cookie?: never
     }
     /** @description ProjectAssignmentMemberSubcontractorAddModel */
     requestBody?: {
@@ -20165,6 +25672,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentModel']
           'application/json': components['schemas']['ProjectAssignmentModel']
@@ -20175,6 +25685,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20185,10 +25698,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20199,12 +25718,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete Role Member
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   DeleteProjectAssignmentMemberEmployee: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20215,10 +25732,15 @@ export type operations = {
         /** @description Role Member Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentModel']
           'application/json': components['schemas']['ProjectAssignmentModel']
@@ -20229,6 +25751,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20239,10 +25764,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20253,17 +25784,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get Roles by Filter
-   * Rate limited, restricted to once per minute, max 1000 requests per day
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   SearchRoles: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description Filter options */
     requestBody?: {
@@ -20277,6 +25806,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentWithStatusModel']
           'application/json': components['schemas']['ProjectAssignmentWithStatusModel']
@@ -20287,6 +25819,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20297,14 +25832,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20315,12 +25859,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add Role Skill
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   AddProjectAssignmentSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20329,6 +25871,7 @@ export type operations = {
         /** @description Role Id */
         roleId: number
       }
+      cookie?: never
     }
     /** @description ProjectAssignmentMemberSkillAddModel */
     requestBody?: {
@@ -20342,6 +25885,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentSkillModel']
           'application/json': components['schemas']['ProjectAssignmentSkillModel']
@@ -20352,6 +25898,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20362,10 +25911,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20376,12 +25931,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update Role Skill
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   UpdateProjectAssignmentSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20392,6 +25945,7 @@ export type operations = {
         /** @description Keyword Id */
         id: number
       }
+      cookie?: never
     }
     /** @description ProjectAssignmentMemberSkillAddModel */
     requestBody?: {
@@ -20405,6 +25959,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentSkillModel']
           'application/json': components['schemas']['ProjectAssignmentSkillModel']
@@ -20415,6 +25972,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20425,10 +25985,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20439,12 +26005,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete Role Skill
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   DeleteProjectAssignmentSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20455,10 +26019,15 @@ export type operations = {
         /** @description Keyword Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectAssignmentSkillModel']
           'application/json': components['schemas']['ProjectAssignmentSkillModel']
@@ -20469,6 +26038,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20479,10 +26051,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20493,12 +26071,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project event by id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectEvent: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20507,10 +26083,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventModel']
           'application/json': components['schemas']['ProjectEventModel']
@@ -20521,6 +26102,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20531,14 +26115,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20549,22 +26142,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project events list
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectEvents: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         projectId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventBaseModel'][]
           'application/json': components['schemas']['ProjectEventBaseModel'][]
@@ -20575,6 +26171,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20585,10 +26184,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20599,12 +26204,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project event meeting by id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectEventMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20613,10 +26216,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventMeetingModel']
           'application/json': components['schemas']['ProjectEventMeetingModel']
@@ -20627,6 +26235,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20637,14 +26248,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20655,12 +26275,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update project event meeting
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   UpdateProjectMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20669,6 +26287,7 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
     /** @description ProjectEventMeetingAddEditModel */
     requestBody?: {
@@ -20682,6 +26301,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventMeetingModel']
           'application/json': components['schemas']['ProjectEventMeetingModel']
@@ -20692,6 +26314,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20702,10 +26327,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20716,12 +26347,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete project event meeting
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   DeleteProjectMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20730,14 +26359,22 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20748,10 +26385,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20762,22 +26405,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project events meetings list
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectEventMeetings: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         projectId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventBaseModel'][]
           'application/json': components['schemas']['ProjectEventBaseModel'][]
@@ -20788,6 +26434,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20798,10 +26447,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20812,18 +26467,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add project event meeting
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   NewProjectMeeting: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         projectId: number
       }
+      cookie?: never
     }
     /** @description ProjectEventMeetingAddEditModel */
     requestBody?: {
@@ -20837,6 +26491,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventMeetingModel']
           'application/json': components['schemas']['ProjectEventMeetingModel']
@@ -20847,6 +26504,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20857,10 +26517,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20871,12 +26537,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project event note by id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectEventNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20885,10 +26549,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['CustomerEventNoteModel']
           'application/json': components['schemas']['CustomerEventNoteModel']
@@ -20899,6 +26568,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20909,14 +26581,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20927,12 +26608,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update project event note
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   UpdateProjectNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -20941,6 +26620,7 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
     /** @description ProjectEventNoteAddEditModel */
     requestBody?: {
@@ -20954,6 +26634,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventNoteModel']
           'application/json': components['schemas']['ProjectEventNoteModel']
@@ -20964,6 +26647,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -20974,10 +26660,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -20988,12 +26680,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete project event note
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   DeleteProjectNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -21002,14 +26692,22 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21020,10 +26718,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21034,22 +26738,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project event notes list
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectEventNotes: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         projectId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventBaseModel'][]
           'application/json': components['schemas']['ProjectEventBaseModel'][]
@@ -21060,6 +26767,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21070,10 +26780,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21084,18 +26800,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add project event note
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   NewProjectNote: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         projectId: number
       }
+      cookie?: never
     }
     /** @description ProjectEventNoteAddEditModel */
     requestBody?: {
@@ -21109,6 +26824,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventNoteModel']
           'application/json': components['schemas']['ProjectEventNoteModel']
@@ -21119,6 +26837,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21129,10 +26850,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21143,12 +26870,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project event task by id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectEventTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -21157,10 +26882,15 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventTaskModel']
           'application/json': components['schemas']['ProjectEventTaskModel']
@@ -21171,6 +26901,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21181,14 +26914,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21199,12 +26941,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Update project event task
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   UpdateProjectTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -21213,6 +26953,7 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
     /** @description ProjectEventTaskAddEditModel */
     requestBody?: {
@@ -21226,6 +26967,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventTaskModel']
           'application/json': components['schemas']['ProjectEventTaskModel']
@@ -21236,6 +26980,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21246,10 +26993,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21260,12 +27013,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Delete project event task
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   DeleteProjectTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -21274,14 +27025,22 @@ export type operations = {
         /** @description Event Id */
         id: string
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21292,10 +27051,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21306,22 +27071,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project event tasks list
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectEventTasks: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         projectId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventBaseModel'][]
           'application/json': components['schemas']['ProjectEventBaseModel'][]
@@ -21332,6 +27100,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21342,10 +27113,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21356,18 +27133,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Add project event task
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   NewProjectTask: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         projectId: number
       }
+      cookie?: never
     }
     /** @description ProjectEventTaskAddEditModel */
     requestBody?: {
@@ -21381,6 +27157,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       201: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectEventTaskModel']
           'application/json': components['schemas']['ProjectEventTaskModel']
@@ -21391,6 +27170,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21401,10 +27183,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21415,20 +27203,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project pipelines
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectPipelines: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectPipelineModel'][]
           'application/json': components['schemas']['ProjectPipelineModel'][]
@@ -21439,6 +27230,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21449,10 +27243,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21463,12 +27263,10 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project reference by id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectReference: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
@@ -21477,10 +27275,15 @@ export type operations = {
         /** @description Project reference Id */
         id: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectReferenceModel']
           'application/json': components['schemas']['ProjectReferenceModel']
@@ -21491,6 +27294,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21501,14 +27307,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21519,22 +27334,25 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get project reference by id
-   * @description Requires access level: CompanyManager. Requires module: Assignments.
-   */
   ProjectReferences: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         projectId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectReferenceModel'][]
           'application/json': components['schemas']['ProjectReferenceModel'][]
@@ -21545,6 +27363,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21555,10 +27376,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21569,35 +27396,17 @@ export type operations = {
       }
     }
   }
-  /**
-   * Edit Tags for Project
-   * @description Note:
-   *
-   *     Posted tags will replace any existing tags for the project.
-   *     A new tag will be created, if the id for a tag not provided.
-   *
-   * Sample request:
-   *
-   *     POST /v0.1/companies/1/projects/19870/tags
-   *     [
-   *         {
-   *             "name": "tag-name",
-   *             "id": 2
-   *         },
-   *         {
-   *             "name": "tag-test",
-   *             "id": 1
-   *         },
-   *     ]
-   */
   EditProjectTags: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
         /** @description Project Id */
         projectId: number
       }
+      cookie?: never
     }
     /** @description CompanyTagModel */
     requestBody?: {
@@ -21611,6 +27420,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ProjectModel']
           'application/json': components['schemas']['ProjectModel']
@@ -21621,6 +27433,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21631,18 +27446,30 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Forbidden request */
       403: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21653,20 +27480,23 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get recruitment sources
-   * @description Requires access level: CompanyRecruiter. Requires module: Recruitment.
-   */
   RecruitmentSources: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
+    requestBody?: never
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['RecruitmentSourceModel'][]
           'application/json': components['schemas']['RecruitmentSourceModel'][]
@@ -21677,6 +27507,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21687,10 +27520,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21701,33 +27540,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company candidates list from search criteria
-   * @description Sample request:
-   *
-   *     POST /v0.1/companies/1/candidates/search
-   *     {
-   *         "term": "candidate property value",
-   *         "rating": 3
-   *         "status": 0,
-   *         "sources": [],
-   *         "noRecruiter": false,
-   *         "recruiters": [],
-   *         "states": [0],
-   *         "pipeline": null,
-   *         "pageAndSortBy": {
-   *             "page": 1,
-   *             "itemsPerPage": 15
-   *         },
-   *         "pipelines": []
-   *     }
-   */
   SearchCompanyCandidate: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description SearchCompanyCandidateQueryModel */
     requestBody?: {
@@ -21741,6 +27562,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['SearchCompanyCandidateResultModel']
           'application/json': components['schemas']['SearchCompanyCandidateResultModel']
@@ -21751,6 +27575,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21761,10 +27588,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21775,16 +27608,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company customer contacts list from search criteria
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   SearchCompanyCustomerContact: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description SearchCompanyCustomerQueryModel */
     requestBody?: {
@@ -21798,6 +27630,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['SearchCompanyCustomerContactResultModel']
           'application/json': components['schemas']['SearchCompanyCustomerContactResultModel']
@@ -21808,6 +27643,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21818,10 +27656,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21832,16 +27676,15 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get company customers list from search criteria
-   * @description Requires access level: CompanyManager. Requires module: Customers.
-   */
   SearchCompanyCustomer: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description SearchCompanyCustomerQueryModel */
     requestBody?: {
@@ -21855,6 +27698,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['SearchCompanyCustomerResultModel']
           'application/json': components['schemas']['SearchCompanyCustomerResultModel']
@@ -21865,6 +27711,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21875,10 +27724,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21889,13 +27744,15 @@ export type operations = {
       }
     }
   }
-  /** Get company users list from search criteria */
   SearchCompanyUser: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description SearchCompanyUserQueryModel */
     requestBody?: {
@@ -21909,6 +27766,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['SearchCompanyUserResultModel']
           'application/json': components['schemas']['SearchCompanyUserResultModel']
@@ -21919,6 +27779,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -21929,10 +27792,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -21943,36 +27812,82 @@ export type operations = {
       }
     }
   }
-  /**
-   * Get projects list from search criteria
-   * @description Sample request:
-   *
-   *     POST /v0.1/companies/1/projects/search
-   *     {
-   *         "pipelines": [4],
-   *         "projectStates": [0],
-   *         "PageAndSortBy": {
-   *             "SortBy": "0",
-   *             "SortOrder": "1",
-   *             "Page": "1",
-   *             "ItemsPerPage": "15",
-   *         }
-   *     }
-   *     SortBy Parameter can be:
-   *         CreatedDateTime=0 // Default
-   *         Title=1
-   *         Identifier=2
-   *         CustomerIdentifier=3
-   *         SeoId=4
-   *         UpdatedDateTime=6
-   *         LastTouchDateTime=7
-   */
+  SearchCompanyEvent: {
+    parameters: {
+      query?: never
+      header?: never
+      path: {
+        companyId: string
+      }
+      cookie?: never
+    }
+    /** @description SearchCompanyEventQueryModel */
+    requestBody?: {
+      content: {
+        'application/json-patch+json': components['schemas']['SearchEventQueryModel']
+        'application/json': components['schemas']['SearchEventQueryModel']
+        'text/json': components['schemas']['SearchEventQueryModel']
+        'application/*+json': components['schemas']['SearchEventQueryModel']
+      }
+    }
+    responses: {
+      /** @description All went well */
+      200: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          'text/plain': components['schemas']['SearchEventResultModel']
+          'application/json': components['schemas']['SearchEventResultModel']
+          'text/json': components['schemas']['SearchEventResultModel']
+          'application/xml': components['schemas']['SearchEventResultModel']
+          'text/xml': components['schemas']['SearchEventResultModel']
+        }
+      }
+      /** @description Incorrect request */
+      400: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          'text/plain': components['schemas']['ValidationModel']
+          'application/json': components['schemas']['ValidationModel']
+          'text/json': components['schemas']['ValidationModel']
+          'application/xml': components['schemas']['ValidationModel']
+          'text/xml': components['schemas']['ValidationModel']
+        }
+      }
+      /** @description Unauthorized request */
+      401: {
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
+      }
+      /** @description Server error */
+      500: {
+        headers: {
+          [name: string]: unknown
+        }
+        content: {
+          'text/plain': components['schemas']['ErrorModel']
+          'application/json': components['schemas']['ErrorModel']
+          'text/json': components['schemas']['ErrorModel']
+          'application/xml': components['schemas']['ErrorModel']
+          'text/xml': components['schemas']['ErrorModel']
+        }
+      }
+    }
+  }
   SearchProject: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description SearchCompanyCustomerQueryModel */
     requestBody?: {
@@ -21986,6 +27901,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['SearchProjectsResultModel']
           'application/json': components['schemas']['SearchProjectsResultModel']
@@ -21996,6 +27914,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -22006,10 +27927,16 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -22020,13 +27947,15 @@ export type operations = {
       }
     }
   }
-  /** Search users by skill keyword id */
   SearchSkill: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description SearchSkillQueryModel */
     requestBody?: {
@@ -22040,6 +27969,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['SearchSkillResultModel']
           'application/json': components['schemas']['SearchSkillResultModel']
@@ -22050,6 +27982,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -22060,14 +27995,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
@@ -22078,13 +28022,15 @@ export type operations = {
       }
     }
   }
-  /** Search users with skills by term (string value) */
   SearchSkillTerm: {
     parameters: {
+      query?: never
+      header?: never
       path: {
         /** @description Company Id */
         companyId: number
       }
+      cookie?: never
     }
     /** @description SkillSearchQueryTermModel */
     requestBody?: {
@@ -22098,6 +28044,9 @@ export type operations = {
     responses: {
       /** @description All went well */
       200: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['SearchSkillResultModel']
           'application/json': components['schemas']['SearchSkillResultModel']
@@ -22108,6 +28057,9 @@ export type operations = {
       }
       /** @description Incorrect request */
       400: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ValidationModel']
           'application/json': components['schemas']['ValidationModel']
@@ -22118,14 +28070,23 @@ export type operations = {
       }
       /** @description Unauthorized request */
       401: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Resource not found */
       404: {
-        content: never
+        headers: {
+          [name: string]: unknown
+        }
+        content?: never
       }
       /** @description Server error */
       500: {
+        headers: {
+          [name: string]: unknown
+        }
         content: {
           'text/plain': components['schemas']['ErrorModel']
           'application/json': components['schemas']['ErrorModel']
