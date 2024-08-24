@@ -18,7 +18,7 @@
     "openapi-fetch": "^0.11.0"
   },
   "devDependencies": {
-    "@ivuorinen/prettier-config": "^0.2.0",
+    "@ivuorinen/prettier-config": "^0.3.0",
     "husky": "^9.0.0",
     "lint-staged": "^15.0.0",
     "openapi-typescript": "^7.0.0",
