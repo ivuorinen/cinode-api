@@ -5,6 +5,11 @@ name: Release Drafter
 on:
   workflow_call:
 
+permissions:
+  contents: write
+  statuses: write
+  packages: read
+
 jobs:
   Draft:
     uses: ivuorinen/.github/.github/workflows/sync-labels.yml@main

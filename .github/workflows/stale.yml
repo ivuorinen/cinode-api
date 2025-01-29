@@ -8,6 +8,10 @@ on:
   workflow_call:
   workflow_dispatch:
 
+permissions:
+  packages: read
+  statuses: read
+
 jobs:
   stale:
     uses: ivuorinen/.github/.github/workflows/stale.yml@main
