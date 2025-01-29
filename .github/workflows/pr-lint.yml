@@ -1,4 +1,5 @@
 ---
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: PR Lint
 
 on:
@@ -11,3 +12,8 @@ on:
 jobs:
   SuperLinter:
     uses: ivuorinen/.github/.github/workflows/pr-lint.yml@main
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+

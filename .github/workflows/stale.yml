@@ -1,7 +1,7 @@
 ---
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: Stale
 
-# yamllint disable-line rule:truthy
 on:
   schedule:
     - cron: '0 8 * * *'
@@ -10,8 +10,11 @@ on:
 
 jobs:
   stale:
+    uses: ivuorinen/.github/.github/workflows/stale.yml@main
     permissions:
-      contents: write
+      contents: write # only for delete-branch option
       issues: write
       pull-requests: write
-    uses: ivuorinen/.github/.github/workflows/stale.yml@main
+      statuses: read
+      packages: read
+
